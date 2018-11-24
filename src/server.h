@@ -5,15 +5,18 @@
 class Server{
     private:
     // for testing one player
-    Player current_player;
+    Player* playerlist[4];
+    Player* current_player;
     int  double_count;
+
     public:
-    //recieve the array of player
     Server();
     void game_flow();
     int roll_dice();
-    void move_token(int steps);
+    void movebysteps(int steps);
+    void movebyposition(int positions);
     void trigger_event();
+    void injail_action();
     void next_player();
 };
 
