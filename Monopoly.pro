@@ -26,10 +26,15 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+    src/player.cpp \
+    src/server.cpp
 
 HEADERS += \
-        mainwindow.h
+        mainwindow.h \
+    src/player.h \
+    src/token.h \
+    src/server.h
 
 FORMS += \
         mainwindow.ui
