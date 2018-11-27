@@ -2,12 +2,31 @@
 
 Player::Player(int id, Token token):
   id(id),
-  asset(0),
+  money(0),
   position(0),
   passed_GO(false),
   token(token)
 {
 
+}
+
+bool Player::pay_rent(Player*player,int rent){
+    int result = money - rent;
+    if (result < 0){
+         return false;
+    }else{
+        player->set_money(get_money()+rent);
+        money-=rent;
+        return true;
+    }
+}
+
+void Player::set_money(int money){
+    this->money = money;
+}
+
+int Player::get_money() const{
+    return money;
 }
 
 void Player::movebysteps(int steps){

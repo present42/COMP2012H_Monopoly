@@ -28,13 +28,22 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     src/player.cpp \
-    src/server.cpp
+    src/server.cpp \
+    src/asset.cpp \
+    src/railroad.cpp \
+    src/utility.cpp \
+    src/property.cpp
 
 HEADERS += \
         mainwindow.h \
     src/player.h \
     src/token.h \
-    src/server.h
+    src/server.h \
+    src/asset.h \
+    src/railroad.h \
+    src/property.h \
+    src/utility.h \
+    src/block.h
 
 FORMS += \
         mainwindow.ui
