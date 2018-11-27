@@ -2,14 +2,10 @@
 #define SERVER_H
 
 #include "player.h"
-class Server{
-    private:
-    // for testing one player
-    Player* playerlist[4];
-    Player* current_player;
-    int  double_count;
+#include "ui/gamewindow.h"
 
-    public:
+class Server{
+public:
     Server();
     void game_flow();
     int roll_dice();
@@ -18,6 +14,17 @@ class Server{
     void trigger_event();
     void injail_action();
     void next_player();
+
+private:
+    // for testing one player
+    Player* playerlist[4];
+    Player* current_player;
+    int  double_count;
+
+    //GUI
+    //If the server-client program is to be implemented,
+    //this part should be removed
+    GameWindow* game_window;
 };
 
 #endif // SERVER_H

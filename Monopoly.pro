@@ -26,16 +26,18 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp \
+        ui/mainwindow.cpp \
     src/player.cpp \
     src/server.cpp \
     src/asset.cpp \
     src/railroad.cpp \
     src/utility.cpp \
-    src/property.cpp
+    src/property.cpp \
+    ui/gamewindow.cpp \
+    src/block.cpp \
 
 HEADERS += \
-        mainwindow.h \
+    ui/mainwindow.h \
     src/player.h \
     src/token.h \
     src/server.h \
@@ -43,12 +45,20 @@ HEADERS += \
     src/railroad.h \
     src/property.h \
     src/utility.h \
-    src/block.h
+    src/block.h \
+    ui/gamewindow.h \
+
 
 FORMS += \
-        mainwindow.ui
+    ui/gamewindow.ui \
+    ui/mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES +=
+
+RESOURCES += \
+    resources.qrc
