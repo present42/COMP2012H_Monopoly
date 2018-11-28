@@ -15,6 +15,8 @@ public:
     void injail_action();
     void next_player();
 
+    GameWindow* get_game_window();
+    void startGUI();
 private:
     // for testing one player
     Player* playerlist[4];
@@ -25,6 +27,8 @@ private:
     //If the server-client program is to be implemented,
     //this part should be removed
     GameWindow* game_window;
+
+
 };
 
 #endif // SERVER_H

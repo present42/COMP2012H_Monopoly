@@ -25,10 +25,13 @@ private:
     //AbstractBlock* test[4][8];
     //SpecialBlock* block[4];
     //HoverDialogue* hoverDialog;
-
+    void closeEvent(QCloseEvent *event);
 private slots:
     //void processHoverEnterWithInput(int x, int y);
     //void processHoverLeaveWithInput(int x, int y);
+
+signals:
+    void closed();
 };
 
 #endif // GAMEWINDOW_H

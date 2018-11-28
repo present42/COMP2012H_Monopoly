@@ -87,5 +87,12 @@ void Server::next_player(){
     current_player = playerlist[index];
 }
 
+GameWindow* Server::get_game_window() {
+    return game_window;
+}
+
+void Server::startGUI() {
+    game_window = new GameWindow(nullptr);
+}
 
 
