@@ -4,7 +4,9 @@
 #include <QWidget>
 #include "abstractblockui.h"
 #include "tokenui.h"
-
+#include "rolldicewidget.h"
+#include "src/player.h"
+#include "src/block.h"
 namespace Ui {
 class GameWindow;
 }
@@ -19,6 +21,7 @@ public:
     virtual ~GameWindow();
     void setDice(int dice1, int dice2);
     void initToken(int player, Token token_type);
+    RollDiceWidget* getRollDiceWidget();
 
 private:
     Ui::GameWindow *ui;
@@ -26,9 +29,14 @@ private:
     TokenUI* tokens[4];
 
     AbstractBlockUI* block_ui[40];
+    RollDiceWidget* roll_dice_widget;
+
     //HoverDialogue* hoverDialog;
+    void initRollDiceWidget();
     void closeEvent(QCloseEvent *event);
-private slots:
+
+public slots:
+    void init_player(int id);
     //void processHoverEnterWithInput(int x, int y);
     //void processHoverLeaveWithInput(int x, int y);
 

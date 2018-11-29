@@ -1,6 +1,7 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 #include "token.h"
+#include <QObject>
 
 class Player{
 private:
@@ -14,14 +15,14 @@ private:
 
 public:
 
-    Player(int id,Token token);
+    Player(int id, Token token);
 
     //asset part
     // false mean not enough money
     bool pay_rent(Player* player,int rent);
     void set_money(int money);
     int get_money() const;
-
+    int get_jail_turn();
     //movement
     void movebysteps(int steps);
     void movebyposition(int position);
@@ -40,6 +41,7 @@ public:
     int  injail_turn() const;
     void out_jail();
     void stayin_jail();
+
 };
 
 #endif // PLAYER_H

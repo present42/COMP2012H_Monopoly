@@ -40,7 +40,8 @@ SOURCES += \
     ui/specialblockui.cpp \
     ui/normalblockui.cpp \
     ui/tokenui.cpp \
-    ui/normalblockwithlabelui.cpp
+    ui/normalblockwithlabelui.cpp \
+    ui/rolldicewidget.cpp
 
 
 HEADERS += \
@@ -60,7 +61,8 @@ HEADERS += \
     ui/normalblockui.h \
     ui/tokenui.h \
     ui/normalblockwithlabelui.h \
-    ui/blockuifactory.h
+    ui/blockuifactory.h \
+    ui/rolldicewidget.h
 
 
 

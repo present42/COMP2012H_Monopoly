@@ -3,30 +3,46 @@
 
 #include "player.h"
 #include "ui/gamewindow.h"
+#include <QObject>
 
-class Server{
+class Server : public QObject {
+    Q_OBJECT
 public:
     Server();
-    void game_flow();
-    int roll_dice();
+    virtual ~Server();
+    void start();
+    //void add_new_player();
+
+    /* INITINATION */
+    void add_player(Player* new_player);
+
+    /* GAME FLOW */
+    void roll_dice();
+    void move(int dice_sum);
+    void status_change(int status);
+
     void movebysteps(int steps);
     void movebyposition(int positions);
     void trigger_event();
-    void injail_action();
+    void end_turn();
     void next_player();
 
-    GameWindow* get_game_window();
-    void startGUI();
 private:
     // for testing one player
-    Player* playerlist[4];
+    Player* players[4];
+    int num_player;
+
     Player* current_player;
     int  double_count;
+    int status;
 
     //GUI
     //If the server-client program is to be implemented,
     //this part should be removed
-    GameWindow* game_window;
+
+
+signals:
+    void init_player(int id);
 
 
 };

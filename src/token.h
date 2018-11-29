@@ -1,7 +1,7 @@
 #ifndef TOKEN_H
 #define TOKEN_H
 
-enum Token{Test1,Test2};
+enum Token { CAT, DOG, HAT, SHIP, BOOT, CAR };
 
 #endif // TOKEN_H
 

@@ -7,10 +7,9 @@ Player::Player(int id, Token token):
   passed_GO(false),
   token(token)
 {
-
 }
 
-bool Player::pay_rent(Player*player,int rent){
+bool Player::pay_rent(Player* player, int rent){
     int result = money - rent;
     if (result < 0){
          return false;
@@ -73,4 +72,8 @@ void Player::out_jail(){
 
 void Player::stayin_jail(){
     jail_turn += 1;
+}
+
+int Player::get_jail_turn() {
+    return jail_turn;
 }
