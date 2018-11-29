@@ -41,6 +41,7 @@ SOURCES += \
     ui/tokenui.cpp \
     ui/normalblockwithlabelui.cpp
 
+
 HEADERS += \
     ui/mainwindow.h \
     src/player.h \
@@ -51,6 +52,7 @@ HEADERS += \
     src/property.h \
     src/utility.h \
     src/block.h \
+    src/card.h \
     ui/gamewindow.h \
     ui/abstractblockui.h \
     ui/specialblockui.h \
@@ -58,6 +60,7 @@ HEADERS += \
     ui/tokenui.h \
     ui/normalblockwithlabelui.h \
     ui/blockuifactory.h
+
 
 
 FORMS += \

@@ -1,9 +1,7 @@
-#include "src/block.h"
+#include "block.h"
 
-Block::Block() {
-
-}
-
-Block::~Block() {
-
+Block::Block(int id, Block* (*block)[40]):
+    id(id),
+    block(block)
+{
 }
