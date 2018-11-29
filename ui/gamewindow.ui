@@ -6,13 +6,13 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1800</width>
+    <width>2000</width>
     <height>1100</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>1800</width>
+    <width>2000</width>
     <height>1100</height>
    </size>
   </property>
@@ -22,18 +22,24 @@
   <widget class="QTabWidget" name="tabWidget">
    <property name="geometry">
     <rect>
-     <x>920</x>
-     <y>20</y>
-     <width>861</width>
+     <x>1100</x>
+     <y>110</y>
+     <width>791</width>
      <height>481</height>
     </rect>
    </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
    <property name="styleSheet">
-    <string notr="true">border-color: black
+    <string notr="true">QTabBar::tab { 
+height: 30px; 
+width: 150px; 
+}
 </string>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>3</number>
    </property>
    <property name="iconSize">
     <size>
@@ -43,7 +49,7 @@
    </property>
    <widget class="QWidget" name="tab1">
     <attribute name="title">
-     <string>Player 1</string>
+     <string>Player 1 ($1,500)</string>
     </attribute>
     <widget class="QLabel" name="brown1">
      <property name="geometry">
@@ -55,13 +61,10 @@
       </rect>
      </property>
      <property name="autoFillBackground">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">QLabe {
-	border-color: &quot;black&quot;;
-	border-width: 1px;
-}</string>
+      <string notr="true">border: 1.5px solid #955436</string>
      </property>
      <property name="text">
       <string>Br1</string>
@@ -77,12 +80,10 @@
       </rect>
      </property>
      <property name="autoFillBackground">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">
-	border-color: &quot;black&quot;;
-	border-width: 1px;</string>
+      <string notr="true">border: 1.5px solid #955436</string>
      </property>
      <property name="text">
       <string>Br2</string>
@@ -98,12 +99,10 @@
       </rect>
      </property>
      <property name="autoFillBackground">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">
-	border-color: &quot;black&quot;;
-	border-width: 1px;</string>
+      <string notr="true">border: 1.5px solid #ade1fa</string>
      </property>
      <property name="text">
       <string>SB2</string>
@@ -119,12 +118,10 @@
       </rect>
      </property>
      <property name="autoFillBackground">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">
-	border-color: &quot;black&quot;;
-	border-width: 1px;</string>
+      <string notr="true">border: 1.5px solid #ade1fa</string>
      </property>
      <property name="text">
       <string>SB1</string>
@@ -140,12 +137,10 @@
       </rect>
      </property>
      <property name="autoFillBackground">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">
-	border-color: &quot;black&quot;;
-	border-width: 1px;</string>
+      <string notr="true">border: 1.5px solid #ade1fa</string>
      </property>
      <property name="text">
       <string>SB3</string>
@@ -161,12 +156,10 @@
       </rect>
      </property>
      <property name="autoFillBackground">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">
-	border-color: &quot;black&quot;;
-	border-width: 1px;</string>
+      <string notr="true">border: 1.5px solid #d94999</string>
      </property>
      <property name="text">
       <string>P1</string>
@@ -182,12 +175,10 @@
       </rect>
      </property>
      <property name="autoFillBackground">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">
-	border-color: &quot;black&quot;;
-	border-width: 1px;</string>
+      <string notr="true">border: 1.5px solid #d94999</string>
      </property>
      <property name="text">
       <string>P3</string>
@@ -203,12 +194,10 @@
       </rect>
      </property>
      <property name="autoFillBackground">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">
-	border-color: &quot;black&quot;;
-	border-width: 1px;</string>
+      <string notr="true">border: 1.5px solid #d94999</string>
      </property>
      <property name="text">
       <string>P2</string>
@@ -224,12 +213,10 @@
       </rect>
      </property>
      <property name="autoFillBackground">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">
-	border-color: &quot;black&quot;;
-	border-width: 1px;</string>
+      <string notr="true">border: 1.5px solid #f89734</string>
      </property>
      <property name="text">
       <string>O1</string>
@@ -245,12 +232,10 @@
       </rect>
      </property>
      <property name="autoFillBackground">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">
-	border-color: &quot;black&quot;;
-	border-width: 1px;</string>
+      <string notr="true">border: 1.5px solid #f89734</string>
      </property>
      <property name="text">
       <string>O1</string>
@@ -266,12 +251,10 @@
       </rect>
      </property>
      <property name="autoFillBackground">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">
-	border-color: &quot;black&quot;;
-	border-width: 1px;</string>
+      <string notr="true">border: 1.5px solid #f89734</string>
      </property>
      <property name="text">
       <string>O3</string>
@@ -287,12 +270,10 @@
       </rect>
      </property>
      <property name="autoFillBackground">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">
-	border-color: &quot;black&quot;;
-	border-width: 1px;</string>
+      <string notr="true">border: 1.5px solid #0077be</string>
      </property>
      <property name="text">
       <string>B2</string>
@@ -308,12 +289,10 @@
       </rect>
      </property>
      <property name="autoFillBackground">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">
-	border-color: &quot;black&quot;;
-	border-width: 1px;</string>
+      <string notr="true">border: 1.5px solid #0077be</string>
      </property>
      <property name="text">
       <string>B1</string>
@@ -329,12 +308,10 @@
       </rect>
      </property>
      <property name="autoFillBackground">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">
-	border-color: &quot;black&quot;;
-	border-width: 1px;</string>
+      <string notr="true">border: 1.5px solid #00a85a</string>
      </property>
      <property name="text">
       <string>G3</string>
@@ -350,12 +327,10 @@
       </rect>
      </property>
      <property name="autoFillBackground">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">
-	border-color: &quot;black&quot;;
-	border-width: 1px;</string>
+      <string notr="true">border: 1.5px solid #ee3338</string>
      </property>
      <property name="text">
       <string>R1</string>
@@ -371,12 +346,10 @@
       </rect>
      </property>
      <property name="autoFillBackground">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">
-	border-color: &quot;black&quot;;
-	border-width: 1px;</string>
+      <string notr="true">border: 1.5px solid #ee3338</string>
      </property>
      <property name="text">
       <string>R3</string>
@@ -392,12 +365,10 @@
       </rect>
      </property>
      <property name="autoFillBackground">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">
-	border-color: &quot;black&quot;;
-	border-width: 1px;</string>
+      <string notr="true">border: 1.5px solid #00a85a</string>
      </property>
      <property name="text">
       <string>G2</string>
@@ -413,12 +384,10 @@
       </rect>
      </property>
      <property name="autoFillBackground">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">
-	border-color: &quot;black&quot;;
-	border-width: 1px;</string>
+      <string notr="true">border: 1.5px solid #fff213</string>
      </property>
      <property name="text">
       <string>P1</string>
@@ -434,12 +403,10 @@
       </rect>
      </property>
      <property name="autoFillBackground">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">
-	border-color: &quot;black&quot;;
-	border-width: 1px;</string>
+      <string notr="true">border: 1.5px solid #00a85a</string>
      </property>
      <property name="text">
       <string>G1</string>
@@ -455,12 +422,10 @@
       </rect>
      </property>
      <property name="autoFillBackground">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">
-	border-color: &quot;black&quot;;
-	border-width: 1px;</string>
+      <string notr="true">border: 1.5px solid #fff213</string>
      </property>
      <property name="text">
       <string>P2</string>
@@ -476,12 +441,10 @@
       </rect>
      </property>
      <property name="autoFillBackground">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">
-	border-color: &quot;black&quot;;
-	border-width: 1px;</string>
+      <string notr="true">border: 1.5px solid #ee3338</string>
      </property>
      <property name="text">
       <string>R2</string>
@@ -497,12 +460,10 @@
       </rect>
      </property>
      <property name="autoFillBackground">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">
-	border-color: &quot;black&quot;;
-	border-width: 1px;</string>
+      <string notr="true">border: 1.5px solid #fff213</string>
      </property>
      <property name="text">
       <string>P3</string>
@@ -518,12 +479,10 @@
       </rect>
      </property>
      <property name="autoFillBackground">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">
-	border-color: &quot;black&quot;;
-	border-width: 1px;</string>
+      <string notr="true">border: 1.5px solid #ffffff</string>
      </property>
      <property name="text">
       <string>U2</string>
@@ -539,12 +498,10 @@
       </rect>
      </property>
      <property name="autoFillBackground">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">
-	border-color: &quot;black&quot;;
-	border-width: 1px;</string>
+      <string notr="true">border: 1.5px solid #ffffff</string>
      </property>
      <property name="text">
       <string>U1</string>
@@ -560,12 +517,10 @@
       </rect>
      </property>
      <property name="autoFillBackground">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">
-	border-color: &quot;black&quot;;
-	border-width: 1px;</string>
+      <string notr="true">border: 1.5px solid #ccc</string>
      </property>
      <property name="text">
       <string>Ra3</string>
@@ -581,12 +536,10 @@
       </rect>
      </property>
      <property name="autoFillBackground">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">
-	border-color: &quot;black&quot;;
-	border-width: 1px;</string>
+      <string notr="true">border: 1.5px solid #ccc</string>
      </property>
      <property name="text">
       <string>Ra1</string>
@@ -602,12 +555,10 @@
       </rect>
      </property>
      <property name="autoFillBackground">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">
-	border-color: &quot;black&quot;;
-	border-width: 1px;</string>
+      <string notr="true">border: 1.5px solid #ccc</string>
      </property>
      <property name="text">
       <string>Ra2</string>
@@ -623,12 +574,10 @@
       </rect>
      </property>
      <property name="autoFillBackground">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">
-	border-color: &quot;black&quot;;
-	border-width: 1px;</string>
+      <string notr="true">border: 1.5px solid #ccc</string>
      </property>
      <property name="text">
       <string>Ra4</string>
@@ -668,7 +617,7 @@
       <string>home</string>
      </property>
     </widget>
-    <widget class="QLabel" name="home_2">
+    <widget class="QLabel" name="hotel">
      <property name="geometry">
       <rect>
        <x>210</x>
@@ -712,19 +661,1930 @@
    </widget>
    <widget class="QWidget" name="tab2">
     <attribute name="title">
-     <string>Player 2</string>
+     <string>Player 2 ($1,500)</string>
     </attribute>
+    <widget class="QLabel" name="pink2_2">
+     <property name="geometry">
+      <rect>
+       <x>480</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #d94999</string>
+     </property>
+     <property name="text">
+      <string>P2</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="railroad3_2">
+     <property name="geometry">
+      <rect>
+       <x>540</x>
+       <y>230</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ccc</string>
+     </property>
+     <property name="text">
+      <string>Ra3</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="brown1_2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #955436</string>
+     </property>
+     <property name="text">
+      <string>Br1</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="pink1_2">
+     <property name="geometry">
+      <rect>
+       <x>420</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #d94999</string>
+     </property>
+     <property name="text">
+      <string>P1</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="orange2_2">
+     <property name="geometry">
+      <rect>
+       <x>680</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #f89734</string>
+     </property>
+     <property name="text">
+      <string>O1</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="blue2_2">
+     <property name="geometry">
+      <rect>
+       <x>740</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #0077be</string>
+     </property>
+     <property name="text">
+      <string>B2</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="railroad1_2">
+     <property name="geometry">
+      <rect>
+       <x>420</x>
+       <y>230</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ccc</string>
+     </property>
+     <property name="text">
+      <string>Ra1</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="orange3_2">
+     <property name="geometry">
+      <rect>
+       <x>740</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #f89734</string>
+     </property>
+     <property name="text">
+      <string>O3</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="skyblue2_2">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ade1fa</string>
+     </property>
+     <property name="text">
+      <string>SB2</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="skyblue3_2">
+     <property name="geometry">
+      <rect>
+       <x>340</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ade1fa</string>
+     </property>
+     <property name="text">
+      <string>SB3</string>
+     </property>
+    </widget>
+    <widget class="QLCDNumber" name="home_number_2">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>340</y>
+       <width>51</width>
+       <height>81</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="blue1_2">
+     <property name="geometry">
+      <rect>
+       <x>680</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #0077be</string>
+     </property>
+     <property name="text">
+      <string>B1</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="hotel_2">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>340</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>true</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+	border-color: &quot;black&quot;;
+	border-width: 1px;</string>
+     </property>
+     <property name="text">
+      <string>hotel</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="red3_2">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ee3338</string>
+     </property>
+     <property name="text">
+      <string>R3</string>
+     </property>
+    </widget>
+    <widget class="QLCDNumber" name="hotel_number_2">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>340</y>
+       <width>51</width>
+       <height>81</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="skyblue1_2">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ade1fa</string>
+     </property>
+     <property name="text">
+      <string>SB1</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="brown2_2">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #955436</string>
+     </property>
+     <property name="text">
+      <string>Br2</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="green2_2">
+     <property name="geometry">
+      <rect>
+       <x>480</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #00a85a</string>
+     </property>
+     <property name="text">
+      <string>G2</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="red2_2">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ee3338</string>
+     </property>
+     <property name="text">
+      <string>R2</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="yellow2_2">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #fff213</string>
+     </property>
+     <property name="text">
+      <string>P2</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="railroad2_2">
+     <property name="geometry">
+      <rect>
+       <x>480</x>
+       <y>230</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ccc</string>
+     </property>
+     <property name="text">
+      <string>Ra2</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="orange1_2">
+     <property name="geometry">
+      <rect>
+       <x>620</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #f89734</string>
+     </property>
+     <property name="text">
+      <string>O1</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="utility1_2">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>230</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ffffff</string>
+     </property>
+     <property name="text">
+      <string>U1</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="green3_2">
+     <property name="geometry">
+      <rect>
+       <x>540</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #00a85a</string>
+     </property>
+     <property name="text">
+      <string>G3</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="red1_2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ee3338</string>
+     </property>
+     <property name="text">
+      <string>R1</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="home_2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>340</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>true</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+	border-color: &quot;black&quot;;
+	border-width: 1px;</string>
+     </property>
+     <property name="text">
+      <string>home</string>
+     </property>
+    </widget>
+    <widget class="Line" name="line_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>310</y>
+       <width>841</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="yellow3_2">
+     <property name="geometry">
+      <rect>
+       <x>340</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #fff213</string>
+     </property>
+     <property name="text">
+      <string>P3</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="yellow1_2">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #fff213</string>
+     </property>
+     <property name="text">
+      <string>P1</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="green1_2">
+     <property name="geometry">
+      <rect>
+       <x>420</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #00a85a</string>
+     </property>
+     <property name="text">
+      <string>G1</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="railroad4_2">
+     <property name="geometry">
+      <rect>
+       <x>600</x>
+       <y>230</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ccc</string>
+     </property>
+     <property name="text">
+      <string>Ra4</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="pink3_2">
+     <property name="geometry">
+      <rect>
+       <x>540</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #d94999</string>
+     </property>
+     <property name="text">
+      <string>P3</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="utility2_2">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>230</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ffffff</string>
+     </property>
+     <property name="text">
+      <string>U2</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="tab3">
     <attribute name="title">
-     <string>Player 3</string>
+     <string>Player 3 ($1,500)</string>
     </attribute>
+    <widget class="QLabel" name="skyblue3_3">
+     <property name="geometry">
+      <rect>
+       <x>340</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ade1fa</string>
+     </property>
+     <property name="text">
+      <string>SB3</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="brown2_3">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #955436</string>
+     </property>
+     <property name="text">
+      <string>Br2</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="home_3">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>340</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>true</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+	border-color: &quot;black&quot;;
+	border-width: 1px;</string>
+     </property>
+     <property name="text">
+      <string>home</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="orange1_3">
+     <property name="geometry">
+      <rect>
+       <x>620</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #f89734</string>
+     </property>
+     <property name="text">
+      <string>O1</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="green1_3">
+     <property name="geometry">
+      <rect>
+       <x>420</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #00a85a</string>
+     </property>
+     <property name="text">
+      <string>G1</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="blue2_3">
+     <property name="geometry">
+      <rect>
+       <x>740</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #0077be</string>
+     </property>
+     <property name="text">
+      <string>B2</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="red2_3">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ee3338</string>
+     </property>
+     <property name="text">
+      <string>R2</string>
+     </property>
+    </widget>
+    <widget class="QLCDNumber" name="home_number_3">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>340</y>
+       <width>51</width>
+       <height>81</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="red1_3">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ee3338</string>
+     </property>
+     <property name="text">
+      <string>R1</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="yellow1_3">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #fff213</string>
+     </property>
+     <property name="text">
+      <string>P1</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="yellow3_3">
+     <property name="geometry">
+      <rect>
+       <x>340</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #fff213</string>
+     </property>
+     <property name="text">
+      <string>P3</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="pink1_3">
+     <property name="geometry">
+      <rect>
+       <x>420</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #d94999</string>
+     </property>
+     <property name="text">
+      <string>P1</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="utility1_3">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>230</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ffffff</string>
+     </property>
+     <property name="text">
+      <string>U1</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="railroad2_3">
+     <property name="geometry">
+      <rect>
+       <x>480</x>
+       <y>230</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ccc</string>
+     </property>
+     <property name="text">
+      <string>Ra2</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="railroad4_3">
+     <property name="geometry">
+      <rect>
+       <x>600</x>
+       <y>230</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ccc</string>
+     </property>
+     <property name="text">
+      <string>Ra4</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="skyblue2_3">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ade1fa</string>
+     </property>
+     <property name="text">
+      <string>SB2</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="pink3_3">
+     <property name="geometry">
+      <rect>
+       <x>540</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #d94999</string>
+     </property>
+     <property name="text">
+      <string>P3</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="railroad1_3">
+     <property name="geometry">
+      <rect>
+       <x>420</x>
+       <y>230</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ccc</string>
+     </property>
+     <property name="text">
+      <string>Ra1</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="red3_3">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ee3338</string>
+     </property>
+     <property name="text">
+      <string>R3</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="utility2_3">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>230</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ffffff</string>
+     </property>
+     <property name="text">
+      <string>U2</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="brown1_3">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #955436</string>
+     </property>
+     <property name="text">
+      <string>Br1</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="railroad3_3">
+     <property name="geometry">
+      <rect>
+       <x>540</x>
+       <y>230</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ccc</string>
+     </property>
+     <property name="text">
+      <string>Ra3</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="skyblue1_3">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ade1fa</string>
+     </property>
+     <property name="text">
+      <string>SB1</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="yellow2_3">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #fff213</string>
+     </property>
+     <property name="text">
+      <string>P2</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="orange3_3">
+     <property name="geometry">
+      <rect>
+       <x>740</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #f89734</string>
+     </property>
+     <property name="text">
+      <string>O3</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="green2_3">
+     <property name="geometry">
+      <rect>
+       <x>480</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #00a85a</string>
+     </property>
+     <property name="text">
+      <string>G2</string>
+     </property>
+    </widget>
+    <widget class="QLCDNumber" name="hotel_number_3">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>340</y>
+       <width>51</width>
+       <height>81</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="orange2_3">
+     <property name="geometry">
+      <rect>
+       <x>680</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #f89734</string>
+     </property>
+     <property name="text">
+      <string>O1</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="green3_3">
+     <property name="geometry">
+      <rect>
+       <x>540</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #00a85a</string>
+     </property>
+     <property name="text">
+      <string>G3</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="hotel_3">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>340</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>true</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+	border-color: &quot;black&quot;;
+	border-width: 1px;</string>
+     </property>
+     <property name="text">
+      <string>hotel</string>
+     </property>
+    </widget>
+    <widget class="Line" name="line_3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>310</y>
+       <width>841</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="blue1_3">
+     <property name="geometry">
+      <rect>
+       <x>680</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #0077be</string>
+     </property>
+     <property name="text">
+      <string>B1</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="pink2_3">
+     <property name="geometry">
+      <rect>
+       <x>480</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #d94999</string>
+     </property>
+     <property name="text">
+      <string>P2</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="tab4">
     <attribute name="title">
-     <string>Player 4</string>
+     <string>Player 4 ($1,500)</string>
     </attribute>
+    <widget class="QLabel" name="skyblue3_4">
+     <property name="geometry">
+      <rect>
+       <x>340</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ade1fa</string>
+     </property>
+     <property name="text">
+      <string>SB3</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="brown2_4">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #955436</string>
+     </property>
+     <property name="text">
+      <string>Br2</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="home_4">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>340</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>true</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+	border-color: &quot;black&quot;;
+	border-width: 1px;</string>
+     </property>
+     <property name="text">
+      <string>home</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="orange1_4">
+     <property name="geometry">
+      <rect>
+       <x>620</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #f89734</string>
+     </property>
+     <property name="text">
+      <string>O1</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="green1_4">
+     <property name="geometry">
+      <rect>
+       <x>420</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #00a85a</string>
+     </property>
+     <property name="text">
+      <string>G1</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="blue2_4">
+     <property name="geometry">
+      <rect>
+       <x>740</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #0077be</string>
+     </property>
+     <property name="text">
+      <string>B2</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="red2_4">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ee3338</string>
+     </property>
+     <property name="text">
+      <string>R2</string>
+     </property>
+    </widget>
+    <widget class="QLCDNumber" name="home_number_4">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>340</y>
+       <width>51</width>
+       <height>81</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="red1_4">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ee3338</string>
+     </property>
+     <property name="text">
+      <string>R1</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="yellow1_4">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #fff213</string>
+     </property>
+     <property name="text">
+      <string>P1</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="yellow3_4">
+     <property name="geometry">
+      <rect>
+       <x>340</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #fff213</string>
+     </property>
+     <property name="text">
+      <string>P3</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="pink1_4">
+     <property name="geometry">
+      <rect>
+       <x>420</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #d94999</string>
+     </property>
+     <property name="text">
+      <string>P1</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="utility1_4">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>230</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ffffff</string>
+     </property>
+     <property name="text">
+      <string>U1</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="railroad2_4">
+     <property name="geometry">
+      <rect>
+       <x>480</x>
+       <y>230</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ccc</string>
+     </property>
+     <property name="text">
+      <string>Ra2</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="railroad4_4">
+     <property name="geometry">
+      <rect>
+       <x>600</x>
+       <y>230</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ccc</string>
+     </property>
+     <property name="text">
+      <string>Ra4</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="skyblue2_4">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ade1fa</string>
+     </property>
+     <property name="text">
+      <string>SB2</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="pink3_4">
+     <property name="geometry">
+      <rect>
+       <x>540</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #d94999</string>
+     </property>
+     <property name="text">
+      <string>P3</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="railroad1_4">
+     <property name="geometry">
+      <rect>
+       <x>420</x>
+       <y>230</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ccc</string>
+     </property>
+     <property name="text">
+      <string>Ra1</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="red3_4">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ee3338</string>
+     </property>
+     <property name="text">
+      <string>R3</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="utility2_4">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>230</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ffffff</string>
+     </property>
+     <property name="text">
+      <string>U2</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="brown1_4">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #955436</string>
+     </property>
+     <property name="text">
+      <string>Br1</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="railroad3_4">
+     <property name="geometry">
+      <rect>
+       <x>540</x>
+       <y>230</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ccc</string>
+     </property>
+     <property name="text">
+      <string>Ra3</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="skyblue1_4">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ade1fa</string>
+     </property>
+     <property name="text">
+      <string>SB1</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="yellow2_4">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #fff213</string>
+     </property>
+     <property name="text">
+      <string>P2</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="orange3_4">
+     <property name="geometry">
+      <rect>
+       <x>740</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #f89734</string>
+     </property>
+     <property name="text">
+      <string>O3</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="green2_4">
+     <property name="geometry">
+      <rect>
+       <x>480</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #00a85a</string>
+     </property>
+     <property name="text">
+      <string>G2</string>
+     </property>
+    </widget>
+    <widget class="QLCDNumber" name="hotel_number_4">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>340</y>
+       <width>51</width>
+       <height>81</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="orange2_4">
+     <property name="geometry">
+      <rect>
+       <x>680</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #f89734</string>
+     </property>
+     <property name="text">
+      <string>O1</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="green3_4">
+     <property name="geometry">
+      <rect>
+       <x>540</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #00a85a</string>
+     </property>
+     <property name="text">
+      <string>G3</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="hotel_4">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>340</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>true</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+	border-color: &quot;black&quot;;
+	border-width: 1px;</string>
+     </property>
+     <property name="text">
+      <string>hotel</string>
+     </property>
+    </widget>
+    <widget class="Line" name="line_4">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>310</y>
+       <width>841</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="blue1_4">
+     <property name="geometry">
+      <rect>
+       <x>680</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #0077be</string>
+     </property>
+     <property name="text">
+      <string>B1</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="pink2_4">
+     <property name="geometry">
+      <rect>
+       <x>480</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #d94999</string>
+     </property>
+     <property name="text">
+      <string>P2</string>
+     </property>
+    </widget>
    </widget>
+  </widget>
+  <widget class="QPushButton" name="buildButton">
+   <property name="geometry">
+    <rect>
+     <x>1080</x>
+     <y>20</y>
+     <width>141</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>BUILD</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="sellButton">
+   <property name="geometry">
+    <rect>
+     <x>1240</x>
+     <y>20</y>
+     <width>141</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>SELL</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="mortageButton">
+   <property name="geometry">
+    <rect>
+     <x>1400</x>
+     <y>20</y>
+     <width>151</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>MORTGAGE</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="unmortgageButton">
+   <property name="geometry">
+    <rect>
+     <x>1570</x>
+     <y>20</y>
+     <width>161</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>UNMORTGAGE</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="tradeButton">
+   <property name="geometry">
+    <rect>
+     <x>1750</x>
+     <y>20</y>
+     <width>141</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>TRADE</string>
+   </property>
   </widget>
  </widget>
  <resources/>
