@@ -2,6 +2,8 @@
 #define GAMEWINDOW_H
 
 #include <QWidget>
+#include "abstractblockui.h"
+#include "tokenui.h"
 
 namespace Ui {
 class GameWindow;
@@ -21,9 +23,9 @@ public:
 private:
     Ui::GameWindow *ui;
     QFont dice;
-    //QLabel* tokens[4];
-    //AbstractBlock* test[4][8];
-    //SpecialBlock* block[4];
+    TokenUI* tokens[4];
+
+    AbstractBlockUI* block_ui[40];
     //HoverDialogue* hoverDialog;
     void closeEvent(QCloseEvent *event);
 private slots:

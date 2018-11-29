@@ -3,6 +3,10 @@
 
 #include <QFont>
 #include <QFontDatabase>
+#include "blockuifactory.h"
+#include "specialblockui.h"
+#include "normalblockui.h"
+#include "normalblockwithlabelui.h"
 
 GameWindow::GameWindow(QWidget* parent) :
     QWidget(parent),
@@ -10,6 +14,13 @@ GameWindow::GameWindow(QWidget* parent) :
     //dice(QFont(QFontDatabase::applicationFontFamilies(QFontDatabase::addApplicationFont(":/font/Dice.ttf")).at(0), 50))
 {
     ui->setupUi(this);
+
+    for(int i = 0; i < 40; i++) {
+        block_ui[i] = BlockUIFactory::createBlock(this, i);
+        block_ui[i]->render();
+    }
+
+    tokens[0] = new TokenUI(this, "cat", &block_ui);
     this->show();
 }
 
