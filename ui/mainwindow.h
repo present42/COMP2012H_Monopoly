@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <src/server.h>
 
 namespace Ui {
 class MainWindow;
@@ -17,6 +18,11 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    Server* game_instance;
+
+private slots:
+    void startButton_clicked_handler();
+    void game_window_closed_handler();
 };
 
 #endif // MAINWINDOW_H

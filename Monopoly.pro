@@ -23,16 +23,50 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 CONFIG += c++11
+CONFIG += resources_big
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        ui/mainwindow.cpp \
+    src/player.cpp \
+    src/server.cpp \
+    src/asset.cpp \
+    src/railroad.cpp \
+    src/utility.cpp \
+    src/property.cpp \
+    ui/gamewindow.cpp \
+    src/block.cpp \
+    ui/abstractblockui.cpp \
+    ui/specialblockui.cpp \
+    ui/normalblockui.cpp \
+    ui/tokenui.cpp \
+    ui/normalblockwithlabelui.cpp
+
 
 HEADERS += \
-        mainwindow.h
+    ui/mainwindow.h \
+    src/player.h \
+    src/token.h \
+    src/server.h \
+    src/asset.h \
+    src/railroad.h \
+    src/property.h \
+    src/utility.h \
+    src/block.h \
+    src/card.h \
+    ui/gamewindow.h \
+    ui/abstractblockui.h \
+    ui/specialblockui.h \
+    ui/normalblockui.h \
+    ui/tokenui.h \
+    ui/normalblockwithlabelui.h \
+    ui/blockuifactory.h
+
+
 
 FORMS += \
-        mainwindow.ui
+    ui/gamewindow.ui \
+    ui/mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -40,3 +74,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES +=
+
+RESOURCES += \
+    resources.qrc
