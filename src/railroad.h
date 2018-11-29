@@ -7,13 +7,11 @@
 class Railroad : public Asset{
 
 public:
-    Railroad(int id,
-             Block* (*block)[40],
-             Player* owner,
+    Railroad(Player* owner,
              std::string title,
              int cost,
              int mortage_value);
-    ~Railroad();
+
     void set_rent(int num);
     void update_ownrail();
     virtual bool trigger_event(Player* player, int points);

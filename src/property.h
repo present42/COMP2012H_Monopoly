@@ -26,18 +26,15 @@ class Property : public Asset{
         const int MAX_HOTEL = 1;
 
     public:
-        Property(int id,
-                 Block* (*block)[40],
-                 Player*owenr ,
+        Property(Player*owenr ,
                  std::string title ,
                  int cost,
                  int mortgage_value,
                  int rentlist[6],
                  Group group);
-        ~Property();
+
         int get_house();
         int get_hotel();
-        int get_rent();
 
         bool add_house();
         bool add_hotel();
