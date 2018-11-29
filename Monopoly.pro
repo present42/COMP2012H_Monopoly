@@ -33,8 +33,12 @@ SOURCES += \
     src/railroad.cpp \
     src/utility.cpp \
     src/property.cpp \
+<<<<<<< Updated upstream
     ui/gamewindow.cpp \
     src/block.cpp \
+=======
+    src/block.cpp
+>>>>>>> Stashed changes
 
 HEADERS += \
     ui/mainwindow.h \
@@ -46,8 +50,12 @@ HEADERS += \
     src/property.h \
     src/utility.h \
     src/block.h \
+<<<<<<< Updated upstream
     ui/gamewindow.h \
 
+=======
+    src/card.h
+>>>>>>> Stashed changes
 
 FORMS += \
     ui/gamewindow.ui \
