@@ -4,7 +4,7 @@
 #include "asset.h"
 
 
-class Railroad : public Asset{
+class Railroad : public Asset {
 
 public:
     Railroad(int id,
@@ -23,6 +23,6 @@ private:
      * rule: depend on the num rail
      * default 25
      */
-    int rent;
+    int rent = 25;
 };
 #endif // RAILROAD_H

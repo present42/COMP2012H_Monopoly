@@ -3,9 +3,12 @@
 using namespace std;
 Railroad::Railroad(int id,
                    Block* (*block)[40],Player*owner,std::string title, int cost, int mortgage_value):
-    Asset(id,block,owner,title, cost,mortgage_value),
-    rent(25)
+    Asset(id, block, owner, title, cost, mortgage_value)
 {
+}
+
+Railroad::~Railroad() {
+
 }
 
 

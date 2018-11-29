@@ -11,6 +11,10 @@ Utility::Utility(int id,
     rate_of_rent(4)
 {}
 
+Utility::~Utility() {
+
+}
+
 void Utility::set_rate(int rate){
     rate_of_rent = rate;
 }

@@ -20,6 +20,11 @@ Property:: Property(
     for(int i=0; i<6 ;++i)
         this->rentlist[i] = rentlist[i];
 }
+
+Property::~Property() {
+
+}
+
 int Property::get_house(){
     return house;
 }

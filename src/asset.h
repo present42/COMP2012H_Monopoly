@@ -7,13 +7,6 @@
 // to be derived to other
 
 class Asset : public Block{
-    protected:
-        Player* owner;
-        std::string title;
-        int cost;
-        int mortgage_value;
-        bool mortgaged;
-
     public:
         Asset(int id,
               Block* (*block)[40],
@@ -29,5 +22,14 @@ class Asset : public Block{
         int get_assetcost();
         int get_assetmortgage();
         virtual bool trigger_event(Player* player, int points) = 0 ;
+
+    protected:
+        Player* owner;
+        std::string title;
+        int cost;
+        int mortgage_value;
+        bool mortgaged = false;
+
+
 };
 #endif // ASSET_H

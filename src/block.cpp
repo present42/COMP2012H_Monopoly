@@ -5,3 +5,7 @@ Block::Block(int id, Block* (*block)[40]):
     block(block)
 {
 }
+
+Block::~Block() {
+
+}
