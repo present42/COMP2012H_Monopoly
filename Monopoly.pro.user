@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <!-- Written by QtCreator 4.7.1, 2018-11-27T17:12:02. -->
+=======
+<!-- Written by QtCreator 4.7.1, 2018-11-29T13:42:15. -->
+>>>>>>> Stashed changes
+=======
+<!-- Written by QtCreator 4.7.1, 2018-11-29T13:42:15. -->
+>>>>>>> Stashed changes
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -291,12 +299,28 @@
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Monopoly</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Users/guswo/Documents/Monopoly/Monopoly.pro</value>
+=======
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:D:/HKUST/2018 Fall/comp2012h/project/COMP2012H_Monopoly/Monopoly.pro</value>
+>>>>>>> Stashed changes
+=======
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:D:/HKUST/2018 Fall/comp2012h/project/COMP2012H_Monopoly/Monopoly.pro</value>
+>>>>>>> Stashed changes
     <value type="bool" key="QmakeProjectManager.QmakeRunConfiguration.UseLibrarySearchPath">true</value>
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.CommandLineArguments"></value>
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.ProFile">Monopoly.pro</value>
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.UserWorkingDirectory"></value>
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.UserWorkingDirectory.default">C:/Users/guswo/Documents/build-Monopoly-Desktop_Qt_5_11_2_MinGW_32bit-Debug</value>
+=======
+    <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.UserWorkingDirectory.default">D:/HKUST/2018 Fall/comp2012h/project/build-Monopoly-Desktop_Qt_5_11_2_MinGW_32bit-Debug</value>
+>>>>>>> Stashed changes
+=======
+    <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.UserWorkingDirectory.default">D:/HKUST/2018 Fall/comp2012h/project/build-Monopoly-Desktop_Qt_5_11_2_MinGW_32bit-Debug</value>
+>>>>>>> Stashed changes
     <value type="uint" key="RunConfiguration.QmlDebugServerPort">3768</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>

@@ -2,17 +2,20 @@
 #include <vector>
 using namespace std;
 
-Property:: Property(Player* owner,
+Property:: Property(
+         int id,
+         Block* (*block)[40],
+         Player* owner,
          std::string title ,
          int cost,
          int mortgage_value,
          int rentlist[6],
          Group group):
-    Asset(owner,title, cost,mortgage_value),
+    Asset(id,block,owner,title, cost,mortgage_value),
     house(0),
     hotel(0),
-    monopoly(0),
-    group(group)
+    group(group),
+    monopoly(0)
 {
     for(int i=0; i<6 ;++i)
         this->rentlist[i] = rentlist[i];
@@ -25,8 +28,15 @@ int Property::get_hotel(){
     return hotel;
 }
 
+int Property::get_rent(){
+    if (hotel != 0)
+        return rentlist[5];
+
+        return rentlist[house];
+}
+
 bool Property::add_house(){
-    if (house+1 > MAX_HOUSE)
+    if (hotel != 0 ||house+1 > MAX_HOUSE)
         return false;
     vector<int> list;
     /*
@@ -55,17 +65,18 @@ bool Property::add_hotel(){
      * Assume we have a block* (*block)[40]
      */
 
-    Block* (*block)[40] = nullptr;
     for(int i=0; i <40; ++i){
         Property* p = dynamic_cast<Property*>(*block[i]);
         if (p != nullptr &&
             p->group == this->group &&
             p->owner == this->owner){
             //
-            if (p->get_monopoly() && p->get_house() < this->house)
+            if (p->get_monopoly() && (p->get_house() < this->house &&
+                                      p->get_hotel() == 0))
                 return false;
         }
     }
+    house = 0;
     hotel++;
     return true;
 }
@@ -82,7 +93,6 @@ void Property::update_group_monopoly(){
     /*
      * Assume we have a block* (*block)[40]
      */
-    Block* (*block)[40] = nullptr;
     bool can_monopoly = true;
     vector<Property*> p_list;
     vector<Property*>::iterator it;

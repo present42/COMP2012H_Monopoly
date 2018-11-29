@@ -13,11 +13,15 @@ class Asset : public Block{
         int cost;
         int mortgage_value;
         bool mortgaged;
+
     public:
-        Asset(Player*owenr ,
+        Asset(int id,
+              Block* (*block)[40],
+              Player*owenr ,
               std::string title ,
               int cost,
-              int mortgage_value);
+              int mortgage_value
+              );
 
         virtual ~Asset();
         void change_owner(Player* player);
