@@ -43,4 +43,10 @@ UnpurchasedAssetWidget::UnpurchasedAssetWidget(QWidget* parent):
 
 UnpurchasedAssetWidget::~UnpurchasedAssetWidget() {
 
+    if(instruction) delete instruction;
+    if(price) delete price;
+    if(preview) delete preview;
+
+    if(purchase_button) delete purchase_button;
+    if(auction_button) delete auction_button;
 }

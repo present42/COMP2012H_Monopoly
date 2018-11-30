@@ -33,6 +33,7 @@ GameWindow::GameWindow(QWidget* parent) :
     initUnpurchasedAssetWidget();
     initEndTurnWidget();
     initOweMoneyWidget();
+    initInJailWidget();
 
     this->show();
 }
@@ -83,7 +84,18 @@ void GameWindow::initOweMoneyWidget() {
     pal.setColor(QPalette::Background, Qt::white);
     owe_money_widget->setPalette(pal);
 
-    owe_money_widget->show();
+    owe_money_widget->hide();
+}
+
+void GameWindow::initInJailWidget() {
+    in_jail_widget = new InJailWidget(this);
+    in_jail_widget->setAutoFillBackground(true);
+
+    QPalette pal = palette();
+    pal.setColor(QPalette::Background, Qt::white);
+    in_jail_widget->setPalette(pal);
+
+    in_jail_widget->show();
 }
 
 void GameWindow::closeEvent(QCloseEvent *) {

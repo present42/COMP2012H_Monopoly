@@ -8,6 +8,7 @@
 #include "dialogue/unpurchasedassetwidget.h"
 #include "dialogue/endturnwidget.h"
 #include "dialogue/owemoneywidget.h"
+#include "dialogue/injailwidget.h"
 
 namespace Ui {
 class GameWindow;
@@ -36,12 +37,13 @@ private:
     UnpurchasedAssetWidget* unpurchased_asset_widget;
     EndTurnWidget* end_turn_widget;
     OweMoneyWidget* owe_money_widget;
-
+    InJailWidget* in_jail_widget;
     //HoverDialogue* hoverDialog;
     void initRollDiceWidget();
     void initUnpurchasedAssetWidget();
     void initEndTurnWidget();
     void initOweMoneyWidget();
+    void initInJailWidget();
 
     void closeEvent(QCloseEvent *event);
     void hideAllDialogues();

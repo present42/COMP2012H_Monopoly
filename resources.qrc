@@ -26,5 +26,6 @@
         <file>res/36.png</file>
         <file>res/38.png</file>
         <file>res/font/Dice.ttf</file>
+        <file>res/in_jail.png</file>
     </qresource>
 </RCC>
