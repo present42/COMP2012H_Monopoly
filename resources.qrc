@@ -25,5 +25,6 @@
         <file>res/35.png</file>
         <file>res/36.png</file>
         <file>res/38.png</file>
+        <file>res/font/Dice.ttf</file>
     </qresource>
 </RCC>

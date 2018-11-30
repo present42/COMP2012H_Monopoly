@@ -3,11 +3,12 @@
 
 #include <QLabel>
 #include "abstractblockui.h"
-#include "src/token.h"
 
 class TokenUI : public QLabel
 {
 public:
+    enum class Token { HAT, BOOT, SHIP, CAR, DOG, CAT };
+
     TokenUI(QWidget* parent = nullptr, Token type = Token::CAT, AbstractBlockUI* (*blocks)[40] = nullptr);
     void move(int position);
 

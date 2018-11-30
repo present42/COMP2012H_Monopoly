@@ -14,8 +14,8 @@
 
 GameWindow::GameWindow(QWidget* parent) :
     QWidget(parent),
-    ui(new Ui::GameWindow)
-    //dice(QFont(QFontDatabase::applicationFontFamilies(QFontDatabase::addApplicationFont(":/font/Dice.ttf")).at(0), 50))
+    ui(new Ui::GameWindow),
+    dice(QFont(QFontDatabase::applicationFontFamilies(QFontDatabase::addApplicationFont(":/res/font/Dice.ttf")).at(0), 50))
 {
     ui->setupUi(this);
 
@@ -25,8 +25,8 @@ GameWindow::GameWindow(QWidget* parent) :
     }
 
     for(int i = 0; i < 4; i++) {
-        tokens[i] = new TokenUI(this);
-
+        tokens[i] = new TokenUI(this, TokenUI::Token::BOOT, &block_ui);
+        tokens[i]->move(0);
     }
 
     initRollDiceWidget();
@@ -49,7 +49,7 @@ void GameWindow::initRollDiceWidget() {
     roll_dice_widget->show(); // should remove after making showRollDiceWidget()
 }
 
-void GameWindow::closeEvent(QCloseEvent *event) {
+void GameWindow::closeEvent(QCloseEvent *) {
     emit closed();
 }
 
@@ -60,3 +60,19 @@ RollDiceWidget* GameWindow::getRollDiceWidget() {
 void GameWindow::init_player(int id) {
     qDebug() << id << "from init_player()";
 }
+
+void GameWindow::statusChangeHandler(int status) {
+    qDebug() << "statusChangeHandler" << status;
+    switch (status) {
+        case 1:
+            roll_dice_widget->show();
+            return;
+        default:
+            qDebug() << "this status is not defined yet..!";
+            return;
+    }
+}
+
+void GameWindow::hideAllDialogues(){
+    roll_dice_widget->hide();
+};

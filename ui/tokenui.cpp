@@ -30,7 +30,5 @@ QString TokenUI::getTokenString() {
             return "hat";
         case Token::SHIP:
             return "ship";
-        default:
-            return "ship";
     }
 }
