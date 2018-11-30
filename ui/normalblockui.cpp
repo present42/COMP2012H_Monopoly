@@ -44,6 +44,7 @@ void NormalBlockUI::render() {
 int NormalBlockUI::token_pos_x() {
     switch(position / 10) {
         case 1:
+        case 3:
             return x() + 35;
         default:
             return x();

@@ -27,5 +27,27 @@
         <file>res/38.png</file>
         <file>res/font/Dice.ttf</file>
         <file>res/in_jail.png</file>
+        <file>res/1.png</file>
+        <file>res/3.png</file>
+        <file>res/6.png</file>
+        <file>res/8.png</file>
+        <file>res/9.png</file>
+        <file>res/21.png</file>
+        <file>res/23.png</file>
+        <file>res/24.png</file>
+        <file>res/26.png</file>
+        <file>res/27.png</file>
+        <file>res/29.png</file>
+        <file>res/31.png</file>
+        <file>res/32.png</file>
+        <file>res/34.png</file>
+        <file>res/37.png</file>
+        <file>res/39.png</file>
+        <file>res/11.png</file>
+        <file>res/13.png</file>
+        <file>res/14.png</file>
+        <file>res/16.png</file>
+        <file>res/18.png</file>
+        <file>res/19.png</file>
     </qresource>
 </RCC>

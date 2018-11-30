@@ -20,13 +20,13 @@ void MainWindow::startButton_clicked_handler() {
     initGameWindow();
 
     //We assume this is remote server
-    if(game_instance) delete game_instance;
+    if(game_instance != nullptr) delete game_instance;
     game_instance = new Server;
 
     //Here, we connect the signal from server to the client (GUI)
     //1. signal that informs new player is created
     //connect(game_instance, &Server::init_player, game_window, &GameWindow::init_player);
-    connect(game_instance, &Server::init_player, this, &MainWindow::handler);
+    connect(game_instance, &Server::init_player, game_window, &GameWindow::init_player);
 
     //Here we define signals from client GUI to server
     //1. when the client clicks the "roll the dice button"
@@ -41,9 +41,9 @@ void MainWindow::startButton_clicked_handler() {
      *
      */
     game_instance->add_player(new Player(0, Token::BOOT));
-    game_instance->add_player(new Player(1, Token::CAR));
-    game_instance->add_player(new Player(2, Token::CAT));
-    game_instance->add_player(new Player(3, Token::SHIP));
+    //game_instance->add_player(new Player(1, Token::CAR));
+    //game_instance->add_player(new Player(2, Token::CAT));
+    //game_instance->add_player(new Player(3, Token::SHIP));
     game_instance->start();
 
     this->hide();

@@ -15,19 +15,27 @@
 GameWindow::GameWindow(QWidget* parent) :
     QWidget(parent),
     ui(new Ui::GameWindow),
-    dice(QFont(QFontDatabase::applicationFontFamilies(QFontDatabase::addApplicationFont(":/res/font/Dice.ttf")).at(0), 50))
+    dice(QFont(QFontDatabase::applicationFontFamilies(QFontDatabase::addApplicationFont(":/res/font/Dice.ttf")).at(0), 50)),
+    token_num(0)
 {
     ui->setupUi(this);
+    player_property_list_widget[0] = ui->tab1;
+    player_property_list_widget[1] = ui->tab2;
+    player_property_list_widget[2] = ui->tab3;
+    player_property_list_widget[3] = ui->tab4;
+
+    for(int i = 0; i < 4; ++i)
+        ui->tabWidget->removeTab(0);
 
     for(int i = 0; i < 40; i++) {
         block_ui[i] = BlockUIFactory::createBlock(this, i);
         block_ui[i]->render();
     }
 
-    for(int i = 0; i < 4; i++) {
-        tokens[i] = new TokenUI(this, TokenUI::Token::BOOT, &block_ui);
-        tokens[i]->move(0);
-    }
+    token_list[0] = TokenUI::Token::BOOT;
+    token_list[1] = TokenUI::Token::CAT;
+    token_list[2] = TokenUI::Token::SHIP;
+    token_list[3] = TokenUI::Token::CAR;
 
     initRollDiceWidget();
     initUnpurchasedAssetWidget();
@@ -107,7 +115,16 @@ RollDiceWidget* GameWindow::getRollDiceWidget() {
 }
 
 void GameWindow::init_player(int id) {
+    token_num++;
+    tokens[id] = new TokenUI(this, token_list[id], &block_ui);
+    tokens[id]->move(39);
+
+    initTabWidget(id);
     qDebug() << id << "from init_player()";
+}
+
+void GameWindow::initTabWidget(int new_tab) {
+    ui->tabWidget->insertTab(new_tab, player_property_list_widget[new_tab], "Player " + QString::number(new_tab + 1) + QString(" ($1500)"));
 }
 
 void GameWindow::statusChangeHandler(int status) {

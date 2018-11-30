@@ -30,6 +30,8 @@ private:
     QFont dice;
     TokenUI* tokens[4];
     TokenUI* current_token = nullptr;
+    TokenUI::Token token_list[6];
+    int token_num;
 
     AbstractBlockUI* block_ui[40];
 
@@ -38,6 +40,11 @@ private:
     EndTurnWidget* end_turn_widget;
     OweMoneyWidget* owe_money_widget;
     InJailWidget* in_jail_widget;
+
+    QWidget* player_property_list_widget[4];
+
+    void initTabWidget(int new_tab);
+
     //HoverDialogue* hoverDialog;
     void initRollDiceWidget();
     void initUnpurchasedAssetWidget();

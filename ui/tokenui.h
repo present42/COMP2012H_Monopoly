@@ -17,6 +17,7 @@ private:
     const static int START_Y = 25;
     AbstractBlockUI* (*blocks)[40];
     Token type;
+    int current_position = 0;
 
     QString getTokenString();
 };

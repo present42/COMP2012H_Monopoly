@@ -35,11 +35,10 @@
     <string notr="true">QTabBar::tab { 
 height: 30px; 
 width: 150px; 
-}
-</string>
+}</string>
    </property>
    <property name="currentIndex">
-    <number>3</number>
+    <number>1</number>
    </property>
    <property name="iconSize">
     <size>
@@ -48,6 +47,14 @@ width: 150px;
     </size>
    </property>
    <widget class="QWidget" name="tab1">
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QWidget {
+	background-color: #b4d0b2;
+}</string>
+    </property>
     <attribute name="title">
      <string>Player 1 ($1,500)</string>
     </attribute>
@@ -606,7 +613,7 @@ width: 150px;
       </rect>
      </property>
      <property name="autoFillBackground">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="styleSheet">
       <string notr="true">
@@ -627,7 +634,7 @@ width: 150px;
       </rect>
      </property>
      <property name="autoFillBackground">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="styleSheet">
       <string notr="true">
@@ -660,6 +667,14 @@ width: 150px;
     </widget>
    </widget>
    <widget class="QWidget" name="tab2">
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QWidget {
+	background-color: #b4d0b2;
+}</string>
+    </property>
     <attribute name="title">
      <string>Player 2 ($1,500)</string>
     </attribute>
@@ -714,7 +729,8 @@ width: 150px;
       <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #955436</string>
+      <string notr="true">border: 1.5px solid #955436;
+</string>
      </property>
      <property name="text">
       <string>Br1</string>
@@ -892,7 +908,7 @@ width: 150px;
       </rect>
      </property>
      <property name="autoFillBackground">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="styleSheet">
       <string notr="true">
@@ -1132,7 +1148,7 @@ width: 150px;
       </rect>
      </property>
      <property name="autoFillBackground">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="styleSheet">
       <string notr="true">
@@ -1272,6 +1288,11 @@ width: 150px;
     </widget>
    </widget>
    <widget class="QWidget" name="tab3">
+    <property name="styleSheet">
+     <string notr="true">QWidget {
+	background-color: #b4d0b2;
+}</string>
+    </property>
     <attribute name="title">
      <string>Player 3 ($1,500)</string>
     </attribute>
@@ -1323,7 +1344,7 @@ width: 150px;
       </rect>
      </property>
      <property name="autoFillBackground">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="styleSheet">
       <string notr="true">
@@ -1820,7 +1841,7 @@ width: 150px;
       </rect>
      </property>
      <property name="autoFillBackground">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="styleSheet">
       <string notr="true">
@@ -1884,6 +1905,11 @@ width: 150px;
     </widget>
    </widget>
    <widget class="QWidget" name="tab4">
+    <property name="styleSheet">
+     <string notr="true">QWidget {
+	background-color: #b4d0b2;
+}</string>
+    </property>
     <attribute name="title">
      <string>Player 4 ($1,500)</string>
     </attribute>
@@ -1935,7 +1961,7 @@ width: 150px;
       </rect>
      </property>
      <property name="autoFillBackground">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="styleSheet">
       <string notr="true">
@@ -2432,7 +2458,7 @@ width: 150px;
       </rect>
      </property>
      <property name="autoFillBackground">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="styleSheet">
       <string notr="true">
