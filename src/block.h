@@ -5,9 +5,9 @@
 // base base
 class Block{
     public:
-        Block(int id, Block* (*block)[40]);
+        Block(Block* (*block)[40]);
         virtual ~Block();
-        virtual bool trigger_event(Player* player, int points) = 0 ;
+        virtual bool trigger_event(Player* player, int points);
 
     protected:
         int id;

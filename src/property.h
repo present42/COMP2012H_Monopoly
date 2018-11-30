@@ -2,37 +2,31 @@
 #define PROPERTY_H
 
 #include "asset.h"
+#include "vector"
 
+using namespace std;
 
 class Property : public Asset{
-    enum Group{
-        Brown,
-        LightBlue,
-        Pink,
-        Orange,
-        Red,
-        Yellow,
-        Green,
-        Blue
-    };
-
-    private:
-        int rentlist[6];
-        int house;
-        int hotel;
-        Group group;
-        bool monopoly;
-        const int MAX_HOUSE = 4;
-        const int MAX_HOTEL = 1;
 
     public:
-        Property(int id,
+
+        enum Group{
+            Brown,
+            LightBlue,
+            Pink,
+            Orange,
+            Red,
+            Yellow,
+            Green,
+            Blue
+        };
+        Property(
                  Block* (*block)[40],
                  Player*owenr ,
-                 std::string title ,
+                 QString title ,
                  int cost,
-                 int mortgage_value,
-                 int rentlist[6],
+                 int housecost,
+                 vector<int> rentlist,
                  Group group);
         ~Property();
         int get_house();
@@ -41,11 +35,27 @@ class Property : public Asset{
 
         bool add_house();
         bool add_hotel();
+
+        void sell_house();
+        void sell_hotel();
+
+
         bool get_monopoly() const;
         void set_monopoly(bool monopoly);
         void update_group_monopoly();
-
+        virtual void set_mortgage();
         virtual bool trigger_event(Player* player,int points);
+
+
+    private:
+        int house;
+        int hotel;
+        Group group;
+        bool monopoly;
+        int housecost;
+        vector<int> rentlist;
+        const int MAX_HOUSE = 4;
+        const int MAX_HOTEL = 1;
 
 
 };

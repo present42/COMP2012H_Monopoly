@@ -7,15 +7,16 @@
 class Railroad : public Asset {
 
 public:
-    Railroad(int id,
+    Railroad(
              Block* (*block)[40],
              Player* owner,
-             std::string title,
-             int cost,
-             int mortage_value);
+             QString title,
+             int cost
+             );
     ~Railroad();
     void set_rent(int num);
     void update_ownrail();
+    virtual void set_mortgage();
     virtual bool trigger_event(Player* player, int points);
 
 private:

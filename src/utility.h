@@ -10,13 +10,14 @@ private:
      */
     int rate_of_rent;
 public:
-    Utility(int id,
+    Utility(
             Block* (*block)[40],
             Player*owner,
-            std::string title,
-            int cost,
-            int mortgage_value);
+            QString title,
+            int cost
+            );
     ~Utility();
+    virtual void set_mortgage();
     virtual bool trigger_event(Player* player, int points);
     void set_rate(int rate);
     void update_ownrate();

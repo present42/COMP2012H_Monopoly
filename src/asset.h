@@ -8,12 +8,11 @@
 
 class Asset : public Block{
     public:
-        Asset(int id,
+        Asset(
               Block* (*block)[40],
               Player*owenr ,
-              std::string title ,
-              int cost,
-              int mortgage_value
+              QString title ,
+              int cost
               );
 
         virtual ~Asset();
@@ -21,15 +20,16 @@ class Asset : public Block{
         Player* get_owner();
         int get_assetcost();
         int get_assetmortgage();
-        virtual bool trigger_event(Player* player, int points) = 0 ;
+        void demortgage();
+        virtual void set_mortgage();
+        virtual bool trigger_event(Player* player, int points);
 
     protected:
         Player* owner;
-        std::string title;
+        QString title;
         int cost;
         int mortgage_value;
         bool mortgaged = false;
-
 
 };
 #endif // ASSET_H

@@ -41,7 +41,9 @@ SOURCES += \
     ui/normalblockui.cpp \
     ui/tokenui.cpp \
     ui/normalblockwithlabelui.cpp \
-    ui/rolldicewidget.cpp
+    ui/rolldicewidget.cpp \
+    src/charge.cpp \
+    src/selectcard.cpp
 
 
 HEADERS += \
@@ -62,7 +64,10 @@ HEADERS += \
     ui/tokenui.h \
     ui/normalblockwithlabelui.h \
     ui/blockuifactory.h \
-    ui/rolldicewidget.h
+    ui/rolldicewidget.h \
+    src/gotojail.h \
+    src/charge.h \
+    src/selectcard.h
 
 
 

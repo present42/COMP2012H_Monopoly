@@ -1,18 +1,17 @@
 #include "asset.h"
 
 
-Asset::Asset(int id,
+Asset::Asset(
              Block* (*block)[40],
              Player*owner,
-             std::string title,
-             int cost,
-             int mortgage_value
+             QString title,
+             int cost
              ):
-    Block(id, block),
+    Block(block),
     owner(owner),
     title(title),
     cost(cost),
-    mortgage_value(mortgage_value)
+    mortgage_value(cost/2)
 {}
 
 Asset::~Asset() {
@@ -34,3 +33,20 @@ int Asset::get_assetcost() {
 int Asset::get_assetmortgage() {
     return mortgage_value;
 }
+
+
+void Asset::set_mortgage(){
+    mortgaged = true;
+    owner->set_money(owner->get_money()+mortgage_value);
+}
+
+void Asset::demortgage(){
+    mortgaged = false;
+    owner->set_money(owner->get_money()-mortgage_value*1.1);
+}
+
+
+bool Asset::trigger_event(Player* player, int points){
+   return Block::trigger_event(player,points);
+}
+

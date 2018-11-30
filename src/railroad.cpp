@@ -1,9 +1,10 @@
 #include "railroad.h"
 #include <vector>
 using namespace std;
-Railroad::Railroad(int id,
-                   Block* (*block)[40],Player*owner,std::string title, int cost, int mortgage_value):
-    Asset(id, block, owner, title, cost, mortgage_value)
+Railroad::Railroad(
+                   Block* (*block)[40],
+                   Player*owner,QString title, int cost):
+    Asset(block, owner, title, cost)
 {
 }
 
@@ -26,7 +27,8 @@ void Railroad::update_ownrail(){
     for(int i=0; i <40; ++i){
         Railroad* p = dynamic_cast<Railroad*>(*block[i]);
         if (p != nullptr &&
-            p->get_owner() == this->owner){
+            p->get_owner() == this->owner &&
+            !mortgaged){
                num++;
                p_list.push_back(p);
         }
@@ -36,9 +38,15 @@ void Railroad::update_ownrail(){
 }
 
 bool Railroad::trigger_event(Player* player, int points){
-    if (player != owner && !player->pay_rent(owner,rent)){
+    if (player != owner && !mortgaged
+            && !player->pay_rent(owner,rent)){
             return false;
     }
     return true;
+}
+
+void Railroad::set_mortgage(){
+    Asset::set_mortgage();
+    update_ownrail();
 }
 

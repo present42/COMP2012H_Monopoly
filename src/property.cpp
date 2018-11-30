@@ -3,22 +3,23 @@
 using namespace std;
 
 Property:: Property(
-         int id,
+
          Block* (*block)[40],
          Player* owner,
-         std::string title ,
+         QString title ,
          int cost,
-         int mortgage_value,
-         int rentlist[6],
+         int housecost,
+         vector<int> rentlist,
          Group group):
-    Asset(id,block,owner,title, cost,mortgage_value),
+
+    Asset(block,owner,title, cost),
     house(0),
     hotel(0),
     group(group),
-    monopoly(0)
+    monopoly(0),
+    housecost(housecost),
+    rentlist(rentlist)
 {
-    for(int i=0; i<6 ;++i)
-        this->rentlist[i] = rentlist[i];
 }
 
 Property::~Property() {
@@ -60,6 +61,7 @@ bool Property::add_house(){
         }
     }
     house++;
+    owner->set_money(owner->get_money()- housecost);
     return true;
 }
 bool Property::add_hotel(){
@@ -83,8 +85,20 @@ bool Property::add_hotel(){
     }
     house = 0;
     hotel++;
+    owner->set_money(owner->get_money()-housecost);
     return true;
 }
+
+void Property::sell_house(){
+    house--;
+    owner->set_money(owner->get_money()+housecost/2);
+}
+
+void Property::sell_hotel(){
+    hotel-- ;
+    owner->set_money(owner->get_money()+housecost*5/2);
+}
+
 
 bool Property::get_monopoly() const{
     return monopoly;
@@ -103,7 +117,7 @@ void Property::update_group_monopoly(){
     vector<Property*>::iterator it;
     for(int i=0; i <40; ++i){
         Property* p = dynamic_cast<Property*>(*block[i]);
-        if (p != nullptr && p->group == this->group){
+        if (p != nullptr && p->group == this->group && !mortgaged){
             p_list.push_back(p);
             if(p->owner != this->owner){
                 can_monopoly = false;
@@ -116,7 +130,7 @@ void Property::update_group_monopoly(){
 }
 
 bool Property::trigger_event(Player* player,int points){
-    if (player!= owner){
+    if (player!= owner && !mortgaged){
         int rent = ((int)monopoly+1)*rentlist[(house+hotel)];
         if (!player->pay_rent(owner, rent))
             return false;
@@ -124,4 +138,24 @@ bool Property::trigger_event(Player* player,int points){
     return true;
 }
 
+void Property::set_mortgage(){
+    //sell all house
+    if(monopoly){
+        for(int i=0; i <40; ++i){
+            Property* p = dynamic_cast<Property*>(*block[i]);
+            if (p != nullptr &&
+                p->group == this->group &&
+                p->owner != this->owner){
+                while(p->get_house() !=0){
+                    p->sell_house();
+                }
+                while(p->get_hotel() !=0){
+                    p->sell_hotel();
+                }
+            }
+        }
+    }
+    Asset::set_mortgage();
+    update_group_monopoly();
+}
 

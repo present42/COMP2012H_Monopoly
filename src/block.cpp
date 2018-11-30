@@ -1,7 +1,6 @@
 #include "block.h"
 
-Block::Block(int id, Block* (*block)[40]):
-    id(id),
+Block::Block(Block* (*block)[40]):
     block(block)
 {
 
@@ -10,4 +9,9 @@ Block::Block(int id, Block* (*block)[40]):
 Block::~Block() {
 
 }
+
+bool Block::trigger_event(Player* player, int points){
+    return true;
+}
+
 
