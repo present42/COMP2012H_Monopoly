@@ -13,9 +13,12 @@ public:
     ~InJailWidget();
 
 private:
+    QLabel* instruction;
     QPushButton* pay_button;
     QPushButton* use_card;
     QPushButton* roll_dice;
+
+    QLabel* jail_pic;
 
     const static int BLOCK_NORMAL_WIDTH = 80;
     const static int BLOCK_HEIGHT = 140;
