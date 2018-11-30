@@ -20,3 +20,7 @@ EndTurnWidget::~EndTurnWidget() {
     if(id_label) delete id_label;
     if(end_turn_button) delete end_turn_button;
 }
+
+QPushButton* EndTurnWidget::get_end_turn_button() {
+    return end_turn_button;
+}

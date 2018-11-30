@@ -27,9 +27,12 @@ public:
 
 private:
     Ui::GameWindow *ui;
-    QFont dice;
+    int game_status;
+
+    QFont dice_font;
+
     TokenUI* tokens[4];
-    TokenUI* current_token = nullptr;
+    int current_token;
     TokenUI::Token token_list[6];
     int token_num;
 
@@ -41,11 +44,16 @@ private:
     OweMoneyWidget* owe_money_widget;
     InJailWidget* in_jail_widget;
 
+    QLabel* dice[2];
+
     QWidget* player_property_list_widget[4];
 
     void initTabWidget(int new_tab);
 
     //HoverDialogue* hoverDialog;
+    void initDice();
+    void relocateDice();
+
     void initRollDiceWidget();
     void initUnpurchasedAssetWidget();
     void initEndTurnWidget();
@@ -56,14 +64,19 @@ private:
     void hideAllDialogues();
 
 public slots:
+    void end_turn_button_clicked();
+
     void init_player(int id);
-    void statusChangeHandler(int status);
+    void handleStatusChange(int status);
     void setCurrentPlayer(int index);
+    void showDiceNumber(int first, int second);
+    void moveToken(int position);
     //void processHoverEnterWithInput(int x, int y);
     //void processHoverLeaveWithInput(int x, int y);
 
 signals:
     void closed();
+    void turn_finished();
 };
 
 #endif // GAMEWINDOW_H

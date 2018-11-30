@@ -46,14 +46,17 @@ void Server::add_player(Player* new_player) {
 void Server::status_change(int status){
     this->status = status;
     //After changing the status, please emit the signal (status change)
+    emit status_changed(status);
 }
 
 
 void Server::start() {
     //Randomly select the current player() [Server -> Client GUI]
-    current_player = players[rand() % 4];
+    int id = rand() % num_player;
+    current_player = players[id];
+    emit current_player_set(id);
     //Wait a signal to roll the dice from Client GUI
-    //status_change(1);
+    status_change(1);
 }
 
 //Define it as a slot (throw the dice only if the client sends the signal to do so)
@@ -69,7 +72,9 @@ void Server::roll_dice() {
         double_count = 0;
 
     //emit signal to GUI
-    qDebug() << first << " and " << second;
+    emit dice_thrown(first, second);
+
+    move(first + second);
 /*
     //special action if player is in jail
     if (current_player->is_injail()) {
@@ -98,12 +103,18 @@ void Server::roll_dice() {
 
 void Server::move(int dice_sum){
     current_player->movebysteps(dice_sum);
+    emit player_moved(current_player->get_playerposition());
+
     //trigger_event();
+    qDebug() << "Something happend in the server..!";
+    qDebug() << "This part should be implemented..";
 
     if(double_count > 0) {
         //Set status to 1 (Waiting for the current player to throw the dice)
+        status_change(1);
     } else {
         //Set status to the last status
+        status_change(5);
     }
 }
 
@@ -128,10 +139,13 @@ void Server::trigger_event(){
  * Here, we should include the logic to check winning condition
  * in order to decide whether to continue game or not
  */
-void Server::next_player(){
-    int index = (current_player->get_playerid() + 1) % 4;
+void Server::next_player() {
+    int index = (current_player->get_playerid() + 1) % num_player;
     current_player = players[index];
     double_count = 0;
+
+    emit current_player_set(index);
+    status_change(1);
 }
 
 

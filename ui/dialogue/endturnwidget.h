@@ -11,6 +11,7 @@ class EndTurnWidget : public QWidget
 public:
     EndTurnWidget(QWidget* parent = nullptr);
     ~EndTurnWidget();
+    QPushButton* get_end_turn_button();
 
 private:
     QPushButton* end_turn_button;

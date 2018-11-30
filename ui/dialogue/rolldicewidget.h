@@ -13,7 +13,7 @@ class RollDiceWidget : public QWidget
 public:
     RollDiceWidget(QWidget* parent = nullptr, Player* player = nullptr);
     ~RollDiceWidget();
-
+    void updatePlayer(int player);
 
 
 private:

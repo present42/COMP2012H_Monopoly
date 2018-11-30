@@ -25,7 +25,6 @@ public:
     void movebyposition(int positions);
     void trigger_event();
     void end_turn();
-    void next_player();
 
 private:
     // for testing one player
@@ -39,11 +38,16 @@ private:
     //GUI
     //If the server-client program is to be implemented,
     //this part should be removed
-
+public slots:
+    void next_player();
 
 signals:
     void init_player(int id);
-
+    void current_player_set(int id);
+    void status_changed(int id);
+    void player_moved(int id);
+    void dice_thrown(int first, int second);
+    void asset_bought();
 
 };
 

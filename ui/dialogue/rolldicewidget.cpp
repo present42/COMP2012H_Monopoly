@@ -30,4 +30,9 @@ RollDiceWidget::~RollDiceWidget() {
 
 void RollDiceWidget::roll_button_click_handler() {
     emit roll_button_clicked();
+    hide();
+}
+
+void RollDiceWidget::updatePlayer(int player) {
+    id_label->setText("Player " + QString::number(player + 1));
 }

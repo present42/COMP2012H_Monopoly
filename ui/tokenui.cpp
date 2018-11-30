@@ -30,6 +30,7 @@ void TokenUI::move(int position) {
         }
         //skip if i is not divided by 10
     }
+    current_position = position;
     group->start(QAbstractAnimation::DeleteWhenStopped);
     //setGeometry((*blocks)[position]->token_pos_x(), (*blocks)[position]->token_pos_y(), 90, 90);
 }
