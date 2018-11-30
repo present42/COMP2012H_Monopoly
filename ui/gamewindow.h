@@ -4,7 +4,10 @@
 #include <QWidget>
 #include "abstractblockui.h"
 #include "tokenui.h"
-#include "rolldicewidget.h"
+#include "dialogue/rolldicewidget.h"
+#include "dialogue/unpurchasedassetwidget.h"
+#include "dialogue/endturnwidget.h"
+#include "dialogue/owemoneywidget.h"
 
 namespace Ui {
 class GameWindow;
@@ -25,18 +28,28 @@ private:
     Ui::GameWindow *ui;
     QFont dice;
     TokenUI* tokens[4];
+    TokenUI* current_token = nullptr;
 
     AbstractBlockUI* block_ui[40];
+
     RollDiceWidget* roll_dice_widget;
+    UnpurchasedAssetWidget* unpurchased_asset_widget;
+    EndTurnWidget* end_turn_widget;
+    OweMoneyWidget* owe_money_widget;
 
     //HoverDialogue* hoverDialog;
     void initRollDiceWidget();
+    void initUnpurchasedAssetWidget();
+    void initEndTurnWidget();
+    void initOweMoneyWidget();
+
     void closeEvent(QCloseEvent *event);
     void hideAllDialogues();
 
 public slots:
     void init_player(int id);
     void statusChangeHandler(int status);
+    void setCurrentPlayer(int index);
     //void processHoverEnterWithInput(int x, int y);
     //void processHoverLeaveWithInput(int x, int y);
 

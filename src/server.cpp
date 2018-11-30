@@ -2,7 +2,6 @@
 #include <ctime>
 #include "server.h"
 #include <QtDebug>
-#include "ui/rolldicewidget.h"
 #include "token.h"
 
 using namespace std;

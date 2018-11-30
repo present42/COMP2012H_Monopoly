@@ -30,6 +30,10 @@ GameWindow::GameWindow(QWidget* parent) :
     }
 
     initRollDiceWidget();
+    initUnpurchasedAssetWidget();
+    initEndTurnWidget();
+    initOweMoneyWidget();
+
     this->show();
 }
 
@@ -46,7 +50,40 @@ void GameWindow::initRollDiceWidget() {
     pal.setColor(QPalette::Background, Qt::white);
     roll_dice_widget->setPalette(pal);
 
-    roll_dice_widget->show(); // should remove after making showRollDiceWidget()
+    roll_dice_widget->hide();
+}
+
+void GameWindow::initUnpurchasedAssetWidget() {
+    unpurchased_asset_widget = new UnpurchasedAssetWidget(this);
+    unpurchased_asset_widget->setAutoFillBackground(true);
+
+    QPalette pal = palette();
+    pal.setColor(QPalette::Background, Qt::white);
+    unpurchased_asset_widget->setPalette(pal);
+
+    unpurchased_asset_widget->hide();
+}
+
+void GameWindow::initEndTurnWidget() {
+    end_turn_widget = new EndTurnWidget(this);
+    end_turn_widget->setAutoFillBackground(true);
+
+    QPalette pal = palette();
+    pal.setColor(QPalette::Background, Qt::white);
+    end_turn_widget->setPalette(pal);
+
+    end_turn_widget->hide();
+}
+
+void GameWindow::initOweMoneyWidget() {
+    owe_money_widget = new OweMoneyWidget(this);
+    owe_money_widget->setAutoFillBackground(true);
+
+    QPalette pal = palette();
+    pal.setColor(QPalette::Background, Qt::white);
+    owe_money_widget->setPalette(pal);
+
+    owe_money_widget->show();
 }
 
 void GameWindow::closeEvent(QCloseEvent *) {
@@ -73,6 +110,10 @@ void GameWindow::statusChangeHandler(int status) {
     }
 }
 
-void GameWindow::hideAllDialogues(){
+void GameWindow::hideAllDialogues() {
     roll_dice_widget->hide();
 };
+
+void GameWindow::setCurrentPlayer(int index) {
+    current_token = tokens[index];
+}

@@ -41,7 +41,11 @@ SOURCES += \
     ui/normalblockui.cpp \
     ui/tokenui.cpp \
     ui/normalblockwithlabelui.cpp \
-    ui/rolldicewidget.cpp
+    ui/dialogue/unpurchasedassetwidget.cpp \
+    ui/dialogue/rolldicewidget.cpp \
+    ui/dialogue/endturnwidget.cpp \
+    ui/dialogue/owemoneywidget.cpp \
+    ui/dialogue/injailwidget.cpp
 
 
 HEADERS += \
@@ -62,7 +66,11 @@ HEADERS += \
     ui/tokenui.h \
     ui/normalblockwithlabelui.h \
     ui/blockuifactory.h \
-    ui/rolldicewidget.h
+    ui/dialogue/unpurchasedassetwidget.h \
+    ui/dialogue/rolldicewidget.h \
+    ui/dialogue/endturnwidget.h \
+    ui/dialogue/owemoneywidget.h \
+    ui/dialogue/injailwidget.h
 
 
 

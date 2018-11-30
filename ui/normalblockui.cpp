@@ -8,7 +8,7 @@ NormalBlockUI::NormalBlockUI(QWidget* parent, int position):
 
 void NormalBlockUI::render() {
     int x = position % 10;
-    QPixmap pixmap(":/res/" +QString::number(position) + ".png");
+    QPixmap pixmap(":/res/" + QString::number(position) + ".png");
     switch(position / 10) {
         case 0:
             setGeometry(QRect(OFFSET_X + BLOCK_HEIGHT + (9 - x) * BLOCK_NORMAL_WIDTH, OFFSET_Y + BLOCK_HEIGHT + (9 * BLOCK_NORMAL_WIDTH), BLOCK_NORMAL_WIDTH, BLOCK_HEIGHT));
