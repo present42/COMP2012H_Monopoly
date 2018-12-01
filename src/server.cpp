@@ -251,7 +251,7 @@ void Server::roll_dice() {
         current_player->movebyposition(10);
         current_player->stayin_jail();
         double_count =0;
-        status_change(0);
+        status_change(10);
     }else
         move(first + second);
 }
