@@ -38,7 +38,7 @@ width: 150px;
 }</string>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>3</number>
    </property>
    <property name="iconSize">
     <size>
@@ -654,6 +654,14 @@ width: 150px;
        <height>81</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>24</pointsize>
+      </font>
+     </property>
+     <property name="digitCount">
+      <number>2</number>
+     </property>
     </widget>
     <widget class="QLCDNumber" name="hotel_number_1">
      <property name="geometry">
@@ -663,6 +671,9 @@ width: 150px;
        <width>51</width>
        <height>81</height>
       </rect>
+     </property>
+     <property name="digitCount">
+      <number>2</number>
      </property>
     </widget>
    </widget>
@@ -762,6 +773,9 @@ width: 150px;
        <width>51</width>
        <height>81</height>
       </rect>
+     </property>
+     <property name="digitCount">
+      <number>2</number>
      </property>
     </widget>
     <widget class="QLabel" name="a18_2">
@@ -994,6 +1008,9 @@ width: 150px;
        <width>51</width>
        <height>81</height>
       </rect>
+     </property>
+     <property name="digitCount">
+      <number>2</number>
      </property>
     </widget>
     <widget class="QLabel" name="a28_2">
@@ -1380,6 +1397,12 @@ width: 150px;
        <height>81</height>
       </rect>
      </property>
+     <property name="smallDecimalPoint">
+      <bool>false</bool>
+     </property>
+     <property name="digitCount">
+      <number>2</number>
+     </property>
     </widget>
     <widget class="QLabel" name="a19_3">
      <property name="geometry">
@@ -1698,6 +1721,12 @@ width: 150px;
        <height>81</height>
       </rect>
      </property>
+     <property name="smallDecimalPoint">
+      <bool>false</bool>
+     </property>
+     <property name="digitCount">
+      <number>2</number>
+     </property>
     </widget>
     <widget class="QLabel" name="a37_3">
      <property name="geometry">
@@ -1977,6 +2006,9 @@ width: 150px;
        <width>51</width>
        <height>81</height>
       </rect>
+     </property>
+     <property name="digitCount">
+      <number>2</number>
      </property>
     </widget>
     <widget class="QLabel" name="a19_4">
@@ -2333,6 +2365,9 @@ width: 150px;
        <width>51</width>
        <height>81</height>
       </rect>
+     </property>
+     <property name="digitCount">
+      <number>2</number>
      </property>
     </widget>
     <widget class="QLabel" name="a1_4">

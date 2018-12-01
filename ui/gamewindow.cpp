@@ -353,8 +353,21 @@ void GameWindow::receiveFromOthers(int amount) {
 }
 
 void GameWindow::updateMoney(int player, int amount) {
-    money[player] = amount;
-
     ui->tabWidget->setTabText(player, "Player " + QString::number(player + 1) + " ($" + QString::number(amount) + ")");
 }
 
+void GameWindow::refresh(vector<Player*> players, Block* block[40]) {
+    QLCDNumber *home[4] = { ui->home_number, ui->home_number_2, ui->home_number_3, ui->home_number_4};
+    QLCDNumber *hotel[4] = { ui->hotel_number_1, ui->hotel_number_2, ui->hotel_number_3, ui->hotel_number_4};
+
+    for(vector<Player*>::iterator temp = players.begin(); temp != players.end(); temp++) {
+        updateMoney((*temp)->get_playerid(), (*temp)->get_money());
+        tokens[(*temp)->get_playerid()]->move((*temp)->get_playerposition());
+        home[(*temp)->get_playerid()]->display(10);
+        home[(*temp)->get_playerid()]->show();
+
+        hotel[(*temp)->get_playerid()]->display(10);
+        hotel[(*temp)->get_playerid()]->show();
+    }
+
+}

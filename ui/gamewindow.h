@@ -33,7 +33,7 @@ public:
     SimpleWidget* getSimpleWidget();
 
     void init_player(int id);
-
+    void refresh(vector<Player*> players, Block* block[40]);
 private:
     Ui::GameWindow *ui;
     int game_status;
