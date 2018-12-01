@@ -8,7 +8,8 @@ using namespace std;
 
 Server::Server():
   current_player(nullptr),
-  double_count(0)
+  double_count(0),
+  num_player(0)
 {
     srand(time(0));
 }
@@ -30,10 +31,19 @@ void Server::add_player(Player* new_player) {
  * Before this function is called, all participating players should be initiated
  *
  * <<Status Indicator>>
- * 0.5 : jail
+ * 0 : jail
  * 1 : Before rolling the dice
- * 2 : After rolling the dice. Current player has to choose something
- * -2a : buy or auction
+ *
+ * 2 : Buy or Auction event
+ * 3 : Pay rent event (Player A -> Player B)
+ * 4 : Pay to bank event (Income tax, Property tax ..)
+ * 5 : Move to other places
+ * 6 : Receive Money from Bank
+ *
+ * 7 : Open Card event
+ *
+ *
+ *
  * -2b : follow instruction (pay rent, pay .. to bank, receive money from bank, move to somewhere)
  * -2c : not enough money
  * 3 : Before ending his turn
@@ -105,17 +115,8 @@ void Server::move(int dice_sum){
     current_player->movebysteps(dice_sum);
     emit player_moved(current_player->get_playerposition());
 
-    //trigger_event();
-    qDebug() << "Something happend in the server..!";
-    qDebug() << "This part should be implemented..";
-
-    if(double_count > 0) {
-        //Set status to 1 (Waiting for the current player to throw the dice)
-        status_change(1);
-    } else {
-        //Set status to the last status
-        status_change(5);
-    }
+    emit pass_asset_price(250);
+    status_change(2);
 }
 
 void Server::movebysteps(int steps){
@@ -135,6 +136,22 @@ void Server::trigger_event(){
     //trigger block-related event
 }
 
+void Server::purchaseProperty() {
+    qDebug() << "Property successfully bought!!";
+    do_next_job();
+}
+
+void Server::do_next_job() {
+    qDebug() << "Decide what to do next";
+    if(double_count > 0) {
+        //Set status to 1 (Waiting for the current player to throw the dice)
+        status_change(1);
+    } else {
+        //Set status to the last status
+        status_change(5);
+    }
+}
+
 /*
  * Here, we should include the logic to check winning condition
  * in order to decide whether to continue game or not
@@ -147,5 +164,4 @@ void Server::next_player() {
     emit current_player_set(index);
     status_change(1);
 }
-
 

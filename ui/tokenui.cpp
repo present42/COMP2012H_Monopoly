@@ -32,7 +32,6 @@ void TokenUI::move(int position) {
     }
     current_position = position;
     group->start(QAbstractAnimation::DeleteWhenStopped);
-    //setGeometry((*blocks)[position]->token_pos_x(), (*blocks)[position]->token_pos_y(), 90, 90);
 }
 
 QString TokenUI::getTokenString() {
@@ -50,4 +49,8 @@ QString TokenUI::getTokenString() {
         case Token::SHIP:
             return "ship";
     }
+}
+
+int TokenUI::getPosition() const {
+    return current_position;
 }

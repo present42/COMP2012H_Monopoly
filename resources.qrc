@@ -49,5 +49,33 @@
         <file>res/16.png</file>
         <file>res/18.png</file>
         <file>res/19.png</file>
+        <file>res/detail/1.png</file>
+        <file>res/detail/2.png</file>
+        <file>res/detail/5.png</file>
+        <file>res/detail/6.png</file>
+        <file>res/detail/8.png</file>
+        <file>res/detail/9.png</file>
+        <file>res/detail/11.png</file>
+        <file>res/detail/12.png</file>
+        <file>res/detail/13.png</file>
+        <file>res/detail/14.png</file>
+        <file>res/detail/15.png</file>
+        <file>res/detail/16.png</file>
+        <file>res/detail/18.png</file>
+        <file>res/detail/19.png</file>
+        <file>res/detail/21.png</file>
+        <file>res/detail/23.png</file>
+        <file>res/detail/24.png</file>
+        <file>res/detail/25.png</file>
+        <file>res/detail/26.png</file>
+        <file>res/detail/27.png</file>
+        <file>res/detail/28.png</file>
+        <file>res/detail/29.png</file>
+        <file>res/detail/31.png</file>
+        <file>res/detail/32.png</file>
+        <file>res/detail/34.png</file>
+        <file>res/detail/35.png</file>
+        <file>res/detail/37.png</file>
+        <file>res/detail/39.png</file>
     </qresource>
 </RCC>

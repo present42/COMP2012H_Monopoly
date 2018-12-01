@@ -34,6 +34,8 @@ UnpurchasedAssetWidget::UnpurchasedAssetWidget(QWidget* parent):
     purchase_button->setText("BUY");
     purchase_button->setFont(QFont("Georgia", 16));
 
+    connect(purchase_button, &QPushButton::clicked, this, &UnpurchasedAssetWidget::purchase);
+
     auction_button = new QPushButton(this);
     auction_button->setGeometry(4 * BLOCK_NORMAL_WIDTH, BLOCK_NORMAL_WIDTH * 13 / 2 + 10,
                                 BLOCK_NORMAL_WIDTH * 3, BLOCK_NORMAL_WIDTH);
@@ -49,4 +51,22 @@ UnpurchasedAssetWidget::~UnpurchasedAssetWidget() {
 
     if(purchase_button) delete purchase_button;
     if(auction_button) delete auction_button;
+}
+
+void UnpurchasedAssetWidget::setPrice(int price) {
+    this->price->setText(QString("$") + QString::number(price));
+}
+
+void UnpurchasedAssetWidget::setPreview(int position) {
+    QPixmap temp(QString(":/res/detail/") + QString::number(position) + ".png");
+    preview->setPixmap(temp.scaled(preview->width(), preview->height(), Qt::KeepAspectRatio));
+}
+
+QPushButton* UnpurchasedAssetWidget::getPurchaseButton() {
+    return purchase_button;
+}
+
+void UnpurchasedAssetWidget::purchase() {
+    hide();
+    emit purchase_button_clicked();
 }

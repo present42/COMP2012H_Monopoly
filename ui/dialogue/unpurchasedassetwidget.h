@@ -11,7 +11,9 @@ class UnpurchasedAssetWidget : public QWidget
 public:
     UnpurchasedAssetWidget(QWidget* parent = nullptr);
     ~UnpurchasedAssetWidget();
-
+    void setPrice(int price = 0);
+    void setPreview(int position = 0);
+    QPushButton* getPurchaseButton();
 private:
     QPushButton* purchase_button;
     QPushButton* auction_button;
@@ -28,7 +30,7 @@ signals:
     void auction_button_clicked();
 
 private slots:
-
+    void purchase();
 
 };
 

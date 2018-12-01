@@ -29,8 +29,8 @@ RollDiceWidget::~RollDiceWidget() {
 }
 
 void RollDiceWidget::roll_button_click_handler() {
-    emit roll_button_clicked();
     hide();
+    emit roll_button_clicked();
 }
 
 void RollDiceWidget::updatePlayer(int player) {

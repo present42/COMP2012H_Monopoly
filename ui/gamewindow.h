@@ -24,6 +24,7 @@ public:
     void setDice(int dice1, int dice2);
     void initToken(int player, TokenUI::Token token_type);
     RollDiceWidget* getRollDiceWidget();
+    UnpurchasedAssetWidget* getUnpurchasedAssetWidget();
 
 private:
     Ui::GameWindow *ui;
@@ -68,6 +69,7 @@ public slots:
 
     void init_player(int id);
     void handleStatusChange(int status);
+    void getAssetPrice(int price);
     void setCurrentPlayer(int index);
     void showDiceNumber(int first, int second);
     void moveToken(int position);

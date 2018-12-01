@@ -11,7 +11,7 @@ public:
 
     TokenUI(QWidget* parent = nullptr, Token type = Token::CAT, AbstractBlockUI* (*blocks)[40] = nullptr);
     void move(int position);
-
+    int getPosition() const;
 private:
     const static int START_X = 25;
     const static int START_Y = 25;

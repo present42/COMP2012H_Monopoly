@@ -20,6 +20,7 @@ public:
     void roll_dice();
     void move(int dice_sum);
     void status_change(int status);
+    void do_next_job();
 
     void movebysteps(int steps);
     void movebyposition(int positions);
@@ -40,6 +41,7 @@ private:
     //this part should be removed
 public slots:
     void next_player();
+    void purchaseProperty();
 
 signals:
     void init_player(int id);
@@ -48,6 +50,8 @@ signals:
     void player_moved(int id);
     void dice_thrown(int first, int second);
     void asset_bought();
+
+    void pass_asset_price(int price);
 
 };
 

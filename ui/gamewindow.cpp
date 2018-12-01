@@ -144,6 +144,10 @@ RollDiceWidget* GameWindow::getRollDiceWidget() {
     return roll_dice_widget;
 }
 
+UnpurchasedAssetWidget* GameWindow::getUnpurchasedAssetWidget() {
+    return unpurchased_asset_widget;
+}
+
 void GameWindow::init_player(int id) {
     token_num++;
     tokens[id] = new TokenUI(this, token_list[id], &block_ui);
@@ -163,6 +167,10 @@ void GameWindow::handleStatusChange(int status) {
             relocateDice();
             roll_dice_widget->updatePlayer(current_token);
             roll_dice_widget->show();
+            return;
+        case 2:
+            unpurchased_asset_widget->setPreview(tokens[current_token]->getPosition());
+            unpurchased_asset_widget->show();
             return;
         case 5:
             end_turn_widget->show();
@@ -189,7 +197,11 @@ void GameWindow::showDiceNumber(int first, int second) {
         group->addAnimation(anim);
     }
 
-    group->start();
+    group->start(QAbstractAnimation::DeleteWhenStopped);
+}
+
+void GameWindow::getAssetPrice(int price) {
+    unpurchased_asset_widget->setPrice(price);
 }
 
 void GameWindow::hideAllDialogues() {
