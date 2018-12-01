@@ -43,7 +43,9 @@ SOURCES += \
     ui/normalblockwithlabelui.cpp \
     ui/rolldicewidget.cpp \
     src/charge.cpp \
-    src/selectcard.cpp
+    src/selectcard.cpp \
+    src/gotojail.cpp \
+    src/card.cpp
 
 
 HEADERS += \

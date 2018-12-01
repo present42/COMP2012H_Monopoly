@@ -2,7 +2,6 @@
 #define ASSET_H
 
 #include <string>
-#include "player.h"
 #include "block.h"
 // to be derived to other
 
@@ -17,10 +16,11 @@ class Asset : public Block{
 
         virtual ~Asset();
         void change_owner(Player* player);
-        Player* get_owner();
-        int get_assetcost();
-        int get_assetmortgage();
+        Player* get_owner() const;
+        int get_cost_value() const;
+        int get_mortgage_value() const;
         void demortgage();
+        bool get_mortgage_status() const;
         virtual void set_mortgage();
         virtual bool trigger_event(Player* player, int points);
 

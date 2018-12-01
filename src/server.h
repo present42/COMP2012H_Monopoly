@@ -2,9 +2,14 @@
 #define SERVER_H
 
 #include "player.h"
+#include "token.h"
 #include "property.h"
 #include "utility.h"
 #include "railroad.h"
+#include "gotojail.h"
+#include "selectcard.h"
+#include "card.h"
+#include "charge.h"
 #include "ui/gamewindow.h"
 #include <QObject>
 
@@ -28,18 +33,21 @@ public:
 
     void trigger_event(int dice_num);
     void end_turn();
+    void bankruptcy();
     void next_player();
 
     GameWindow* get_game_window();
     void startGUI();
 private:
-    // for testing one player
-    Player* players[4];
+    vector<Player*> players;
     Block* block[40];
-    int num_player;
+    SelectCard* chance_block;
+    SelectCard* community_block;
     Player* current_player;
+
     int  double_count;
     int status;
+    void initboard();
 
     //GUI
     //If the server-client program is to be implemented,
@@ -49,13 +57,13 @@ private:
 
 signals:
     void init_player(int id);
-    void emit_status(int status);
-    void emit_player(int index);
-    void emit_dice(int first, int second);
-    void emit_buy_auction();
-    void emit_normal();
-    void emit_nomoney();
-    void emit_next();
+    void status_changed(int status);
+    void player(int index);
+    void dice_rolled(int first, int second);
+    void buy_auction();
+    void normal();
+    void nomoney();
+    void next(Player* player);
 
 
 };

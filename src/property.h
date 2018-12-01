@@ -29,9 +29,10 @@ class Property : public Asset{
                  vector<int> rentlist,
                  Group group);
         ~Property();
-        int get_house();
-        int get_hotel();
-        int get_rent();
+        int get_housecost() const;
+        int get_house() const;
+        int get_hotel() const;
+        int get_rent() const;
 
         bool add_house();
         bool add_hotel();

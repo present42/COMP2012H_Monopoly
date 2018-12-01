@@ -22,16 +22,20 @@ void Asset::change_owner(Player* player){
     this->owner = player;
 }
 
-Player* Asset::get_owner() {
+Player* Asset::get_owner() const{
     return owner;
 }
 
-int Asset::get_assetcost() {
+int Asset::get_cost_value() const{
     return cost;
 }
 
-int Asset::get_assetmortgage() {
+int Asset::get_mortgage_value()  const{
     return mortgage_value;
+}
+
+bool Asset::get_mortgage_status() const{
+    return mortgaged;
 }
 
 
@@ -49,4 +53,6 @@ void Asset::demortgage(){
 bool Asset::trigger_event(Player* player, int points){
    return Block::trigger_event(player,points);
 }
+
+
 

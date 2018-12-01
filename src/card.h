@@ -1,18 +1,20 @@
 #ifndef CARD_H
 #define CARD_H
 
-#include "block.h"
-#include <string>
+#include <QString>
 using namespace std;
 
-class Card : public Block{
-    protected:
-    string description;
+class Card {
+    private:
+
+    QString explanation;
+    QString type;
 
     public:
 
-    Card();
+    QString get_explanation() const;
+    QString get_type() const;
+    Card(QString explanation , QString type);
     ~Card();
-    virtual bool trigger_event(Player* player, int points);
 };
 #endif // CARD_H

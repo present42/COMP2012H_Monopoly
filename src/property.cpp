@@ -26,15 +26,19 @@ Property::~Property() {
 
 }
 
-int Property::get_house(){
+int Property::get_housecost() const{
+    return housecost;
+
+}
+int Property::get_house() const{
     return house;
 }
 
-int Property::get_hotel(){
+int Property::get_hotel() const{
     return hotel;
 }
 
-int Property::get_rent(){
+int Property::get_rent() const{
     if (hotel != 0)
         return rentlist[5];
 
@@ -45,10 +49,6 @@ bool Property::add_house(){
     if (hotel != 0 ||house+1 > MAX_HOUSE)
         return false;
     vector<int> list;
-    /*
-     * Assume we have a block* (*block)[40]
-     */
-
     Block* (*block)[40] = nullptr;
     for(int i=0; i <40; ++i){
         Property* p = dynamic_cast<Property*>(*block[i]);
@@ -68,10 +68,6 @@ bool Property::add_hotel(){
     if (hotel+1 > MAX_HOTEL)
         return false;
     vector<int> list;
-    /*
-     * Assume we have a block* (*block)[40]
-     */
-
     for(int i=0; i <40; ++i){
         Property* p = dynamic_cast<Property*>(*block[i]);
         if (p != nullptr &&

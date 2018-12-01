@@ -6,10 +6,11 @@ charge(charge)
 {
 }
 
+Charge::~Charge(){
+
+}
+
 bool Charge::trigger_event(Player* player, int points){
-    if(player->get_money()- charge <0)
-        return false;
-    player->set_money(player->get_money() - charge);
-    return true;
+    return player->pay_rent(nullptr, charge);
 }
 
