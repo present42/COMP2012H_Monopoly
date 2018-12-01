@@ -440,24 +440,24 @@ void GameWindow::refresh(vector<Player*> players, Block* block[40]) {
     }
     int j =0;
     for (vector<Player*>::iterator temp = players.begin(); temp != players.end(); temp++){
-        for(int i =0 ; i < 40;i++){
+        for(int i =0 ; i < 40; i++){
             Asset* asset = dynamic_cast<Asset*>(block[i]);
             if(asset != nullptr){
                 if(asset->get_owner() == nullptr){
-                    update(j,i,-3);
-                }else if (asset->get_owner() != *temp){
-                    update(j,i,-2);
-                }else if (asset->get_owner() == *temp&&
+                    updateAssetInfo(j, i, -3);
+                } else if (asset->get_owner() != *temp){
+                    updateAssetInfo(j, i, -2);
+                } else if (asset->get_owner() == *temp&&
                           asset->get_mortgage_status()){
-                    update(j,i,-1);
-                }else{
+                    updateAssetInfo(j, i, -1);
+                } else{
                     Property* property = dynamic_cast<Property*>(block[i]);
                     if (property == nullptr){
-                        update(j,i,0);
-                    }else if (property->get_hotel() == 0){
-                        update(j,i,property->get_house());
-                    }else{
-                        update(j,i,5);
+                        updateAssetInfo(j,i,0);
+                    } else if (property->get_hotel() == 0){
+                        updateAssetInfo(j, i, property->get_house());
+                    } else{
+                        updateAssetInfo(j, i, 5);
                     }
                 }
             }
