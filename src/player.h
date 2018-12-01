@@ -58,7 +58,7 @@ public:
     void stayin_jail();
 
     //0 ,1 ,2 = both
-    void have_jailcard(int &id);
+    bool have_jailcard(int &id);
     void use_jailcard(int id);
     void keep_jailcard(int id);
 

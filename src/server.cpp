@@ -342,6 +342,9 @@ void Server::trigger_event(int dice_num){
 //        status_change(4);
     }
 
+}
+
+void Server::drawn_after(){
 
 }
 
@@ -355,6 +358,48 @@ void Server::checkdouble(){
 void Server::bankruptcy(){
     current_player->bankruptcy();
 }
+
+void Server::in_jail_action(int num){
+    switch (num) {
+        case 0:
+        //pay
+        {
+            current_player->pay_rent(nullptr,50);
+            current_player->out_jail();
+            roll_dice();
+            break;
+        }
+        case 1:
+        {
+            int card = -1;
+            if (current_player->have_jailcard(card)){
+                if(card == 0 || card == 2){
+                    chance_block->add_jailcard();
+                    current_player->use_jailcard(0);
+                }else{
+                    community_block->add_jailcard();
+                    current_player->use_jailcard(1);
+                }
+                current_player->out_jail();
+                roll_dice();
+            }
+            break;
+        }
+        case 2:
+        {
+            int first = rand() % 6 + 1;
+            int second = rand() % 6 + 1;
+            if(first == second){
+                gamewindow->showDiceNumber(first, second);
+                current_player->out_jail();
+                move(first+second);
+            }else
+                current_player->stayin_jail();
+            break;
+        }
+    }
+}
+
 
 /*
  * Here, we should include the logic to check winning condition

@@ -96,13 +96,16 @@ void Player::use_jailcard(int id){
     jailcardlist[id] = false;
 }
 
-void Player::have_jailcard(int &id){
+bool Player::have_jailcard(int &id){
     if(jailcardlist[0] && jailcardlist[1])
         id = 2;
     else if (jailcardlist[0])
         id = 0;
-    else
+    else if (jailcardlist[1])
         id = 1;
+    else
+        return false;
+    return true;
 }
 
 void Player::keep_jailcard(int id){

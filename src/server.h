@@ -56,8 +56,10 @@ private:
 
 public slots:
     void next_player();
+    void drawn_after();
     void purchaseProperty();
     void checkdouble();
+    void in_jail_action(int num);
 
 signals:
     void pay_bank(int money);
