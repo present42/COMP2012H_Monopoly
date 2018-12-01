@@ -17,7 +17,11 @@
 #include "specialblockui.h"
 #include "normalblockui.h"
 #include "normalblockwithlabelui.h"
-#include "src/player.h"
+#include "src/block.h"
+#include "src/property.h"
+#include "src/railroad.h"
+#include "src/utility.h"
+
 
 GameWindow::GameWindow(QWidget* parent) :
     QWidget(parent),
@@ -368,6 +372,32 @@ void GameWindow::refresh(vector<Player*> players, Block* block[40]) {
 
         hotel[(*temp)->get_playerid()]->display(10);
         hotel[(*temp)->get_playerid()]->show();
+    }
+    int j =0;
+    for (vector<Player*>::iterator temp = players.begin(); temp != players.end(); temp++){
+        for(int i =0 ; i < 40;i++){
+            Asset* asset = dynamic_cast<Asset*>(block[i]);
+            if(asset != nullptr){
+                if(asset->get_owner() == nullptr){
+                    update(j,i,-3);
+                }else if (asset->get_owner() != *temp){
+                    update(j,i,-2);
+                }else if (asset->get_owner() == *temp&&
+                          asset->get_mortgage_status()){
+                    update(j,i,-1);
+                }else{
+                    Property* property = dynamic_cast<Property*>(block[i]);
+                    if (property == nullptr){
+                        update(j,i,0);
+                    }else if (property->get_hotel() == 0){
+                        update(j,i,property->get_house());
+                    }else{
+                        update(j,i,5);
+                    }
+                }
+            }
+        }
+        j++;
     }
 
 }
