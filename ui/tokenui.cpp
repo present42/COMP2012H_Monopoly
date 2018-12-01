@@ -17,20 +17,30 @@ TokenUI::TokenUI(QWidget* parent, Token type, AbstractBlockUI* (*blocks)[40]):
 void TokenUI::move(int position) {
     QSequentialAnimationGroup *group = new QSequentialAnimationGroup;
     int temp_stop = current_position;
-    for(int i = current_position + 1; i != ((position + 1) % 40); (++i) %= 40) {
-        if(i % 10 == 0 || i == position) {
-            if(i == current_position) continue;
-            QPropertyAnimation *animation = new QPropertyAnimation(this, "geometry");
-            animation->setDuration((i - temp_stop) * 200);
-            animation->setStartValue(QRect((*blocks)[temp_stop]->token_pos_x(), (*blocks)[temp_stop]->token_pos_y(), 90, 90));
-            animation->setEndValue(QRect((*blocks)[i]->token_pos_x(), (*blocks)[i]->token_pos_y(), 90, 90));
-            group->addAnimation(animation);
-            qDebug() << temp_stop << "=>" << i;
-            temp_stop = i;
+    if(position >= 0) {
+        for(int i = current_position + 1; i != ((position + 1) % 40); (++i) %= 40) {
+            if(i % 10 == 0 || i == position) {
+                if(i == current_position) continue;
+                QPropertyAnimation *animation = new QPropertyAnimation(this, "geometry");
+                animation->setDuration((i - temp_stop) * 200);
+                animation->setStartValue(QRect((*blocks)[temp_stop]->token_pos_x(), (*blocks)[temp_stop]->token_pos_y(), 90, 90));
+                animation->setEndValue(QRect((*blocks)[i]->token_pos_x(), (*blocks)[i]->token_pos_y(), 90, 90));
+                group->addAnimation(animation);
+                qDebug() << temp_stop << "=>" << i;
+                temp_stop = i;
+            }
+            //skip if i is not divided by 10
         }
-        //skip if i is not divided by 10
+
+        current_position = position;
+    } else if(position < 0) {
+        QPropertyAnimation *animation = new QPropertyAnimation(this, "geometry");
+        animation->setDuration((-position) * 200);
+        animation->setStartValue(QRect((*blocks)[current_position]->token_pos_x(), (*blocks)[current_position]->token_pos_y(), 90, 90));
+        animation->setEndValue(QRect((*blocks)[current_position - position]->token_pos_x(), (*blocks)[current_position - position]->token_pos_y(), 90, 90));
+        group->addAnimation(animation);
     }
-    current_position = position;
+
     group->start(QAbstractAnimation::DeleteWhenStopped);
 }
 
