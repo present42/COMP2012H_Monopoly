@@ -77,5 +77,8 @@
         <file>res/detail/35.png</file>
         <file>res/detail/37.png</file>
         <file>res/detail/39.png</file>
+        <file>res/json/property.json</file>
+        <file>res/json/chance_card.json</file>
+        <file>res/json/community_chest_card.json</file>
     </qresource>
 </RCC>

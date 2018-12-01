@@ -2,12 +2,12 @@
 #include <vector>
 using namespace std;
 
-Utility::Utility(int id,
+Utility::Utility(
                  Block* (*block)[40],
-                 Player*owner,std::string title,
-                 int cost,
-                 int mortgage_value):
-    Asset(id,block,owner,title, cost,mortgage_value),
+                 Player*owner,QString title,
+                 int cost
+                 ):
+    Asset(block,owner,title, cost),
     rate_of_rent(4)
 {}
 
@@ -26,7 +26,8 @@ void Utility::update_ownrate(){
     for(int i=0; i <40; ++i){
         Utility* p = dynamic_cast<Utility*>(*block[i]);
         if (p != nullptr &&
-            p->get_owner() == this->owner){
+            p->get_owner() == this->owner &&
+            !mortgaged){
                num++;
                p_list.push_back(p);
         }
@@ -38,10 +39,16 @@ void Utility::update_ownrate(){
 
 bool Utility::trigger_event(Player* player, int points){
     int rent = points*rate_of_rent;
-    if (player != owner){
+    if (player != owner && !mortgaged){
         if (!player->pay_rent(owner,rent)){
             return false;
         }
     }
     return true;
 }
+
+void Utility::set_mortgage(){
+    Asset::set_mortgage();
+    update_ownrate();
+}
+

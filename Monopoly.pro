@@ -45,7 +45,11 @@ SOURCES += \
     ui/dialogue/rolldicewidget.cpp \
     ui/dialogue/endturnwidget.cpp \
     ui/dialogue/owemoneywidget.cpp \
-    ui/dialogue/injailwidget.cpp
+    ui/dialogue/injailwidget.cpp \
+    src/charge.cpp \
+    src/selectcard.cpp \
+    src/gotojail.cpp \
+    src/card.cpp
 
 
 HEADERS += \
@@ -70,7 +74,10 @@ HEADERS += \
     ui/dialogue/rolldicewidget.h \
     ui/dialogue/endturnwidget.h \
     ui/dialogue/owemoneywidget.h \
-    ui/dialogue/injailwidget.h
+    ui/dialogue/injailwidget.h \
+    src/gotojail.h \
+    src/charge.h \
+    src/selectcard.h
 
 
 

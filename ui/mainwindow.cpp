@@ -27,7 +27,7 @@ void MainWindow::startButton_clicked_handler() {
     //1. signal that informs new player is created
     //connect(game_instance, &Server::init_player, game_window, &GameWindow::init_player);
     connect(game_instance, &Server::init_player, game_window, &GameWindow::init_player);
-    connect(game_instance, &Server::current_player_set, game_window, &GameWindow::setCurrentPlayer);
+    connect(game_instance, &Server::next, game_window, &GameWindow::setCurrentPlayer);
     connect(game_instance, &Server::status_changed, game_window, &GameWindow::handleStatusChange);
     connect(game_instance, &Server::dice_thrown, game_window, &GameWindow::showDiceNumber);
     connect(game_instance, &Server::player_moved, game_window, &GameWindow::moveToken);

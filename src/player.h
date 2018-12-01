@@ -1,16 +1,28 @@
 #ifndef PLAYER_H
 #define PLAYER_H
+
+#include <vector>
+
 #include "token.h"
-#include <QObject>
+#include "card.h"
+
+using namespace std;
+
+class Asset;
+
+class Block;
 
 class Player{
+
 private:
     int id;
     int money;
     int position;
+    vector<Asset*> assetlist;
     // -1 mean not in jail
+    bool jailcardlist[2];
     int jail_turn;
-    bool passed_GO;
+    bool losed;
     Token token;
 
 public:
@@ -18,11 +30,17 @@ public:
     Player(int id, Token token);
 
     //asset part
+    void add_asset(Asset* asset);
+    vector<Asset*> get_assetlist();
+    // monoey in trading not hee
+    void remove_asset(Asset* asset);
+
     // false mean not enough money
     bool pay_rent(Player* player,int rent);
     void set_money(int money);
     int get_money() const;
     int get_jail_turn();
+
     //movement
     void movebysteps(int steps);
     void movebyposition(int position);
@@ -32,15 +50,24 @@ public:
     int get_playerposition() const;
     Token get_playertoken() const;
 
-    //go
-    bool is_passed_GO() const;
-    void set_passed_GO(bool);
 
     //jail
     bool is_injail() const;
     int  injail_turn() const;
     void out_jail();
     void stayin_jail();
+
+    //0 ,1 ,2 = both
+    void have_jailcard(int &id);
+    void use_jailcard(int id);
+    void keep_jailcard(int id);
+
+
+    //determine lose or not
+    // if asset_value + money + jailcard < 0 gg
+    bool willlose();
+    bool islosed();
+    void bankruptcy();
 
 };
 

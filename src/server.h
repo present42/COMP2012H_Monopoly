@@ -2,11 +2,21 @@
 #define SERVER_H
 
 #include "player.h"
+#include "token.h"
+#include "property.h"
+#include "utility.h"
+#include "railroad.h"
+#include "gotojail.h"
+#include "selectcard.h"
+#include "card.h"
+#include "charge.h"
 #include "ui/gamewindow.h"
 #include <QObject>
 
+
 class Server : public QObject {
     Q_OBJECT
+
 public:
     Server();
     virtual ~Server();
@@ -22,34 +32,43 @@ public:
     void status_change(int status);
     void do_next_job();
 
-    void movebysteps(int steps);
-    void movebyposition(int positions);
-    void trigger_event();
+    void trigger_event(int dice_num);
     void end_turn();
 
-private:
-    // for testing one player
-    Player* players[4];
-    int num_player;
+    void bankruptcy();
 
+    GameWindow* get_game_window();
+    void startGUI();
+private:
+    vector<Player*> players;
+    Block* block[40];
+    SelectCard* chance_block;
+    SelectCard* community_block;
     Player* current_player;
+
     int  double_count;
     int status;
+    void initboard();
 
     //GUI
     //If the server-client program is to be implemented,
     //this part should be removed
+
 public slots:
     void next_player();
     void purchaseProperty();
 
 signals:
     void init_player(int id);
-    void current_player_set(int id);
-    void status_changed(int id);
+    void status_changed(int status);
     void player_moved(int id);
     void dice_thrown(int first, int second);
     void asset_bought();
+
+    //void normal();
+    //void nomoney();
+    void next(int id);
+
 
     void pass_asset_price(int price);
 

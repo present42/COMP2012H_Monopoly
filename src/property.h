@@ -2,50 +2,61 @@
 #define PROPERTY_H
 
 #include "asset.h"
+#include "vector"
 
+using namespace std;
 
 class Property : public Asset{
-    enum Group{
-        Brown,
-        LightBlue,
-        Pink,
-        Orange,
-        Red,
-        Yellow,
-        Green,
-        Blue
-    };
+
+    public:
+
+        enum Group{
+            Brown,
+            LightBlue,
+            Pink,
+            Orange,
+            Red,
+            Yellow,
+            Green,
+            Blue
+        };
+        Property(
+                 Block* (*block)[40],
+                 Player*owenr ,
+                 QString title ,
+                 int cost,
+                 int housecost,
+                 vector<int> rentlist,
+                 Group group);
+        ~Property();
+        int get_housecost() const;
+        int get_house() const;
+        int get_hotel() const;
+        int get_rent() const;
+
+        bool add_house();
+        bool add_hotel();
+
+        void sell_house();
+        void sell_hotel();
+
+
+        bool get_monopoly() const;
+        void set_monopoly(bool monopoly);
+        void update_group_monopoly();
+        virtual void set_mortgage();
+        virtual bool trigger_event(Player* player,int points);
+
 
     private:
-        int rentlist[6];
         int house;
         int hotel;
         Group group;
         bool monopoly;
+        int housecost;
+        vector<int> rentlist;
         const int MAX_HOUSE = 4;
         const int MAX_HOTEL = 1;
-
-    public:
-        Property(int id,
-                 Block* (*block)[40],
-                 Player*owenr ,
-                 std::string title ,
-                 int cost,
-                 int mortgage_value,
-                 int rentlist[6],
-                 Group group);
-        ~Property();
-        int get_house();
-        int get_hotel();
-        int get_rent();
-
-        bool add_house();
-        bool add_hotel();
-        bool get_monopoly() const;
-        void set_monopoly(bool monopoly);
-        void update_group_monopoly();
-
-        virtual bool trigger_event(Player* player,int points);
 
 
 };
