@@ -12,6 +12,8 @@ public:
     TokenUI(QWidget* parent = nullptr, Token type = Token::CAT, AbstractBlockUI* (*blocks)[40] = nullptr);
     void move(int position);
     int getPosition() const;
+
+    QString getTokenString();
 private:
     const static int START_X = 25;
     const static int START_Y = 25;
@@ -19,7 +21,7 @@ private:
     Token type;
     int current_position = 0;
 
-    QString getTokenString();
+
 };
 
 #endif // TOKENUI_H

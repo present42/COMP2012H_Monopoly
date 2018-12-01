@@ -115,8 +115,8 @@ void Server::move(int dice_sum){
     current_player->movebysteps(dice_sum);
     emit player_moved(current_player->get_playerposition());
 
-    emit pass_asset_price(250);
-    status_change(2);
+    emit pass_rent_payment_info(1, 300);
+    status_change(3);
 }
 
 void Server::movebysteps(int steps){
@@ -163,5 +163,10 @@ void Server::next_player() {
 
     emit current_player_set(index);
     status_change(1);
+}
+
+void Server::endRentEvent() {
+    qDebug() << "endRentEvent()";
+    do_next_job();
 }
 

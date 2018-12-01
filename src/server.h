@@ -42,7 +42,7 @@ private:
 public slots:
     void next_player();
     void purchaseProperty();
-
+    void endRentEvent();
 signals:
     void init_player(int id);
     void current_player_set(int id);
@@ -52,6 +52,7 @@ signals:
     void asset_bought();
 
     void pass_asset_price(int price);
+    void pass_rent_payment_info(int receiver, int amount);
 
 };
 

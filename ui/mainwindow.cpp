@@ -32,14 +32,14 @@ void MainWindow::startButton_clicked_handler() {
     connect(game_instance, &Server::dice_thrown, game_window, &GameWindow::showDiceNumber);
     connect(game_instance, &Server::player_moved, game_window, &GameWindow::moveToken);
     connect(game_instance, &Server::pass_asset_price, game_window, &GameWindow::getAssetPrice);
-
+    connect(game_instance, &Server::pass_rent_payment_info, game_window, &GameWindow::getRentInfo);
     //connect(game_instance, &Server::current_player_set, game_window, &GameWindow::setCurrentPlayer);
     //Here we define signals from client GUI to server
     //1. when the client clicks the "roll the dice button"
     connect(game_window->getRollDiceWidget(), &RollDiceWidget::roll_button_clicked, game_instance, &Server::roll_dice);
     connect(game_window, &GameWindow::turn_finished, game_instance, &Server::next_player);
     connect(game_window->getUnpurchasedAssetWidget(), &UnpurchasedAssetWidget::purchase_button_clicked, game_instance, &Server::purchaseProperty);
-
+    connect(game_window->getPayRentWidget(), &PayRentWidget::ok_button_clicked, game_instance, &Server::endRentEvent);
     //If the game window is closed, open the main window
     connect(game_window, &GameWindow::closed, this, &MainWindow::game_window_closed_handler);
 

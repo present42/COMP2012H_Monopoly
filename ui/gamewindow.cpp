@@ -8,6 +8,9 @@
 #include <QPropertyAnimation>
 #include <QParallelAnimationGroup>
 
+#include <QFile>
+#include <QJsonDocument>
+
 #include "blockuifactory.h"
 #include "specialblockui.h"
 #include "normalblockui.h"
@@ -22,6 +25,14 @@ GameWindow::GameWindow(QWidget* parent) :
     token_num(0)
 {
     ui->setupUi(this);
+
+    QFile file;
+    file.setFileName(":/res/json/chance_card.json");
+    file.open(QIODevice::ReadOnly | QIODevice::Text);
+    QString content = file.readAll();
+    file.close();
+
+    QJsonDocument doc = QJsonDocument::fromJson(content.toUtf8());
 
     player_property_list_widget[0] = ui->tab1;
     player_property_list_widget[1] = ui->tab2;
@@ -46,6 +57,8 @@ GameWindow::GameWindow(QWidget* parent) :
     initEndTurnWidget();
     initOweMoneyWidget();
     initInJailWidget();
+    initPayRentWidget();
+    initCardWidget();
 
     initDice();
 
@@ -136,6 +149,28 @@ void GameWindow::initInJailWidget() {
     in_jail_widget->hide();
 }
 
+void GameWindow::initPayRentWidget() {
+    pay_rent_widget = new PayRentWidget(this);
+    pay_rent_widget->setAutoFillBackground(true);
+
+    QPalette pal = palette();
+    pal.setColor(QPalette::Background, Qt::white);
+    pay_rent_widget->setPalette(pal);
+
+    pay_rent_widget->hide();
+}
+
+void GameWindow::initCardWidget() {
+    card_widget = new CardWidget(this);
+    card_widget->setAutoFillBackground(true);
+
+    QPalette pal = palette();
+    pal.setColor(QPalette::Background, Qt::white);
+    card_widget->setPalette(pal);
+
+    card_widget->show();
+}
+
 void GameWindow::closeEvent(QCloseEvent *) {
     emit closed();
 }
@@ -148,10 +183,17 @@ UnpurchasedAssetWidget* GameWindow::getUnpurchasedAssetWidget() {
     return unpurchased_asset_widget;
 }
 
+PayRentWidget* GameWindow::getPayRentWidget() {
+    return pay_rent_widget;
+}
+
+CardWidget* GameWindow::getCardWidget() {
+    return card_widget;
+}
+
 void GameWindow::init_player(int id) {
     token_num++;
     tokens[id] = new TokenUI(this, token_list[id], &block_ui);
-
     initTabWidget(id);
     qDebug() << id << "from init_player()";
 }
@@ -172,8 +214,15 @@ void GameWindow::handleStatusChange(int status) {
             unpurchased_asset_widget->setPreview(tokens[current_token]->getPosition());
             unpurchased_asset_widget->show();
             return;
+        case 3:
+            pay_rent_widget->setPayer(tokens[current_token]);
+            pay_rent_widget->show();
+            return;
         case 5:
             end_turn_widget->show();
+            return;
+        case 7:
+            card_widget->show();
             return;
         default:
             qDebug() << "this status is not defined yet..!";
@@ -204,6 +253,11 @@ void GameWindow::getAssetPrice(int price) {
     unpurchased_asset_widget->setPrice(price);
 }
 
+void GameWindow::getRentInfo(int receiver, int amount) {
+    pay_rent_widget->setRent(amount);
+    pay_rent_widget->setReceiver(tokens[receiver]);
+}
+
 void GameWindow::hideAllDialogues() {
     roll_dice_widget->hide();
 }
@@ -222,4 +276,12 @@ void GameWindow::end_turn_button_clicked() {
     qDebug() << "end_turn_button_clicked";
     end_turn_widget->hide();
     emit turn_finished();
+}
+
+QString GameWindow::getCardInstruction(int id, bool isChanceCard) {
+    if(isChanceCard) {
+
+    } else {
+
+    }
 }
