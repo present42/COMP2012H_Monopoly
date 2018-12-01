@@ -38,7 +38,7 @@ width: 150px;
 }</string>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <property name="iconSize">
     <size>
@@ -58,7 +58,7 @@ width: 150px;
     <attribute name="title">
      <string>Player 1 ($1,500)</string>
     </attribute>
-    <widget class="QLabel" name="brown1">
+    <widget class="QLabel" name="a1_1">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -74,10 +74,10 @@ width: 150px;
       <string notr="true">border: 1.5px solid #955436</string>
      </property>
      <property name="text">
-      <string>Br1</string>
+      <string>1</string>
      </property>
     </widget>
-    <widget class="QLabel" name="brown2">
+    <widget class="QLabel" name="a3_1">
      <property name="geometry">
       <rect>
        <x>80</x>
@@ -93,10 +93,10 @@ width: 150px;
       <string notr="true">border: 1.5px solid #955436</string>
      </property>
      <property name="text">
-      <string>Br2</string>
+      <string>3</string>
      </property>
     </widget>
-    <widget class="QLabel" name="skyblue2">
+    <widget class="QLabel" name="a8_1">
      <property name="geometry">
       <rect>
        <x>280</x>
@@ -112,10 +112,10 @@ width: 150px;
       <string notr="true">border: 1.5px solid #ade1fa</string>
      </property>
      <property name="text">
-      <string>SB2</string>
+      <string>8</string>
      </property>
     </widget>
-    <widget class="QLabel" name="skyblue1">
+    <widget class="QLabel" name="a6_1">
      <property name="geometry">
       <rect>
        <x>220</x>
@@ -131,10 +131,10 @@ width: 150px;
       <string notr="true">border: 1.5px solid #ade1fa</string>
      </property>
      <property name="text">
-      <string>SB1</string>
+      <string>6</string>
      </property>
     </widget>
-    <widget class="QLabel" name="skyblue3">
+    <widget class="QLabel" name="a9_1">
      <property name="geometry">
       <rect>
        <x>340</x>
@@ -150,10 +150,10 @@ width: 150px;
       <string notr="true">border: 1.5px solid #ade1fa</string>
      </property>
      <property name="text">
-      <string>SB3</string>
+      <string>9</string>
      </property>
     </widget>
-    <widget class="QLabel" name="pink1">
+    <widget class="QLabel" name="a11_1">
      <property name="geometry">
       <rect>
        <x>420</x>
@@ -169,10 +169,10 @@ width: 150px;
       <string notr="true">border: 1.5px solid #d94999</string>
      </property>
      <property name="text">
-      <string>P1</string>
+      <string>11</string>
      </property>
     </widget>
-    <widget class="QLabel" name="pink3">
+    <widget class="QLabel" name="a14_1">
      <property name="geometry">
       <rect>
        <x>540</x>
@@ -188,10 +188,10 @@ width: 150px;
       <string notr="true">border: 1.5px solid #d94999</string>
      </property>
      <property name="text">
-      <string>P3</string>
+      <string>14</string>
      </property>
     </widget>
-    <widget class="QLabel" name="pink2">
+    <widget class="QLabel" name="a13_1">
      <property name="geometry">
       <rect>
        <x>480</x>
@@ -207,10 +207,10 @@ width: 150px;
       <string notr="true">border: 1.5px solid #d94999</string>
      </property>
      <property name="text">
-      <string>P2</string>
+      <string>13</string>
      </property>
     </widget>
-    <widget class="QLabel" name="orange1">
+    <widget class="QLabel" name="a16_1">
      <property name="geometry">
       <rect>
        <x>620</x>
@@ -226,10 +226,10 @@ width: 150px;
       <string notr="true">border: 1.5px solid #f89734</string>
      </property>
      <property name="text">
-      <string>O1</string>
+      <string>16</string>
      </property>
     </widget>
-    <widget class="QLabel" name="orange2">
+    <widget class="QLabel" name="a18_1">
      <property name="geometry">
       <rect>
        <x>680</x>
@@ -245,10 +245,10 @@ width: 150px;
       <string notr="true">border: 1.5px solid #f89734</string>
      </property>
      <property name="text">
-      <string>O1</string>
+      <string>18</string>
      </property>
     </widget>
-    <widget class="QLabel" name="orange3">
+    <widget class="QLabel" name="a19_1">
      <property name="geometry">
       <rect>
        <x>740</x>
@@ -264,10 +264,10 @@ width: 150px;
       <string notr="true">border: 1.5px solid #f89734</string>
      </property>
      <property name="text">
-      <string>O3</string>
+      <string>19</string>
      </property>
     </widget>
-    <widget class="QLabel" name="blue2">
+    <widget class="QLabel" name="a39_1">
      <property name="geometry">
       <rect>
        <x>740</x>
@@ -283,10 +283,10 @@ width: 150px;
       <string notr="true">border: 1.5px solid #0077be</string>
      </property>
      <property name="text">
-      <string>B2</string>
+      <string>39</string>
      </property>
     </widget>
-    <widget class="QLabel" name="blue1">
+    <widget class="QLabel" name="a37_1">
      <property name="geometry">
       <rect>
        <x>680</x>
@@ -302,10 +302,10 @@ width: 150px;
       <string notr="true">border: 1.5px solid #0077be</string>
      </property>
      <property name="text">
-      <string>B1</string>
+      <string>37</string>
      </property>
     </widget>
-    <widget class="QLabel" name="green3">
+    <widget class="QLabel" name="a34_1">
      <property name="geometry">
       <rect>
        <x>540</x>
@@ -321,10 +321,10 @@ width: 150px;
       <string notr="true">border: 1.5px solid #00a85a</string>
      </property>
      <property name="text">
-      <string>G3</string>
+      <string>34</string>
      </property>
     </widget>
-    <widget class="QLabel" name="red1">
+    <widget class="QLabel" name="a21_1">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -340,10 +340,10 @@ width: 150px;
       <string notr="true">border: 1.5px solid #ee3338</string>
      </property>
      <property name="text">
-      <string>R1</string>
+      <string>21</string>
      </property>
     </widget>
-    <widget class="QLabel" name="red3">
+    <widget class="QLabel" name="a24_1">
      <property name="geometry">
       <rect>
        <x>140</x>
@@ -359,10 +359,10 @@ width: 150px;
       <string notr="true">border: 1.5px solid #ee3338</string>
      </property>
      <property name="text">
-      <string>R3</string>
+      <string>24</string>
      </property>
     </widget>
-    <widget class="QLabel" name="green2">
+    <widget class="QLabel" name="a32_1">
      <property name="geometry">
       <rect>
        <x>480</x>
@@ -378,10 +378,10 @@ width: 150px;
       <string notr="true">border: 1.5px solid #00a85a</string>
      </property>
      <property name="text">
-      <string>G2</string>
+      <string>32</string>
      </property>
     </widget>
-    <widget class="QLabel" name="yellow1">
+    <widget class="QLabel" name="a26_1">
      <property name="geometry">
       <rect>
        <x>220</x>
@@ -397,10 +397,10 @@ width: 150px;
       <string notr="true">border: 1.5px solid #fff213</string>
      </property>
      <property name="text">
-      <string>P1</string>
+      <string>26</string>
      </property>
     </widget>
-    <widget class="QLabel" name="green1">
+    <widget class="QLabel" name="a31_1">
      <property name="geometry">
       <rect>
        <x>420</x>
@@ -416,10 +416,10 @@ width: 150px;
       <string notr="true">border: 1.5px solid #00a85a</string>
      </property>
      <property name="text">
-      <string>G1</string>
+      <string>31</string>
      </property>
     </widget>
-    <widget class="QLabel" name="yellow2">
+    <widget class="QLabel" name="a27_1">
      <property name="geometry">
       <rect>
        <x>280</x>
@@ -435,10 +435,10 @@ width: 150px;
       <string notr="true">border: 1.5px solid #fff213</string>
      </property>
      <property name="text">
-      <string>P2</string>
+      <string>27</string>
      </property>
     </widget>
-    <widget class="QLabel" name="red2">
+    <widget class="QLabel" name="a23_1">
      <property name="geometry">
       <rect>
        <x>80</x>
@@ -454,10 +454,10 @@ width: 150px;
       <string notr="true">border: 1.5px solid #ee3338</string>
      </property>
      <property name="text">
-      <string>R2</string>
+      <string>23</string>
      </property>
     </widget>
-    <widget class="QLabel" name="yellow3">
+    <widget class="QLabel" name="a29_1">
      <property name="geometry">
       <rect>
        <x>340</x>
@@ -473,10 +473,10 @@ width: 150px;
       <string notr="true">border: 1.5px solid #fff213</string>
      </property>
      <property name="text">
-      <string>P3</string>
+      <string>29</string>
      </property>
     </widget>
-    <widget class="QLabel" name="utility2">
+    <widget class="QLabel" name="a28_1">
      <property name="geometry">
       <rect>
        <x>280</x>
@@ -492,10 +492,10 @@ width: 150px;
       <string notr="true">border: 1.5px solid #ffffff</string>
      </property>
      <property name="text">
-      <string>U2</string>
+      <string>28</string>
      </property>
     </widget>
-    <widget class="QLabel" name="utility1">
+    <widget class="QLabel" name="a12_1">
      <property name="geometry">
       <rect>
        <x>220</x>
@@ -511,10 +511,10 @@ width: 150px;
       <string notr="true">border: 1.5px solid #ffffff</string>
      </property>
      <property name="text">
-      <string>U1</string>
+      <string>12</string>
      </property>
     </widget>
-    <widget class="QLabel" name="railroad3">
+    <widget class="QLabel" name="a25_1">
      <property name="geometry">
       <rect>
        <x>540</x>
@@ -530,10 +530,10 @@ width: 150px;
       <string notr="true">border: 1.5px solid #ccc</string>
      </property>
      <property name="text">
-      <string>Ra3</string>
+      <string>25</string>
      </property>
     </widget>
-    <widget class="QLabel" name="railroad1">
+    <widget class="QLabel" name="a5_1">
      <property name="geometry">
       <rect>
        <x>420</x>
@@ -549,10 +549,10 @@ width: 150px;
       <string notr="true">border: 1.5px solid #ccc</string>
      </property>
      <property name="text">
-      <string>Ra1</string>
+      <string>5</string>
      </property>
     </widget>
-    <widget class="QLabel" name="railroad2">
+    <widget class="QLabel" name="a15_1">
      <property name="geometry">
       <rect>
        <x>480</x>
@@ -568,10 +568,10 @@ width: 150px;
       <string notr="true">border: 1.5px solid #ccc</string>
      </property>
      <property name="text">
-      <string>Ra2</string>
+      <string>15</string>
      </property>
     </widget>
-    <widget class="QLabel" name="railroad4">
+    <widget class="QLabel" name="a35_1">
      <property name="geometry">
       <rect>
        <x>600</x>
@@ -587,7 +587,7 @@ width: 150px;
       <string notr="true">border: 1.5px solid #ccc</string>
      </property>
      <property name="text">
-      <string>Ra4</string>
+      <string>35</string>
      </property>
     </widget>
     <widget class="Line" name="line">
@@ -655,7 +655,7 @@ width: 150px;
       </rect>
      </property>
     </widget>
-    <widget class="QLCDNumber" name="hotel_number">
+    <widget class="QLCDNumber" name="hotel_number_1">
      <property name="geometry">
       <rect>
        <x>300</x>
@@ -678,10 +678,48 @@ width: 150px;
     <attribute name="title">
      <string>Player 2 ($1,500)</string>
     </attribute>
-    <widget class="QLabel" name="pink2_2">
+    <widget class="QLabel" name="a29_2">
      <property name="geometry">
       <rect>
-       <x>480</x>
+       <x>340</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #fff213</string>
+     </property>
+     <property name="text">
+      <string>29</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a23_2">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ee3338</string>
+     </property>
+     <property name="text">
+      <string>23</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a3_2">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
        <y>50</y>
        <width>41</width>
        <height>71</height>
@@ -691,16 +729,16 @@ width: 150px;
       <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #d94999</string>
+      <string notr="true">border: 1.5px solid #955436</string>
      </property>
      <property name="text">
-      <string>P2</string>
+      <string>3</string>
      </property>
     </widget>
-    <widget class="QLabel" name="railroad3_2">
+    <widget class="QLabel" name="a12_2">
      <property name="geometry">
       <rect>
-       <x>540</x>
+       <x>220</x>
        <y>230</y>
        <width>41</width>
        <height>71</height>
@@ -710,52 +748,23 @@ width: 150px;
       <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #ccc</string>
+      <string notr="true">border: 1.5px solid #ffffff</string>
      </property>
      <property name="text">
-      <string>Ra3</string>
+      <string>12</string>
      </property>
     </widget>
-    <widget class="QLabel" name="brown1_2">
+    <widget class="QLCDNumber" name="home_number_2">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>50</y>
-       <width>41</width>
-       <height>71</height>
+       <x>110</x>
+       <y>340</y>
+       <width>51</width>
+       <height>81</height>
       </rect>
      </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #955436;
-</string>
-     </property>
-     <property name="text">
-      <string>Br1</string>
-     </property>
     </widget>
-    <widget class="QLabel" name="pink1_2">
-     <property name="geometry">
-      <rect>
-       <x>420</x>
-       <y>50</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #d94999</string>
-     </property>
-     <property name="text">
-      <string>P1</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="orange2_2">
+    <widget class="QLabel" name="a18_2">
      <property name="geometry">
       <rect>
        <x>680</x>
@@ -771,10 +780,67 @@ width: 150px;
       <string notr="true">border: 1.5px solid #f89734</string>
      </property>
      <property name="text">
-      <string>O1</string>
+      <string>18</string>
      </property>
     </widget>
-    <widget class="QLabel" name="blue2_2">
+    <widget class="QLabel" name="a6_2">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ade1fa</string>
+     </property>
+     <property name="text">
+      <string>6</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a21_2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ee3338</string>
+     </property>
+     <property name="text">
+      <string>21</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a16_2">
+     <property name="geometry">
+      <rect>
+       <x>620</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #f89734</string>
+     </property>
+     <property name="text">
+      <string>16</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a39_2">
      <property name="geometry">
       <rect>
        <x>740</x>
@@ -790,67 +856,10 @@ width: 150px;
       <string notr="true">border: 1.5px solid #0077be</string>
      </property>
      <property name="text">
-      <string>B2</string>
+      <string>39</string>
      </property>
     </widget>
-    <widget class="QLabel" name="railroad1_2">
-     <property name="geometry">
-      <rect>
-       <x>420</x>
-       <y>230</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #ccc</string>
-     </property>
-     <property name="text">
-      <string>Ra1</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="orange3_2">
-     <property name="geometry">
-      <rect>
-       <x>740</x>
-       <y>50</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #f89734</string>
-     </property>
-     <property name="text">
-      <string>O3</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="skyblue2_2">
-     <property name="geometry">
-      <rect>
-       <x>280</x>
-       <y>50</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #ade1fa</string>
-     </property>
-     <property name="text">
-      <string>SB2</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="skyblue3_2">
+    <widget class="QLabel" name="a9_2">
      <property name="geometry">
       <rect>
        <x>340</x>
@@ -866,20 +875,166 @@ width: 150px;
       <string notr="true">border: 1.5px solid #ade1fa</string>
      </property>
      <property name="text">
-      <string>SB3</string>
+      <string>9</string>
      </property>
     </widget>
-    <widget class="QLCDNumber" name="home_number_2">
+    <widget class="Line" name="line_2">
      <property name="geometry">
       <rect>
-       <x>110</x>
+       <x>10</x>
+       <y>310</y>
+       <width>841</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a11_2">
+     <property name="geometry">
+      <rect>
+       <x>420</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #d94999</string>
+     </property>
+     <property name="text">
+      <string>11</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a24_2">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ee3338</string>
+     </property>
+     <property name="text">
+      <string>24</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a8_2">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ade1fa</string>
+     </property>
+     <property name="text">
+      <string>8</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a25_2">
+     <property name="geometry">
+      <rect>
+       <x>540</x>
+       <y>230</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ccc</string>
+     </property>
+     <property name="text">
+      <string>25</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a1_2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #955436</string>
+     </property>
+     <property name="text">
+      <string>1</string>
+     </property>
+    </widget>
+    <widget class="QLCDNumber" name="hotel_number_2">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
        <y>340</y>
        <width>51</width>
        <height>81</height>
       </rect>
      </property>
     </widget>
-    <widget class="QLabel" name="blue1_2">
+    <widget class="QLabel" name="a28_2">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>230</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ffffff</string>
+     </property>
+     <property name="text">
+      <string>28</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a27_2">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #fff213</string>
+     </property>
+     <property name="text">
+      <string>27</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a37_2">
      <property name="geometry">
       <rect>
        <x>680</x>
@@ -895,7 +1050,45 @@ width: 150px;
       <string notr="true">border: 1.5px solid #0077be</string>
      </property>
      <property name="text">
-      <string>B1</string>
+      <string>37</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a13_2">
+     <property name="geometry">
+      <rect>
+       <x>480</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #d94999</string>
+     </property>
+     <property name="text">
+      <string>13</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a19_2">
+     <property name="geometry">
+      <rect>
+       <x>740</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #f89734</string>
+     </property>
+     <property name="text">
+      <string>19</string>
      </property>
     </widget>
     <widget class="QLabel" name="hotel_2">
@@ -919,188 +1112,7 @@ width: 150px;
       <string>hotel</string>
      </property>
     </widget>
-    <widget class="QLabel" name="red3_2">
-     <property name="geometry">
-      <rect>
-       <x>140</x>
-       <y>140</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #ee3338</string>
-     </property>
-     <property name="text">
-      <string>R3</string>
-     </property>
-    </widget>
-    <widget class="QLCDNumber" name="hotel_number_2">
-     <property name="geometry">
-      <rect>
-       <x>300</x>
-       <y>340</y>
-       <width>51</width>
-       <height>81</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLabel" name="skyblue1_2">
-     <property name="geometry">
-      <rect>
-       <x>220</x>
-       <y>50</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #ade1fa</string>
-     </property>
-     <property name="text">
-      <string>SB1</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="brown2_2">
-     <property name="geometry">
-      <rect>
-       <x>80</x>
-       <y>50</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #955436</string>
-     </property>
-     <property name="text">
-      <string>Br2</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="green2_2">
-     <property name="geometry">
-      <rect>
-       <x>480</x>
-       <y>140</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #00a85a</string>
-     </property>
-     <property name="text">
-      <string>G2</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="red2_2">
-     <property name="geometry">
-      <rect>
-       <x>80</x>
-       <y>140</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #ee3338</string>
-     </property>
-     <property name="text">
-      <string>R2</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="yellow2_2">
-     <property name="geometry">
-      <rect>
-       <x>280</x>
-       <y>140</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #fff213</string>
-     </property>
-     <property name="text">
-      <string>P2</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="railroad2_2">
-     <property name="geometry">
-      <rect>
-       <x>480</x>
-       <y>230</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #ccc</string>
-     </property>
-     <property name="text">
-      <string>Ra2</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="orange1_2">
-     <property name="geometry">
-      <rect>
-       <x>620</x>
-       <y>50</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #f89734</string>
-     </property>
-     <property name="text">
-      <string>O1</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="utility1_2">
-     <property name="geometry">
-      <rect>
-       <x>220</x>
-       <y>230</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #ffffff</string>
-     </property>
-     <property name="text">
-      <string>U1</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="green3_2">
+    <widget class="QLabel" name="a34_2">
      <property name="geometry">
       <rect>
        <x>540</x>
@@ -1116,26 +1128,7 @@ width: 150px;
       <string notr="true">border: 1.5px solid #00a85a</string>
      </property>
      <property name="text">
-      <string>G3</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="red1_2">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>140</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #ee3338</string>
-     </property>
-     <property name="text">
-      <string>R1</string>
+      <string>34</string>
      </property>
     </widget>
     <widget class="QLabel" name="home_2">
@@ -1159,23 +1152,10 @@ width: 150px;
       <string>home</string>
      </property>
     </widget>
-    <widget class="Line" name="line_2">
+    <widget class="QLabel" name="a32_2">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>310</y>
-       <width>841</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-    </widget>
-    <widget class="QLabel" name="yellow3_2">
-     <property name="geometry">
-      <rect>
-       <x>340</x>
+       <x>480</x>
        <y>140</y>
        <width>41</width>
        <height>71</height>
@@ -1185,32 +1165,13 @@ width: 150px;
       <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #fff213</string>
+      <string notr="true">border: 1.5px solid #00a85a</string>
      </property>
      <property name="text">
-      <string>P3</string>
+      <string>32</string>
      </property>
     </widget>
-    <widget class="QLabel" name="yellow1_2">
-     <property name="geometry">
-      <rect>
-       <x>220</x>
-       <y>140</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #fff213</string>
-     </property>
-     <property name="text">
-      <string>P1</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="green1_2">
+    <widget class="QLabel" name="a31_2">
      <property name="geometry">
       <rect>
        <x>420</x>
@@ -1226,13 +1187,13 @@ width: 150px;
       <string notr="true">border: 1.5px solid #00a85a</string>
      </property>
      <property name="text">
-      <string>G1</string>
+      <string>31</string>
      </property>
     </widget>
-    <widget class="QLabel" name="railroad4_2">
+    <widget class="QLabel" name="a5_2">
      <property name="geometry">
       <rect>
-       <x>600</x>
+       <x>420</x>
        <y>230</y>
        <width>41</width>
        <height>71</height>
@@ -1245,10 +1206,29 @@ width: 150px;
       <string notr="true">border: 1.5px solid #ccc</string>
      </property>
      <property name="text">
-      <string>Ra4</string>
+      <string>5</string>
      </property>
     </widget>
-    <widget class="QLabel" name="pink3_2">
+    <widget class="QLabel" name="a15_2">
+     <property name="geometry">
+      <rect>
+       <x>480</x>
+       <y>230</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ccc</string>
+     </property>
+     <property name="text">
+      <string>15</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a14_2">
      <property name="geometry">
       <rect>
        <x>540</x>
@@ -1264,13 +1244,32 @@ width: 150px;
       <string notr="true">border: 1.5px solid #d94999</string>
      </property>
      <property name="text">
-      <string>P3</string>
+      <string>14</string>
      </property>
     </widget>
-    <widget class="QLabel" name="utility2_2">
+    <widget class="QLabel" name="a26_2">
      <property name="geometry">
       <rect>
-       <x>280</x>
+       <x>220</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #fff213</string>
+     </property>
+     <property name="text">
+      <string>26</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a35_2">
+     <property name="geometry">
+      <rect>
+       <x>600</x>
        <y>230</y>
        <width>41</width>
        <height>71</height>
@@ -1280,10 +1279,10 @@ width: 150px;
       <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #ffffff</string>
+      <string notr="true">border: 1.5px solid #ccc</string>
      </property>
      <property name="text">
-      <string>U2</string>
+      <string>35</string>
      </property>
     </widget>
    </widget>
@@ -1296,10 +1295,96 @@ width: 150px;
     <attribute name="title">
      <string>Player 3 ($1,500)</string>
     </attribute>
-    <widget class="QLabel" name="skyblue3_3">
+    <widget class="QLabel" name="a29_3">
      <property name="geometry">
       <rect>
        <x>340</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #fff213</string>
+     </property>
+     <property name="text">
+      <string>29</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a23_3">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ee3338</string>
+     </property>
+     <property name="text">
+      <string>23</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a39_3">
+     <property name="geometry">
+      <rect>
+       <x>740</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #0077be</string>
+     </property>
+     <property name="text">
+      <string>39</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a25_3">
+     <property name="geometry">
+      <rect>
+       <x>540</x>
+       <y>230</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ccc</string>
+     </property>
+     <property name="text">
+      <string>25</string>
+     </property>
+    </widget>
+    <widget class="QLCDNumber" name="hotel_number_3">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>340</y>
+       <width>51</width>
+       <height>81</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a19_3">
+     <property name="geometry">
+      <rect>
+       <x>740</x>
        <y>50</y>
        <width>41</width>
        <height>71</height>
@@ -1309,13 +1394,108 @@ width: 150px;
       <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #ade1fa</string>
+      <string notr="true">border: 1.5px solid #f89734</string>
      </property>
      <property name="text">
-      <string>SB3</string>
+      <string>19</string>
      </property>
     </widget>
-    <widget class="QLabel" name="brown2_3">
+    <widget class="QLabel" name="a12_3">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>230</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ffffff</string>
+     </property>
+     <property name="text">
+      <string>12</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a26_3">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #fff213</string>
+     </property>
+     <property name="text">
+      <string>26</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a11_3">
+     <property name="geometry">
+      <rect>
+       <x>420</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #d94999</string>
+     </property>
+     <property name="text">
+      <string>11</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a31_3">
+     <property name="geometry">
+      <rect>
+       <x>420</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #00a85a</string>
+     </property>
+     <property name="text">
+      <string>31</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a16_3">
+     <property name="geometry">
+      <rect>
+       <x>620</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #f89734</string>
+     </property>
+     <property name="text">
+      <string>16</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a3_3">
      <property name="geometry">
       <rect>
        <x>80</x>
@@ -1331,7 +1511,64 @@ width: 150px;
       <string notr="true">border: 1.5px solid #955436</string>
      </property>
      <property name="text">
-      <string>Br2</string>
+      <string>3</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a13_3">
+     <property name="geometry">
+      <rect>
+       <x>480</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #d94999</string>
+     </property>
+     <property name="text">
+      <string>13</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a8_3">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ade1fa</string>
+     </property>
+     <property name="text">
+      <string>8</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a5_3">
+     <property name="geometry">
+      <rect>
+       <x>420</x>
+       <y>230</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ccc</string>
+     </property>
+     <property name="text">
+      <string>5</string>
      </property>
     </widget>
     <widget class="QLabel" name="home_3">
@@ -1355,482 +1592,6 @@ width: 150px;
       <string>home</string>
      </property>
     </widget>
-    <widget class="QLabel" name="orange1_3">
-     <property name="geometry">
-      <rect>
-       <x>620</x>
-       <y>50</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #f89734</string>
-     </property>
-     <property name="text">
-      <string>O1</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="green1_3">
-     <property name="geometry">
-      <rect>
-       <x>420</x>
-       <y>140</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #00a85a</string>
-     </property>
-     <property name="text">
-      <string>G1</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="blue2_3">
-     <property name="geometry">
-      <rect>
-       <x>740</x>
-       <y>140</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #0077be</string>
-     </property>
-     <property name="text">
-      <string>B2</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="red2_3">
-     <property name="geometry">
-      <rect>
-       <x>80</x>
-       <y>140</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #ee3338</string>
-     </property>
-     <property name="text">
-      <string>R2</string>
-     </property>
-    </widget>
-    <widget class="QLCDNumber" name="home_number_3">
-     <property name="geometry">
-      <rect>
-       <x>110</x>
-       <y>340</y>
-       <width>51</width>
-       <height>81</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLabel" name="red1_3">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>140</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #ee3338</string>
-     </property>
-     <property name="text">
-      <string>R1</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="yellow1_3">
-     <property name="geometry">
-      <rect>
-       <x>220</x>
-       <y>140</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #fff213</string>
-     </property>
-     <property name="text">
-      <string>P1</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="yellow3_3">
-     <property name="geometry">
-      <rect>
-       <x>340</x>
-       <y>140</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #fff213</string>
-     </property>
-     <property name="text">
-      <string>P3</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="pink1_3">
-     <property name="geometry">
-      <rect>
-       <x>420</x>
-       <y>50</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #d94999</string>
-     </property>
-     <property name="text">
-      <string>P1</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="utility1_3">
-     <property name="geometry">
-      <rect>
-       <x>220</x>
-       <y>230</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #ffffff</string>
-     </property>
-     <property name="text">
-      <string>U1</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="railroad2_3">
-     <property name="geometry">
-      <rect>
-       <x>480</x>
-       <y>230</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #ccc</string>
-     </property>
-     <property name="text">
-      <string>Ra2</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="railroad4_3">
-     <property name="geometry">
-      <rect>
-       <x>600</x>
-       <y>230</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #ccc</string>
-     </property>
-     <property name="text">
-      <string>Ra4</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="skyblue2_3">
-     <property name="geometry">
-      <rect>
-       <x>280</x>
-       <y>50</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #ade1fa</string>
-     </property>
-     <property name="text">
-      <string>SB2</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="pink3_3">
-     <property name="geometry">
-      <rect>
-       <x>540</x>
-       <y>50</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #d94999</string>
-     </property>
-     <property name="text">
-      <string>P3</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="railroad1_3">
-     <property name="geometry">
-      <rect>
-       <x>420</x>
-       <y>230</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #ccc</string>
-     </property>
-     <property name="text">
-      <string>Ra1</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="red3_3">
-     <property name="geometry">
-      <rect>
-       <x>140</x>
-       <y>140</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #ee3338</string>
-     </property>
-     <property name="text">
-      <string>R3</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="utility2_3">
-     <property name="geometry">
-      <rect>
-       <x>280</x>
-       <y>230</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #ffffff</string>
-     </property>
-     <property name="text">
-      <string>U2</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="brown1_3">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>50</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #955436</string>
-     </property>
-     <property name="text">
-      <string>Br1</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="railroad3_3">
-     <property name="geometry">
-      <rect>
-       <x>540</x>
-       <y>230</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #ccc</string>
-     </property>
-     <property name="text">
-      <string>Ra3</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="skyblue1_3">
-     <property name="geometry">
-      <rect>
-       <x>220</x>
-       <y>50</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #ade1fa</string>
-     </property>
-     <property name="text">
-      <string>SB1</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="yellow2_3">
-     <property name="geometry">
-      <rect>
-       <x>280</x>
-       <y>140</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #fff213</string>
-     </property>
-     <property name="text">
-      <string>P2</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="orange3_3">
-     <property name="geometry">
-      <rect>
-       <x>740</x>
-       <y>50</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #f89734</string>
-     </property>
-     <property name="text">
-      <string>O3</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="green2_3">
-     <property name="geometry">
-      <rect>
-       <x>480</x>
-       <y>140</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #00a85a</string>
-     </property>
-     <property name="text">
-      <string>G2</string>
-     </property>
-    </widget>
-    <widget class="QLCDNumber" name="hotel_number_3">
-     <property name="geometry">
-      <rect>
-       <x>300</x>
-       <y>340</y>
-       <width>51</width>
-       <height>81</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLabel" name="orange2_3">
-     <property name="geometry">
-      <rect>
-       <x>680</x>
-       <y>50</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #f89734</string>
-     </property>
-     <property name="text">
-      <string>O1</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="green3_3">
-     <property name="geometry">
-      <rect>
-       <x>540</x>
-       <y>140</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #00a85a</string>
-     </property>
-     <property name="text">
-      <string>G3</string>
-     </property>
-    </widget>
     <widget class="QLabel" name="hotel_3">
      <property name="geometry">
       <rect>
@@ -1852,42 +1613,10 @@ width: 150px;
       <string>hotel</string>
      </property>
     </widget>
-    <widget class="Line" name="line_3">
+    <widget class="QLabel" name="a14_3">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>310</y>
-       <width>841</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-    </widget>
-    <widget class="QLabel" name="blue1_3">
-     <property name="geometry">
-      <rect>
-       <x>680</x>
-       <y>140</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #0077be</string>
-     </property>
-     <property name="text">
-      <string>B1</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="pink2_3">
-     <property name="geometry">
-      <rect>
-       <x>480</x>
+       <x>540</x>
        <y>50</y>
        <width>41</width>
        <height>71</height>
@@ -1900,20 +1629,29 @@ width: 150px;
       <string notr="true">border: 1.5px solid #d94999</string>
      </property>
      <property name="text">
-      <string>P2</string>
+      <string>14</string>
      </property>
     </widget>
-   </widget>
-   <widget class="QWidget" name="tab4">
-    <property name="styleSheet">
-     <string notr="true">QWidget {
-	background-color: #b4d0b2;
-}</string>
-    </property>
-    <attribute name="title">
-     <string>Player 4 ($1,500)</string>
-    </attribute>
-    <widget class="QLabel" name="skyblue3_4">
+    <widget class="QLabel" name="a6_3">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ade1fa</string>
+     </property>
+     <property name="text">
+      <string>6</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a9_3">
      <property name="geometry">
       <rect>
        <x>340</x>
@@ -1929,10 +1667,433 @@ width: 150px;
       <string notr="true">border: 1.5px solid #ade1fa</string>
      </property>
      <property name="text">
-      <string>SB3</string>
+      <string>9</string>
      </property>
     </widget>
-    <widget class="QLabel" name="brown2_4">
+    <widget class="QLabel" name="a27_3">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #fff213</string>
+     </property>
+     <property name="text">
+      <string>27</string>
+     </property>
+    </widget>
+    <widget class="QLCDNumber" name="home_number_3">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>340</y>
+       <width>51</width>
+       <height>81</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a37_3">
+     <property name="geometry">
+      <rect>
+       <x>680</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #0077be</string>
+     </property>
+     <property name="text">
+      <string>37</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a1_3">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #955436</string>
+     </property>
+     <property name="text">
+      <string>1</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a32_3">
+     <property name="geometry">
+      <rect>
+       <x>480</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #00a85a</string>
+     </property>
+     <property name="text">
+      <string>32</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a24_3">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ee3338</string>
+     </property>
+     <property name="text">
+      <string>24</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a18_3">
+     <property name="geometry">
+      <rect>
+       <x>680</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #f89734</string>
+     </property>
+     <property name="text">
+      <string>18</string>
+     </property>
+    </widget>
+    <widget class="Line" name="line_3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>310</y>
+       <width>841</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a21_3">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ee3338</string>
+     </property>
+     <property name="text">
+      <string>21</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a35_3">
+     <property name="geometry">
+      <rect>
+       <x>600</x>
+       <y>230</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ccc</string>
+     </property>
+     <property name="text">
+      <string>35</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a28_3">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>230</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ffffff</string>
+     </property>
+     <property name="text">
+      <string>28</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a34_3">
+     <property name="geometry">
+      <rect>
+       <x>540</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #00a85a</string>
+     </property>
+     <property name="text">
+      <string>34</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a15_3">
+     <property name="geometry">
+      <rect>
+       <x>480</x>
+       <y>230</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ccc</string>
+     </property>
+     <property name="text">
+      <string>15</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab4">
+    <property name="styleSheet">
+     <string notr="true">QWidget {
+	background-color: #b4d0b2;
+}</string>
+    </property>
+    <attribute name="title">
+     <string>Player 4 ($1,500)</string>
+    </attribute>
+    <widget class="QLabel" name="a23_4">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ee3338</string>
+     </property>
+     <property name="text">
+      <string>23</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a39_4">
+     <property name="geometry">
+      <rect>
+       <x>740</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #0077be</string>
+     </property>
+     <property name="text">
+      <string>39</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a25_4">
+     <property name="geometry">
+      <rect>
+       <x>540</x>
+       <y>230</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ccc</string>
+     </property>
+     <property name="text">
+      <string>25</string>
+     </property>
+    </widget>
+    <widget class="QLCDNumber" name="hotel_number_4">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>340</y>
+       <width>51</width>
+       <height>81</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a19_4">
+     <property name="geometry">
+      <rect>
+       <x>740</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #f89734</string>
+     </property>
+     <property name="text">
+      <string>19</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a12_4">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>230</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ffffff</string>
+     </property>
+     <property name="text">
+      <string>12</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a26_4">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #fff213</string>
+     </property>
+     <property name="text">
+      <string>26</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a11_4">
+     <property name="geometry">
+      <rect>
+       <x>420</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #d94999</string>
+     </property>
+     <property name="text">
+      <string>11</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a31_4">
+     <property name="geometry">
+      <rect>
+       <x>420</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #00a85a</string>
+     </property>
+     <property name="text">
+      <string>31</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a16_4">
+     <property name="geometry">
+      <rect>
+       <x>620</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #f89734</string>
+     </property>
+     <property name="text">
+      <string>16</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a3_4">
      <property name="geometry">
       <rect>
        <x>80</x>
@@ -1948,7 +2109,64 @@ width: 150px;
       <string notr="true">border: 1.5px solid #955436</string>
      </property>
      <property name="text">
-      <string>Br2</string>
+      <string>3</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a13_4">
+     <property name="geometry">
+      <rect>
+       <x>480</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #d94999</string>
+     </property>
+     <property name="text">
+      <string>13</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a8_4">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ade1fa</string>
+     </property>
+     <property name="text">
+      <string>8</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a5_4">
+     <property name="geometry">
+      <rect>
+       <x>420</x>
+       <y>230</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ccc</string>
+     </property>
+     <property name="text">
+      <string>5</string>
      </property>
     </widget>
     <widget class="QLabel" name="home_4">
@@ -1972,482 +2190,6 @@ width: 150px;
       <string>home</string>
      </property>
     </widget>
-    <widget class="QLabel" name="orange1_4">
-     <property name="geometry">
-      <rect>
-       <x>620</x>
-       <y>50</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #f89734</string>
-     </property>
-     <property name="text">
-      <string>O1</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="green1_4">
-     <property name="geometry">
-      <rect>
-       <x>420</x>
-       <y>140</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #00a85a</string>
-     </property>
-     <property name="text">
-      <string>G1</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="blue2_4">
-     <property name="geometry">
-      <rect>
-       <x>740</x>
-       <y>140</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #0077be</string>
-     </property>
-     <property name="text">
-      <string>B2</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="red2_4">
-     <property name="geometry">
-      <rect>
-       <x>80</x>
-       <y>140</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #ee3338</string>
-     </property>
-     <property name="text">
-      <string>R2</string>
-     </property>
-    </widget>
-    <widget class="QLCDNumber" name="home_number_4">
-     <property name="geometry">
-      <rect>
-       <x>110</x>
-       <y>340</y>
-       <width>51</width>
-       <height>81</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLabel" name="red1_4">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>140</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #ee3338</string>
-     </property>
-     <property name="text">
-      <string>R1</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="yellow1_4">
-     <property name="geometry">
-      <rect>
-       <x>220</x>
-       <y>140</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #fff213</string>
-     </property>
-     <property name="text">
-      <string>P1</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="yellow3_4">
-     <property name="geometry">
-      <rect>
-       <x>340</x>
-       <y>140</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #fff213</string>
-     </property>
-     <property name="text">
-      <string>P3</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="pink1_4">
-     <property name="geometry">
-      <rect>
-       <x>420</x>
-       <y>50</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #d94999</string>
-     </property>
-     <property name="text">
-      <string>P1</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="utility1_4">
-     <property name="geometry">
-      <rect>
-       <x>220</x>
-       <y>230</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #ffffff</string>
-     </property>
-     <property name="text">
-      <string>U1</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="railroad2_4">
-     <property name="geometry">
-      <rect>
-       <x>480</x>
-       <y>230</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #ccc</string>
-     </property>
-     <property name="text">
-      <string>Ra2</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="railroad4_4">
-     <property name="geometry">
-      <rect>
-       <x>600</x>
-       <y>230</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #ccc</string>
-     </property>
-     <property name="text">
-      <string>Ra4</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="skyblue2_4">
-     <property name="geometry">
-      <rect>
-       <x>280</x>
-       <y>50</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #ade1fa</string>
-     </property>
-     <property name="text">
-      <string>SB2</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="pink3_4">
-     <property name="geometry">
-      <rect>
-       <x>540</x>
-       <y>50</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #d94999</string>
-     </property>
-     <property name="text">
-      <string>P3</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="railroad1_4">
-     <property name="geometry">
-      <rect>
-       <x>420</x>
-       <y>230</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #ccc</string>
-     </property>
-     <property name="text">
-      <string>Ra1</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="red3_4">
-     <property name="geometry">
-      <rect>
-       <x>140</x>
-       <y>140</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #ee3338</string>
-     </property>
-     <property name="text">
-      <string>R3</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="utility2_4">
-     <property name="geometry">
-      <rect>
-       <x>280</x>
-       <y>230</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #ffffff</string>
-     </property>
-     <property name="text">
-      <string>U2</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="brown1_4">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>50</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #955436</string>
-     </property>
-     <property name="text">
-      <string>Br1</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="railroad3_4">
-     <property name="geometry">
-      <rect>
-       <x>540</x>
-       <y>230</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #ccc</string>
-     </property>
-     <property name="text">
-      <string>Ra3</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="skyblue1_4">
-     <property name="geometry">
-      <rect>
-       <x>220</x>
-       <y>50</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #ade1fa</string>
-     </property>
-     <property name="text">
-      <string>SB1</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="yellow2_4">
-     <property name="geometry">
-      <rect>
-       <x>280</x>
-       <y>140</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #fff213</string>
-     </property>
-     <property name="text">
-      <string>P2</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="orange3_4">
-     <property name="geometry">
-      <rect>
-       <x>740</x>
-       <y>50</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #f89734</string>
-     </property>
-     <property name="text">
-      <string>O3</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="green2_4">
-     <property name="geometry">
-      <rect>
-       <x>480</x>
-       <y>140</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #00a85a</string>
-     </property>
-     <property name="text">
-      <string>G2</string>
-     </property>
-    </widget>
-    <widget class="QLCDNumber" name="hotel_number_4">
-     <property name="geometry">
-      <rect>
-       <x>300</x>
-       <y>340</y>
-       <width>51</width>
-       <height>81</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLabel" name="orange2_4">
-     <property name="geometry">
-      <rect>
-       <x>680</x>
-       <y>50</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #f89734</string>
-     </property>
-     <property name="text">
-      <string>O1</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="green3_4">
-     <property name="geometry">
-      <rect>
-       <x>540</x>
-       <y>140</y>
-       <width>41</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #00a85a</string>
-     </property>
-     <property name="text">
-      <string>G3</string>
-     </property>
-    </widget>
     <widget class="QLabel" name="hotel_4">
      <property name="geometry">
       <rect>
@@ -2469,20 +2211,102 @@ width: 150px;
       <string>hotel</string>
      </property>
     </widget>
-    <widget class="Line" name="line_4">
+    <widget class="QLabel" name="a14_4">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>310</y>
-       <width>841</width>
-       <height>20</height>
+       <x>540</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
       </rect>
      </property>
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #d94999</string>
+     </property>
+     <property name="text">
+      <string>14</string>
      </property>
     </widget>
-    <widget class="QLabel" name="blue1_4">
+    <widget class="QLabel" name="a29_4">
+     <property name="geometry">
+      <rect>
+       <x>340</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #fff213</string>
+     </property>
+     <property name="text">
+      <string>29</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a6_4">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ade1fa</string>
+     </property>
+     <property name="text">
+      <string>6</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a9_4">
+     <property name="geometry">
+      <rect>
+       <x>340</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ade1fa</string>
+     </property>
+     <property name="text">
+      <string>9</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a27_4">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #fff213</string>
+     </property>
+     <property name="text">
+      <string>27</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a37_4">
      <property name="geometry">
       <rect>
        <x>680</x>
@@ -2498,13 +2322,23 @@ width: 150px;
       <string notr="true">border: 1.5px solid #0077be</string>
      </property>
      <property name="text">
-      <string>B1</string>
+      <string>37</string>
      </property>
     </widget>
-    <widget class="QLabel" name="pink2_4">
+    <widget class="QLCDNumber" name="home_number_4">
      <property name="geometry">
       <rect>
-       <x>480</x>
+       <x>110</x>
+       <y>340</y>
+       <width>51</width>
+       <height>81</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a1_4">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
        <y>50</y>
        <width>41</width>
        <height>71</height>
@@ -2514,10 +2348,175 @@ width: 150px;
       <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">border: 1.5px solid #d94999</string>
+      <string notr="true">border: 1.5px solid #955436</string>
      </property>
      <property name="text">
-      <string>P2</string>
+      <string>1</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a24_4">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ee3338</string>
+     </property>
+     <property name="text">
+      <string>24</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a32_4">
+     <property name="geometry">
+      <rect>
+       <x>480</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #00a85a</string>
+     </property>
+     <property name="text">
+      <string>32</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a18_4">
+     <property name="geometry">
+      <rect>
+       <x>680</x>
+       <y>50</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #f89734</string>
+     </property>
+     <property name="text">
+      <string>18</string>
+     </property>
+    </widget>
+    <widget class="Line" name="line_4">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>310</y>
+       <width>841</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a21_4">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ee3338</string>
+     </property>
+     <property name="text">
+      <string>21</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a28_4">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>230</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ffffff</string>
+     </property>
+     <property name="text">
+      <string>28</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a35_4">
+     <property name="geometry">
+      <rect>
+       <x>600</x>
+       <y>230</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ccc</string>
+     </property>
+     <property name="text">
+      <string>35</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a34_4">
+     <property name="geometry">
+      <rect>
+       <x>540</x>
+       <y>140</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #00a85a</string>
+     </property>
+     <property name="text">
+      <string>34</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="a15_4">
+     <property name="geometry">
+      <rect>
+       <x>480</x>
+       <y>230</y>
+       <width>41</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 1.5px solid #ccc</string>
+     </property>
+     <property name="text">
+      <string>15</string>
      </property>
     </widget>
    </widget>

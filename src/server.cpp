@@ -64,7 +64,7 @@ void Server::initboard(){
         }
         QString title = obj["title"].toString();
         Property::Group group = (Property::Group)obj["Group"].toInt();
-        qDebug() << pos << cost << housecost << title << rentlist << group;
+        //qDebug() << pos << cost << housecost << title << rentlist << group;
         block[pos] = new Property(&block,nullptr,title,cost,housecost,rentlist,group);
     }
     file.close();
@@ -108,7 +108,7 @@ void Server::initboard(){
         QJsonObject obj = p->toJsonObject();
         QString type = obj["type"].toString();
         QString explanation = obj["explanation"].toString();
-        qDebug() << type << explanation;
+        //qDebug() << type << explanation;
         Chance.push_back(new Card(explanation,type));
 
     }
@@ -120,7 +120,7 @@ void Server::initboard(){
     file.open(QIODevice::ReadOnly | QIODevice::Text);
     Json = QJsonDocument::fromJson(file.readAll(),&jsonError);
     if (jsonError.error != QJsonParseError::NoError){
-        qDebug() << jsonError.errorString();
+        //qDebug() << jsonError.errorString();
     }
 
     list = Json.toVariant().toList();
@@ -128,7 +128,7 @@ void Server::initboard(){
         QJsonObject obj = p->toJsonObject();
         QString type = obj["type"].toString();
         QString explanation = obj["explanation"].toString();
-        qDebug() << type << explanation;
+        //qDebug() << type << explanation;
         Community_chest.push_back(new Card(explanation,type));
     }
     file.close();
@@ -152,6 +152,21 @@ void Server::add_player(Player* new_player) {
 }
 
 /*
+ * [Required signals to update GUI]
+ *
+ * Pay to bank event (Income tax, Property tax ..)
+ * >>payToBank(int amount)
+ *
+ * Move to other places
+ * >>
+ *
+ * Receive Money from Bank
+ *
+ *
+ *
+ */
+
+/*
  * [Suggestion on Game Flow]
  * This function is called when the clients agree to start (all click the button)
  * Before this function is called, all participating players should be initiated
@@ -160,13 +175,10 @@ void Server::add_player(Player* new_player) {
  * 0 : jail
  * 1 : Before rolling the dice
  *
- * 2 : Buy or Auction event
- * 3 : Pay rent event (Player A -> Player B)
- * 4 : Pay to bank event (Income tax, Property tax ..)
- * 5 : Move to other places
- * 6 : Receive Money from Bank
+ * 2 : Buy or Auction event [Dialogue required]
+ * 3 : Pay rent event (Player A -> Player B) [Dialogue required]
+ * 4 : Open Card event
  *
- * 7 : Open Card event
  *
  * 10 : Before ending his turn
  *
@@ -262,7 +274,7 @@ void Server::next_player(){
         int index = current_player->get_playerid();
         do {
             index = (index + 1) % players.size();
-        }while (players[index]->islosed());
+        } while (players[index]->islosed());
 
         if (current_player == players[index]){
             //end game

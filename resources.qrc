@@ -50,7 +50,6 @@
         <file>res/18.png</file>
         <file>res/19.png</file>
         <file>res/detail/1.png</file>
-        <file>res/detail/2.png</file>
         <file>res/detail/5.png</file>
         <file>res/detail/6.png</file>
         <file>res/detail/8.png</file>
@@ -80,5 +79,6 @@
         <file>res/json/property.json</file>
         <file>res/json/chance_card.json</file>
         <file>res/json/community_chest_card.json</file>
+        <file>res/detail/3.png</file>
     </qresource>
 </RCC>
