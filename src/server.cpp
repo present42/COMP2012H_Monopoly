@@ -299,10 +299,10 @@ void Server::trigger_event(int dice_num){
                     qDebug() << topcard->get_explanation();
                     emit card_drawn(sc->get_id(), topcard->get_explanation());
                     status_change(signal);
-                    if (sc->get_trigger()){
-                        sc->reset_trigger();
-                        trigger_event(0);
-                    }
+                    //if (sc->get_trigger()){
+                    //    sc->reset_trigger();
+                    //    trigger_event(0);
+                    //}
                 }
             }
         }
@@ -313,6 +313,8 @@ void Server::trigger_event(int dice_num){
         //no money
 //        status_change(4);
     }
+
+
 }
 
 void Server::bankruptcy(){

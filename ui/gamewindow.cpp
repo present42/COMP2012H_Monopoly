@@ -55,6 +55,7 @@ GameWindow::GameWindow(QWidget* parent) :
     initInJailWidget();
     initPayRentWidget();
     initCardWidget();
+    initSimpleWidget();
 
     initDice();
     this->show();
@@ -166,6 +167,17 @@ void GameWindow::initCardWidget() {
     card_widget->hide();
 }
 
+void GameWindow::initSimpleWidget() {
+    simple_widget = new SimpleWidget(this);
+    simple_widget->setAutoFillBackground(true);
+
+    QPalette pal = palette();
+    pal.setColor(QPalette::Background, Qt::white);
+    simple_widget->setPalette(pal);
+
+    simple_widget->show();
+}
+
 void GameWindow::closeEvent(QCloseEvent *) {
     emit closed();
 }
@@ -184,6 +196,10 @@ PayRentWidget* GameWindow::getPayRentWidget() {
 
 CardWidget* GameWindow::getCardWidget() {
     return card_widget;
+}
+
+SimpleWidget* GameWindow::getSimpleWidget() {
+    return simple_widget;
 }
 
 void GameWindow::init_player(int id) {

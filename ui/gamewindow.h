@@ -11,6 +11,7 @@
 #include "dialogue/injailwidget.h"
 #include "dialogue/payrentwidget.h"
 #include "dialogue/cardwidget.h"
+#include "dialogue/simplewidget.h"
 
 namespace Ui {
 class GameWindow;
@@ -29,7 +30,7 @@ public:
     UnpurchasedAssetWidget* getUnpurchasedAssetWidget();
     PayRentWidget* getPayRentWidget();
     CardWidget* getCardWidget();
-
+    SimpleWidget* getSimpleWidget();
 private:
     Ui::GameWindow *ui;
     int game_status;
@@ -55,6 +56,7 @@ private:
     InJailWidget* in_jail_widget;
     PayRentWidget* pay_rent_widget;
     CardWidget* card_widget;
+    SimpleWidget* simple_widget;
 
     QLabel* dice[2];
 
@@ -73,6 +75,7 @@ private:
     void initInJailWidget();
     void initPayRentWidget();
     void initCardWidget();
+    void initSimpleWidget();
 
     void closeEvent(QCloseEvent *event);
     void hideAllDialogues();
@@ -92,6 +95,7 @@ public slots:
     void payToBank(int amount);
     void payToOtherPlayer(int receiver, int amount);
     void payToOthers(int amount);
+
     void receiveFromBank(int amount);
     void receiveFromOthers(int amount);
 

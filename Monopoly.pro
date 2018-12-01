@@ -51,7 +51,8 @@ SOURCES += \
     src/gotojail.cpp \
     src/card.cpp \
     ui/dialogue/cardwidget.cpp \
-    ui/dialogue/payrentwidget.cpp
+    ui/dialogue/payrentwidget.cpp \
+    ui/dialogue/simplewidget.cpp
 
 
 HEADERS += \
@@ -81,7 +82,8 @@ HEADERS += \
     src/charge.h \
     src/selectcard.h \
     ui/dialogue/cardwidget.h \
-    ui/dialogue/payrentwidget.h
+    ui/dialogue/payrentwidget.h \
+    ui/dialogue/simplewidget.h
 
 
 
