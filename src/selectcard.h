@@ -12,6 +12,7 @@ class SelectCard : public Block{
     int id;
     int index;
     bool trigger_again;
+    Card* selectedcard;
     Card* tempdiscard;
     vector<Player*> players;
     vector<Card*> carddeck;
@@ -23,11 +24,13 @@ public:
                vector<Card*> carddeck);
 
     virtual ~SelectCard();
-    virtual bool trigger_event(Player* player, int points);
+    virtual bool trigger_event(Player* player, int point, int& signal);
     void suffle();
     void add_jailcard();
     bool get_trigger() const;
     void reset_trigger();
+    int get_id() const;
+    Card* get_card() const;
 
 
 };

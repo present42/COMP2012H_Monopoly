@@ -64,7 +64,7 @@ void Server::initboard(){
         }
         QString title = obj["title"].toString();
         Property::Group group = (Property::Group)obj["Group"].toInt();
-        qDebug() << pos << cost << housecost << title << rentlist << group;
+//        qDebug() << pos << cost << housecost << title << rentlist << group;
         block[pos] = new Property(&block,nullptr,title,cost,housecost,rentlist,group);
     }
     file.close();
@@ -106,10 +106,11 @@ void Server::initboard(){
     list = Json.toVariant().toList();
     for(QList<QVariant>::iterator p = list.begin();p != list.end(); ++p){
         QJsonObject obj = p->toJsonObject();
+        int id = obj["id"].toInt();
         QString type = obj["type"].toString();
         QString explanation = obj["explanation"].toString();
-        qDebug() << type << explanation;
-        Chance.push_back(new Card(explanation,type));
+//        qDebug() << type << explanation;
+        Chance.push_back(new Card(id,explanation,type));
 
     }
 
@@ -126,10 +127,11 @@ void Server::initboard(){
     list = Json.toVariant().toList();
     for(QList<QVariant>::iterator p = list.begin();p != list.end(); ++p){
         QJsonObject obj = p->toJsonObject();
+        int id = obj["id"].toInt();
         QString type = obj["type"].toString();
         QString explanation = obj["explanation"].toString();
-        qDebug() << type << explanation;
-        Community_chest.push_back(new Card(explanation,type));
+//        qDebug() << type << explanation;
+        Community_chest.push_back(new Card(id,explanation,type));
     }
     file.close();
 
@@ -146,10 +148,15 @@ void Server::initboard(){
 
 void Server::add_player(Player* new_player) {
     if(players.size() < 4) {
+        new_player->set_money(1500);
         players.push_back( new_player);
         emit init_player(new_player->get_playerid());
     } else return;
 }
+
+// Move to other places
+// Receive Money from Bank
+
 
 /*
  * [Suggestion on Game Flow]
@@ -161,12 +168,8 @@ void Server::add_player(Player* new_player) {
  * 1 : Before rolling the dice
  *
  * 2 : Buy or Auction event
- * 3 : Pay rent event (Player A -> Player B)
- * 4 : Pay to bank event (Income tax, Property tax ..)
- * 5 : Move to other places
- * 6 : Receive Money from Bank
- *
- * 7 : Open Card event
+ * 3 : Pay rent event (Player A -> Player B) B rent
+ * 5 : card
  *
  * 10 : Before ending his turn
  *
@@ -213,6 +216,7 @@ void Server::roll_dice() {
 }
 
 void Server::move(int dice_sum){
+    qDebug() << "moved";
     int prepos = current_player->get_playerposition();
     current_player->movebysteps(dice_sum);
 
@@ -227,26 +231,69 @@ void Server::move(int dice_sum){
 
 
 void Server::trigger_event(int dice_num){
-
+//    int pos =2;
     int pos = current_player->get_playerposition();
-
+    int signal =-1 ;
     Asset* asset = dynamic_cast<Asset*> (block[pos]);
     if (asset != nullptr && asset->get_owner() == nullptr){
+        //buy
+        qDebug() << "buy a house";
+        emit asset_bought(pos);
         status_change(2);
-    }else if (block[pos]->trigger_event(current_player, dice_num)){
-        SelectCard* sc = dynamic_cast<SelectCard*>(block[pos]);
-        if (sc != nullptr && sc->get_trigger()){
-            sc->reset_trigger();
-            trigger_event(0);
-        } else if (current_player->is_injail()){
-            status_change(0);
-        }else if(current_player->willlose()){
-             //gg
-            bankruptcy();
-        }else
-            status_change(3);
-    }else
-        status_change(4);
+
+    }else if (block[pos]->trigger_event(current_player, dice_num,signal)){
+        qDebug() << signal << "successful trigger";
+        switch(signal){
+            case 0:
+                qDebug() << "go to jail";
+                status_change(signal);
+                break;
+            case 3:
+            {
+                Asset* asset = dynamic_cast<Asset*>(block[pos]);
+                // asset part
+                if (asset != nullptr){
+                    if (asset->get_owner() != current_player){
+                        emit pay_rent(asset->get_owner()->get_playerid()
+                                      , asset->get_rent());
+                    }
+                }
+                qDebug()<< "give to owner";
+                status_change(signal);
+                break;
+            }
+            case 4:
+            {
+                Charge* charge = dynamic_cast<Charge*>(block[pos]);
+                if (charge != nullptr){
+                    emit pay_bank(charge->get_charge());
+                }
+                qDebug()<< "give to bank";
+                break;
+            }
+            case 5:
+            {
+                SelectCard* sc = dynamic_cast<SelectCard*>(block[pos]);
+                qDebug()<< "Draw a card";
+                if (sc != nullptr){
+                    Card* topcard = sc->get_card();
+                    qDebug() << topcard->get_explanation();
+                    emit card_drawn(sc->get_id(), topcard->get_explanation());
+                    status_change(signal);
+                    if (sc->get_trigger()){
+                        sc->reset_trigger();
+                        trigger_event(0);
+                    }
+                }
+            }
+        }
+    }
+    else
+    {
+        qDebug()<< "fail";
+        //no money
+//        status_change(4);
+    }
 }
 
 void Server::bankruptcy(){
@@ -278,5 +325,13 @@ void Server::next_player(){
 }
 
 void Server::purchaseProperty() {
+    Asset* asset = dynamic_cast<Asset*> (block[current_player->get_playerposition()]);
+    current_player->add_asset(asset);
+    int fee = asset->get_cost_value();
+    current_player->set_money(current_player->get_money() - fee);
+    asset->change_owner(current_player);
 
+    qDebug()<< current_player->get_money();
+    emit pay_bank(fee);
+    status_change(10);
 }

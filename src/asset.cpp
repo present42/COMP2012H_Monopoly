@@ -50,8 +50,9 @@ void Asset::demortgage(){
 }
 
 
-bool Asset::trigger_event(Player* player, int points){
-   return Block::trigger_event(player,points);
+bool Asset::trigger_event(Player* player, int points, int& signal){
+    signal = 3;
+   return Block::trigger_event(player,points,signal);
 }
 
 

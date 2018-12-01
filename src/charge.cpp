@@ -10,7 +10,12 @@ Charge::~Charge(){
 
 }
 
-bool Charge::trigger_event(Player* player, int points){
+bool Charge::trigger_event(Player* player, int points, int& signal){
+    signal = 4;
     return player->pay_rent(nullptr, charge);
+}
+
+int Charge::get_charge() const{
+    return charge;
 }
 

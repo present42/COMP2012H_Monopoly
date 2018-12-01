@@ -9,7 +9,8 @@ GotoJail::~GotoJail(){
 
 }
 
-bool GotoJail::trigger_event(Player* player, int points){
+bool GotoJail::trigger_event(Player* player, int points, int& signal){
+    signal = 0;
     player->movebyposition(10);
     player->stayin_jail();
     return true;

@@ -10,7 +10,7 @@ class Block{
     public:
         Block(Block* (*block)[40]);
         virtual ~Block();
-        virtual bool trigger_event(Player* player, int points);
+        virtual bool trigger_event(Player* player, int points, int& signal);
 
     protected:
         Block* (*block)[40];

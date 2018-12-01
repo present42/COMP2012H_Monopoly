@@ -7,7 +7,7 @@ class GotoJail : public Block{
 public:
     GotoJail(Block* (*block)[40]);
     ~GotoJail();
-    virtual bool trigger_event(Player* player, int points);
+    virtual bool trigger_event(Player* player, int points, int& signal);
 
 };
 

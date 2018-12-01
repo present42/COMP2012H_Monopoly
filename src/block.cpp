@@ -10,7 +10,7 @@ Block::~Block() {
 
 }
 
-bool Block::trigger_event(Player* player, int points){
+bool Block::trigger_event(Player* player, int points, int& signal){
     return true;
 }
 

@@ -32,7 +32,7 @@ class Property : public Asset{
         int get_housecost() const;
         int get_house() const;
         int get_hotel() const;
-        int get_rent() const;
+        int get_rent() ;
 
         bool add_house();
         bool add_hotel();
@@ -45,7 +45,7 @@ class Property : public Asset{
         void set_monopoly(bool monopoly);
         void update_group_monopoly();
         virtual void set_mortgage();
-        virtual bool trigger_event(Player* player,int points);
+        virtual bool trigger_event(Player* player,int points, int& signal);
 
 
     private:

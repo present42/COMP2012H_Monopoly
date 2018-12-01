@@ -6,15 +6,15 @@ using namespace std;
 
 class Card {
     private:
-
+    int id;
     QString explanation;
     QString type;
 
     public:
-
+    int get_id() const;
     QString get_explanation() const;
     QString get_type() const;
-    Card(QString explanation , QString type);
+    Card(int id, QString explanation , QString type);
     ~Card();
 };
 #endif // CARD_H
