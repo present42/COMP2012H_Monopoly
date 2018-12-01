@@ -10,6 +10,8 @@
 
 #include <QFile>
 #include <QJsonDocument>
+#include <QJsonObject>
+#include <QTabBar>
 
 #include "blockuifactory.h"
 #include "specialblockui.h"
@@ -22,17 +24,11 @@ GameWindow::GameWindow(QWidget* parent) :
     ui(new Ui::GameWindow),
     game_status(-1),
     dice_font(QFont(QFontDatabase::applicationFontFamilies(QFontDatabase::addApplicationFont(":/res/font/Dice.ttf")).at(0), 50)),
-    token_num(0)
+    token_num(0),
+    current_token(0)
 {
-    ui->setupUi(this);
-
-    QFile file;
-    file.setFileName(":/res/json/chance_card.json");
-    file.open(QIODevice::ReadOnly | QIODevice::Text);
-    QString content = file.readAll();
-    file.close();
-
-    QJsonDocument doc = QJsonDocument::fromJson(content.toUtf8());
+    ui->setupUi(this);   
+    for(int i = 0; i < 4; ++i) money[i] = 1500;
 
     player_property_list_widget[0] = ui->tab1;
     player_property_list_widget[1] = ui->tab2;
@@ -61,7 +57,7 @@ GameWindow::GameWindow(QWidget* parent) :
     initCardWidget();
 
     initDice();
-
+    buyAsset(9);
     this->show();
 }
 
@@ -219,10 +215,10 @@ void GameWindow::handleStatusChange(int status) {
             pay_rent_widget->show();
             return;
         case 5:
-            end_turn_widget->show();
-            return;
-        case 7:
             card_widget->show();
+            return;
+        case 10:
+            end_turn_widget->show();
             return;
         default:
             qDebug() << "this status is not defined yet..!";
@@ -264,6 +260,7 @@ void GameWindow::hideAllDialogues() {
 
 void GameWindow::setCurrentPlayer(int index) {
     qDebug() << "setCurrentPlayer with" << index;
+    ui->tabWidget->setCurrentIndex(index);
     current_token = index;
 }
 
@@ -278,10 +275,66 @@ void GameWindow::end_turn_button_clicked() {
     emit turn_finished();
 }
 
-QString GameWindow::getCardInstruction(int id, bool isChanceCard) {
+void GameWindow::setCardInstruction(bool isChanceCard, QString instruction) {
+    card_widget->setReader(current_token);
     if(isChanceCard) {
-
+        card_widget->setInstruction("CHANCE CARD\n\n" + instruction);
     } else {
-
+        card_widget->setInstruction("COMMUNITY CHEST CARD\n\n" + instruction);
     }
+}
+
+void GameWindow::buyAsset(int position) {
+    QString find_name = QString("\\b(\\w*") + "a" + QString::number(position) + "_" + "\\w*)\\b";
+    QRegExp regex (find_name);
+    QList<QLabel *> list = ui->tabWidget->findChildren<QLabel*>(regex);
+
+    QList<QLabel *>::Iterator temp;
+    for(temp = list.begin(); temp != list.end(); temp++) {
+        qDebug() << (*temp)->parent()->objectName();
+        if((*temp)->parent()->objectName() == (QString("tab") + QString::number(current_token + 1))) {
+            (*temp)->setStyleSheet((*temp)->styleSheet().append(";background-color: white;"));
+        } else {
+            (*temp)->setStyleSheet((*temp)->styleSheet().append(";background-color: grey;"));
+        }
+    }
+}
+
+void GameWindow::payToBank(int amount) {
+    updateMoney(current_token, money[current_token] - amount);
+}
+
+void GameWindow::payToOtherPlayer(int receiver, int amount) {
+    updateMoney(current_token, money[current_token] - amount);
+    updateMoney(receiver, money[receiver] + amount);
+}
+
+void GameWindow::payToOthers(int amount) {
+    for(int i = 0; i < token_num; ++i) {
+        if(i == current_token) {
+            updateMoney(current_token, money[current_token] - amount * (token_num - 1));
+        } else {
+            updateMoney(i, money[i] + amount);
+        }
+    }
+}
+
+void GameWindow::receiveFromBank(int amount) {
+    updateMoney(current_token, money[current_token] + amount);
+}
+
+void GameWindow::receiveFromOthers(int amount) {
+    for(int i = 0; i < token_num; ++i) {
+        if(i == current_token) {
+            updateMoney(current_token, money[current_token] + amount * (token_num - 1));
+        } else {
+            updateMoney(i, money[i] - amount);
+        }
+    }
+}
+
+void GameWindow::updateMoney(int player, int amount) {
+    money[player] = amount;
+
+    ui->tabWidget->setTabText(player, "Player " + QString::number(player + 1) + " ($" + QString::number(amount) + ")");
 }

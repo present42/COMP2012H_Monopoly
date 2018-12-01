@@ -34,6 +34,11 @@ private:
     Ui::GameWindow *ui;
     int game_status;
 
+    /*
+     * Those data members are soly for displaying.
+     */
+    int money[4];
+
     QFont dice_font;
 
     TokenUI* tokens[4];
@@ -72,7 +77,7 @@ private:
     void closeEvent(QCloseEvent *event);
     void hideAllDialogues();
 
-    QString getCardInstruction(int id, bool isChanceCard = true);
+    void updateMoney(int player, int amount);
 
 public slots:
     void end_turn_button_clicked();
@@ -82,10 +87,19 @@ public slots:
 
     void getAssetPrice(int price);
     void getRentInfo(int receiver, int amount);
+    void buyAsset(int position);
+
+    void payToBank(int amount);
+    void payToOtherPlayer(int receiver, int amount);
+    void payToOthers(int amount);
+    void receiveFromBank(int amount);
+    void receiveFromOthers(int amount);
 
     void setCurrentPlayer(int index);
     void showDiceNumber(int first, int second);
     void moveToken(int position);
+
+    void setCardInstruction(bool isChanceCard, QString instruction);
     //void processHoverEnterWithInput(int x, int y);
     //void processHoverLeaveWithInput(int x, int y);
 
