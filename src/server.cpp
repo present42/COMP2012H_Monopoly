@@ -261,7 +261,8 @@ void Server::move(int dice_sum){
     int prepos = current_player->get_playerposition();
     current_player->movebysteps(dice_sum);
 
-    gamewindow->moveToken(current_player->get_playerposition());
+    //gamewindow->moveToken(current_player->get_playerposition());
+    gamewindow->refresh(players, block);
 
     if (prepos > current_player->get_playerposition()){
         current_player->set_money(current_player->get_money()+ 200);

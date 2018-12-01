@@ -62,6 +62,7 @@ GameWindow::GameWindow(QWidget* parent) :
     initSimpleWidget();
 
     initDice();
+
     this->show();
 }
 
@@ -146,7 +147,7 @@ void GameWindow::initInJailWidget() {
     pal.setColor(QPalette::Background, Qt::white);
     in_jail_widget->setPalette(pal);
 
-    in_jail_widget->show();
+    in_jail_widget->hide();
 }
 
 void GameWindow::initPayRentWidget() {
@@ -363,25 +364,25 @@ void GameWindow::updateMoney(int player, int amount) {
 QString GameWindow::getBorderStyle(int position) {
     switch(position) {
         case 1: case 3:
-            return "border: 1.5px solid #955436";
+            return "border: 1.5px solid #955436;";
         case 5: case 15: case 25: case 35:
-            return "border: 1.5px solid #ade1fa";
+            return "border: 1.5px solid #ccc;";
         case 6: case 8: case 9:
-            return "border: 1.5px solid #d94999";
+            return "border: 1.5px solid #ade1fa;";
         case 11: case 13: case 14:
-            return "border: 1.5px solid #f89734";
+            return "border: 1.5px solid #d94999;";
         case 16: case 18: case 19:
-            return "border: 1.5px solid #ee3338";
+            return "border: 1.5px solid #f89734;";
         case 21: case 23: case 24:
-            return "border: 1.5px solid #fff213";
+            return "border: 1.5px solid #ee3338;";
         case 26: case 27: case 29:
-            return "border: 1.5px solid #00a85a";
+            return "border: 1.5px solid #fff213;";
         case 31: case 32: case 34:
-            return "border: 1.5px solid #0077be";
+            return "border: 1.5px solid #00a85a;";
         case 37: case 39:
-            return "border: 1.5px solid #ffffff";
+            return "border: 1.5px solid #0077be;";
         case 12: case 28:
-            return "border: 1.5px solid #ccc";
+            return "border: 1.5px solid #ffffff;";
 
     }
 }
@@ -390,6 +391,8 @@ void GameWindow::updateAssetInfo(int player, int position, int value) {
     QString find_name = QString("\\b(\\w*") + "a" + QString::number(position) + "_" + QString::number(player) + "\\w*)\\b";
     QRegExp regex (find_name);
     QList<QLabel *> list = ui->tabWidget->findChildren<QLabel*>(regex);
+
+    if(list.size() == 0) return;
 
     QLabel* block = *(list.begin());
     if(block == nullptr) {
@@ -400,6 +403,7 @@ void GameWindow::updateAssetInfo(int player, int position, int value) {
     if(value >= -1) {
         block->setStyleSheet(getBorderStyle(position) + "background-color: white");
         block->setText("");
+        block->setAlignment(Qt::AlignCenter);
         switch(value) {
             case 5:
                 block->setText("HOTEL");
@@ -426,8 +430,10 @@ void GameWindow::updateAssetInfo(int player, int position, int value) {
 }
 
 void GameWindow::refresh(vector<Player*> players, Block* block[40]) {
+    qDebug() << "Refresh";
     QLCDNumber *home[4] = { ui->home_number, ui->home_number_2, ui->home_number_3, ui->home_number_4};
     QLCDNumber *hotel[4] = { ui->hotel_number_1, ui->hotel_number_2, ui->hotel_number_3, ui->hotel_number_4};
+    qDebug() << "Refresh2";
 
     for(vector<Player*>::iterator temp = players.begin(); temp != players.end(); temp++) {
         updateMoney((*temp)->get_playerid(), (*temp)->get_money());
@@ -438,6 +444,8 @@ void GameWindow::refresh(vector<Player*> players, Block* block[40]) {
         hotel[(*temp)->get_playerid()]->display(10);
         hotel[(*temp)->get_playerid()]->show();
     }
+    qDebug() << "Refresh3";
+
     int j =0;
     for (vector<Player*>::iterator temp = players.begin(); temp != players.end(); temp++){
         for(int i =0 ; i < 40; i++){
@@ -464,5 +472,6 @@ void GameWindow::refresh(vector<Player*> players, Block* block[40]) {
         }
         j++;
     }
+    qDebug() << "Refresh4";
 
 }
