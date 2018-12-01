@@ -57,6 +57,7 @@ private:
 public slots:
     void next_player();
     void purchaseProperty();
+    void checkdouble();
 
 signals:
     void pay_bank(int money);

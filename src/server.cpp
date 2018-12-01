@@ -229,9 +229,13 @@ void Server::roll_dice() {
 
     //emit signal to GUI
     emit dice_thrown(first, second);
-
-    move(first + second);
-
+    if(double_count == 3){
+        current_player->movebyposition(10);
+        current_player->stayin_jail();
+        double_count =0;
+        status_change(0);
+    }else
+        move(first + second);
 }
 
 void Server::move(int dice_sum){
@@ -252,7 +256,7 @@ void Server::move(int dice_sum){
 void Server::trigger_event(int dice_num){
 //    int pos =2;
     int pos = current_player->get_playerposition();
-    int signal =-1 ;
+    int signal = -1 ;
     Asset* asset = dynamic_cast<Asset*> (block[pos]);
     if (asset != nullptr && asset->get_owner() == nullptr){
         //buy
@@ -285,9 +289,10 @@ void Server::trigger_event(int dice_num){
             {
                 Charge* charge = dynamic_cast<Charge*>(block[pos]);
                 if (charge != nullptr){
+                 qDebug() << "pay to bank";
                     emit pay_bank(charge->get_charge());
                 }
-                qDebug()<< "give to bank";
+                status_change(signal);
                 break;
             }
             case 5:
@@ -299,12 +304,23 @@ void Server::trigger_event(int dice_num){
                     qDebug() << topcard->get_explanation();
                     emit card_drawn(sc->get_id(), topcard->get_explanation());
                     status_change(signal);
+<<<<<<< Updated upstream
                     //if (sc->get_trigger()){
                     //    sc->reset_trigger();
                     //    trigger_event(0);
                     //}
+=======
+//                    if (sc->get_trigger()){
+//                        sc->reset_trigger();
+//                        trigger_event(0);
+//                    }
+>>>>>>> Stashed changes
                 }
+                break;
             }
+            default:
+            qDebug()<< "nothing to do";
+            status_change(6);
         }
     }
     else
@@ -317,6 +333,13 @@ void Server::trigger_event(int dice_num){
 
 }
 
+void Server::checkdouble(){
+    if (double_count != 0){
+        status_change(1);
+    }else
+        status_change(10);
+}
+
 void Server::bankruptcy(){
     current_player->bankruptcy();
 }
@@ -326,21 +349,18 @@ void Server::bankruptcy(){
  * in order to decide whether to continue game or not
  */
 void Server::next_player(){
-    if (double_count == 0){
-        int index = current_player->get_playerid();
-        do {
-            index = (index + 1) % players.size();
-        } while (players[index]->islosed());
+    int index = current_player->get_playerid();
+    do {
+        index = (index + 1) % players.size();
+    } while (players[index]->islosed());
 
-        if (current_player == players[index]){
-            //end game
-            return;
-        }else{
-            current_player = players[index];
-            double_count = 0;
-        }
+    if (current_player == players[index]){
+        //end game
+        return;
+    }else{
+        current_player = players[index];
+        double_count = 0;
     }
-
     emit next(current_player->get_playerid());
     status_change(1);
 }
