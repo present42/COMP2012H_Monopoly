@@ -107,6 +107,7 @@ bool SelectCard::trigger_event(Player* player, int points, int& signal){
                     player->movebyposition(list[1].toInt());
             }
             int nowpos = player->get_playerposition();
+
             if (prepos < nowpos)
                 player->set_money(player->get_money()+200);
             trigger_again = true;

@@ -33,8 +33,6 @@ Server::Server():
     connect(gamewindow->getPayRentWidget(), &PayRentWidget::ok_button_clicked, this, &Server::checkdouble);
     connect(gamewindow->getCardWidget(), &CardWidget::ok_button_clicked, this, &Server::drawn_after);
 
-    //connect(gamewindow->getInJailWidget()->getPayButton(), &QPushButton::clicked, this)
-
     gamewindow->show();
 }
 
@@ -325,11 +323,6 @@ void Server::trigger_event(int dice_num){
                     qDebug() << topcard->get_explanation();
                     gamewindow->setCardInstruction(sc->get_id(), topcard->get_explanation());
                     status_change(signal);
-                    //if (sc->get_trigger()){
-                    //    sc->reset_trigger();
-                    //    trigger_event(0);
-                    //}
-
                 }
                 break;
             }
@@ -348,7 +341,15 @@ void Server::trigger_event(int dice_num){
 }
 
 void Server::drawn_after(){
-
+    gamewindow->moveToken(current_player->get_playerposition());
+    if (chance_block->get_trigger()){
+        chance_block->reset_trigger();
+        trigger_event(0);
+    }else if(community_block->get_trigger()){
+        community_block->reset_trigger();
+        trigger_event(0);
+    }else
+        checkdouble();
 }
 
 void Server::checkdouble(){
@@ -437,10 +438,8 @@ void Server::purchaseProperty() {
     int fee = asset->get_cost_value();
     current_player->set_money(current_player->get_money() - fee);
     asset->change_owner(current_player);
-
-    qDebug()<< current_player->get_money();
     gamewindow->buyAsset(current_player->get_playerposition());
-    gamewindow->payToBank(fee);
+    gamewindow->refresh(players, block);
     checkdouble();
 }
 
