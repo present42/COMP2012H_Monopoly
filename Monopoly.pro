@@ -49,7 +49,9 @@ SOURCES += \
     src/charge.cpp \
     src/selectcard.cpp \
     src/gotojail.cpp \
-    src/card.cpp
+    src/card.cpp \
+    ui/dialogue/cardwidget.cpp \
+    ui/dialogue/payrentwidget.cpp
 
 
 HEADERS += \
@@ -77,7 +79,9 @@ HEADERS += \
     ui/dialogue/injailwidget.h \
     src/gotojail.h \
     src/charge.h \
-    src/selectcard.h
+    src/selectcard.h \
+    ui/dialogue/cardwidget.h \
+    ui/dialogue/payrentwidget.h
 
 
 

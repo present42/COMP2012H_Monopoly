@@ -80,8 +80,5 @@
         <file>res/json/property.json</file>
         <file>res/json/chance_card.json</file>
         <file>res/json/community_chest_card.json</file>
-        <file>res/json/chance_card.json</file>
-        <file>res/json/community_chest_card.json</file>
-        <file>res/json/property.json</file>
     </qresource>
 </RCC>

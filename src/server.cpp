@@ -144,7 +144,6 @@ void Server::initboard(){
 
 }
 
-
 void Server::add_player(Player* new_player) {
     if(players.size() < 4) {
         players.push_back( new_player);
@@ -160,7 +159,6 @@ void Server::add_player(Player* new_player) {
  * <<Status Indicator>>
  * 0 : jail
  * 1 : Before rolling the dice
-<<<<<<< HEAD
  *
  * 2 : Buy or Auction event
  * 3 : Pay rent event (Player A -> Player B)
@@ -170,17 +168,7 @@ void Server::add_player(Player* new_player) {
  *
  * 7 : Open Card event
  *
- *
- *
- * -2b : follow instruction (pay rent, pay .. to bank, receive money from bank, move to somewhere)
- * -2c : not enough money
- * 3 : Before ending his turn
-=======
- * 2 : buy or auction
- * 3 : follow instruction (pay rent, pay .. to bank, receive money from bank, move to somewhere)
- * 4 : not enough money
- * 5 : Before ending his turn
->>>>>>> frank/second
+ * 10 : Before ending his turn
  *
  * #1 : build
  * #2 : mortgage
