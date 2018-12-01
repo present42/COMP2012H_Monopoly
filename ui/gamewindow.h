@@ -84,6 +84,8 @@ private:
     void hideAllDialogues();
 
     void updateMoney(int player, int amount);
+    void updateAssetInfo(int player, int position, int value);
+    QString getBorderStyle(int position);
 
 public slots:
     void end_turn_button_clicked();
