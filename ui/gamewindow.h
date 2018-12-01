@@ -9,6 +9,8 @@
 #include "dialogue/endturnwidget.h"
 #include "dialogue/owemoneywidget.h"
 #include "dialogue/injailwidget.h"
+#include "dialogue/payrentwidget.h"
+#include "dialogue/cardwidget.h"
 
 namespace Ui {
 class GameWindow;
@@ -25,6 +27,8 @@ public:
     void initToken(int player, TokenUI::Token token_type);
     RollDiceWidget* getRollDiceWidget();
     UnpurchasedAssetWidget* getUnpurchasedAssetWidget();
+    PayRentWidget* getPayRentWidget();
+    CardWidget* getCardWidget();
 
 private:
     Ui::GameWindow *ui;
@@ -44,6 +48,8 @@ private:
     EndTurnWidget* end_turn_widget;
     OweMoneyWidget* owe_money_widget;
     InJailWidget* in_jail_widget;
+    PayRentWidget* pay_rent_widget;
+    CardWidget* card_widget;
 
     QLabel* dice[2];
 
@@ -60,16 +66,23 @@ private:
     void initEndTurnWidget();
     void initOweMoneyWidget();
     void initInJailWidget();
+    void initPayRentWidget();
+    void initCardWidget();
 
     void closeEvent(QCloseEvent *event);
     void hideAllDialogues();
+
+    QString getCardInstruction(int id, bool isChanceCard = true);
 
 public slots:
     void end_turn_button_clicked();
 
     void init_player(int id);
     void handleStatusChange(int status);
+
     void getAssetPrice(int price);
+    void getRentInfo(int receiver, int amount);
+
     void setCurrentPlayer(int index);
     void showDiceNumber(int first, int second);
     void moveToken(int position);
