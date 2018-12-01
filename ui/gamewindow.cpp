@@ -57,7 +57,6 @@ GameWindow::GameWindow(QWidget* parent) :
     initCardWidget();
 
     initDice();
-    buyAsset(9);
     this->show();
 }
 
@@ -164,7 +163,7 @@ void GameWindow::initCardWidget() {
     pal.setColor(QPalette::Background, Qt::white);
     card_widget->setPalette(pal);
 
-    card_widget->show();
+    card_widget->hide();
 }
 
 void GameWindow::closeEvent(QCloseEvent *) {
