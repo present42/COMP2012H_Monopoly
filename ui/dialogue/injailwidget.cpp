@@ -46,3 +46,15 @@ InJailWidget::~InJailWidget() {
     if(use_card) delete use_card;
     if(roll_dice) delete roll_dice;
 }
+
+QPushButton* InJailWidget::getPayButton() {
+    return pay_button;
+}
+
+QPushButton* InJailWidget::getUseCardButton() {
+    return use_card;
+}
+
+QPushButton* InJailWidget::getRollDiceButton() {
+    return roll_dice;
+}

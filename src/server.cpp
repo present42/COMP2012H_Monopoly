@@ -19,7 +19,7 @@ Server::Server():
 {
     srand(time(0));
 
-    if(gamewindow != nullptr) gamewindow = new GameWindow(nullptr);
+    if(gamewindow != nullptr) gamewindow = new GameWindow(nullptr, block);
 
     add_player(new Player(0, Token::BOOT));
     add_player(new Player(1, Token::CAR));
@@ -31,7 +31,9 @@ Server::Server():
     connect(gamewindow->getUnpurchasedAssetWidget(), &UnpurchasedAssetWidget::purchase_button_clicked, this, &Server::purchaseProperty);
     connect(gamewindow->getSimpleWidget(), &SimpleWidget::ok_button_clicked, this, &Server::checkdouble);
     connect(gamewindow->getPayRentWidget(), &PayRentWidget::ok_button_clicked, this, &Server::checkdouble);
-    connect(gamewindow->getCardWidget(), &CardWidget::ok_button_clicked, this, &Server::checkdouble);
+    connect(gamewindow->getCardWidget(), &CardWidget::ok_button_clicked, this, &Server::drawn_after);
+
+    //connect(gamewindow->getInJailWidget()->getPayButton(), &QPushButton::clicked, this)
 
     gamewindow->show();
 }
@@ -261,8 +263,8 @@ void Server::move(int dice_sum){
     int prepos = current_player->get_playerposition();
     current_player->movebysteps(dice_sum);
 
-    //gamewindow->moveToken(current_player->get_playerposition());
-    gamewindow->refresh(players, block);
+    gamewindow->moveToken(current_player->get_playerposition());
+    //gamewindow->refresh(players, block);
 
     if (prepos > current_player->get_playerposition()){
         current_player->set_money(current_player->get_money()+ 200);
@@ -421,7 +423,12 @@ void Server::next_player(){
     }
 
     gamewindow->setCurrentPlayer(current_player->get_playerid());
-    status_change(1);
+    if(current_player->is_injail()) {
+        status_change(0);
+    } else {
+        status_change(1);
+    }
+
 }
 
 void Server::purchaseProperty() {

@@ -23,9 +23,10 @@
 #include "src/utility.h"
 
 
-GameWindow::GameWindow(QWidget* parent) :
+GameWindow::GameWindow(QWidget* parent, Block* board[40]) :
     QWidget(parent),
     ui(new Ui::GameWindow),
+    board(board),
     game_status(-1),
     dice_font(QFont(QFontDatabase::applicationFontFamilies(QFontDatabase::addApplicationFont(":/res/font/Dice.ttf")).at(0), 50)),
     token_num(0),
@@ -207,6 +208,10 @@ SimpleWidget* GameWindow::getSimpleWidget() {
     return simple_widget;
 }
 
+InJailWidget* GameWindow::getInJailWidget() {
+    return in_jail_widget;
+}
+
 void GameWindow::init_player(int id) {
     token_num++;
     tokens[id] = new TokenUI(this, token_list[id], &block_ui);
@@ -221,6 +226,9 @@ void GameWindow::initTabWidget(int new_tab) {
 void GameWindow::handleStatusChange(int status) {
     qDebug() << "statusChangeHandler with parameter" << status;
     switch (status) {
+        case 0:
+            in_jail_widget->show();
+            return;
         case 1:
             relocateDice();
             roll_dice_widget->updatePlayer(current_token);
@@ -232,7 +240,6 @@ void GameWindow::handleStatusChange(int status) {
             return;
         case 3:
             pay_rent_widget->setPayer(tokens[current_token]);
-            pay_rent_widget->show();
             return;
         case 5:
             card_widget->show();

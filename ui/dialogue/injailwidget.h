@@ -12,6 +12,10 @@ public:
     InJailWidget(QWidget* parent = nullptr);
     ~InJailWidget();
 
+    QPushButton* getPayButton();
+    QPushButton* getUseCardButton();
+    QPushButton* getRollDiceButton();
+
 private:
     QLabel* instruction;
     QPushButton* pay_button;
@@ -25,6 +29,7 @@ private:
     const static int OFFSET = 20;
 
 signals:
+    void injail_choose(int choice);
 
 };
 

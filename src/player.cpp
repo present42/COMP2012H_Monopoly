@@ -11,7 +11,7 @@ Player::Player(int id, Token token):
   id(id),
   money(0),
   position(0),
-  jail_turn(0),
+  jail_turn(-1),
   losed(false),
   token(token)
 {
