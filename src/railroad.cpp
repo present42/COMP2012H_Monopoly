@@ -37,7 +37,8 @@ void Railroad::update_ownrail(){
           (*it)->set_rent(num);
 }
 
-bool Railroad::trigger_event(Player* player, int points){
+bool Railroad::trigger_event(Player* player, int points, int& signal){
+    signal = 3;
     if (player != owner && !mortgaged
             && !player->pay_rent(owner,rent)){
             return false;
@@ -48,5 +49,9 @@ bool Railroad::trigger_event(Player* player, int points){
 void Railroad::set_mortgage(){
     Asset::set_mortgage();
     update_ownrail();
+}
+
+int Railroad::get_rent(){
+    return rent;
 }
 

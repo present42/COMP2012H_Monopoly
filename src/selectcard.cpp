@@ -12,6 +12,7 @@ SelectCard::SelectCard(
      id(id),
      index(0),
      trigger_again(false),
+     selectedcard(nullptr),
      tempdiscard(nullptr),
      players(players),
      carddeck(carddeck)
@@ -30,18 +31,19 @@ void SelectCard::suffle(){
     random_shuffle(carddeck.begin(),carddeck.end(),random);
 }
 
-bool SelectCard::trigger_event(Player* player, int points){
+bool SelectCard::trigger_event(Player* player, int points, int& signal){
     trigger_again = false;
-    if (index > carddeck.size()){
+    signal = 5;
+    if (index == carddeck.size()-1){
         suffle();
         index = 0;
     }
-    Card* card = carddeck[index];
+    Card* card = selectedcard = carddeck[index];
     QString string = card->get_type();
     QStringList list = (string.left(string.length() -1)).split('(');
     QStringList Case;
-    index++;
     Case << "P" << "P2" << "R" << "M" << "F";
+    index++;
     switch(Case.indexOf(list[0])){
         case 0:
         {
@@ -95,14 +97,14 @@ bool SelectCard::trigger_event(Player* player, int points){
                 //send signal
                 break;
                 case 10:
-                player->movebyposition(10);
-                player->stayin_jail();
+                    player->movebyposition(10);
+                    player->stayin_jail();
                 return true;
                 case -3:
-                player->movebysteps(-3);
+                    player->movebysteps(-3);
                 break;
                 default:
-                player->movebyposition(list[1].toInt());
+                    player->movebyposition(list[1].toInt());
             }
             int nowpos = player->get_playerposition();
             if (prepos < nowpos)
@@ -134,4 +136,12 @@ bool SelectCard::get_trigger() const{
 void SelectCard::add_jailcard(){
     carddeck.push_back(tempdiscard);
     tempdiscard = nullptr;
+}
+
+int SelectCard::get_id() const{
+    return id;
+}
+
+Card* SelectCard::get_card() const{
+    return selectedcard;
 }

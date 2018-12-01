@@ -8,6 +8,7 @@ private:
     /*
      * 4 or 8
      */
+    int points;
     int rate_of_rent;
 public:
     Utility(
@@ -17,8 +18,9 @@ public:
             int cost
             );
     ~Utility();
+    int get_rent();
     virtual void set_mortgage();
-    virtual bool trigger_event(Player* player, int points);
+    virtual bool trigger_event(Player* player, int points,int& signal);
     void set_rate(int rate);
     void update_ownrate();
 };

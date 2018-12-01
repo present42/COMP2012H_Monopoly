@@ -38,7 +38,7 @@ int Property::get_hotel() const{
     return hotel;
 }
 
-int Property::get_rent() const{
+int Property::get_rent() {
     if (hotel != 0)
         return rentlist[5];
 
@@ -125,7 +125,8 @@ void Property::update_group_monopoly(){
 
 }
 
-bool Property::trigger_event(Player* player,int points){
+bool Property::trigger_event(Player* player,int points, int& signal){
+    signal =3;
     if (player!= owner && !mortgaged){
         int rent = ((int)monopoly+1)*rentlist[(house+hotel)];
         if (!player->pay_rent(owner, rent))

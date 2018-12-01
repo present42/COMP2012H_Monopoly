@@ -21,8 +21,9 @@ class Asset : public Block{
         int get_mortgage_value() const;
         void demortgage();
         bool get_mortgage_status() const;
+        virtual int get_rent() = 0;
         virtual void set_mortgage();
-        virtual bool trigger_event(Player* player, int points);
+        virtual bool trigger_event(Player* player, int points, int& signal);
 
     protected:
         Player* owner;

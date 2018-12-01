@@ -8,6 +8,7 @@ Utility::Utility(
                  int cost
                  ):
     Asset(block,owner,title, cost),
+    points(0),
     rate_of_rent(4)
 {}
 
@@ -37,7 +38,9 @@ void Utility::update_ownrate(){
 
 }
 
-bool Utility::trigger_event(Player* player, int points){
+bool Utility::trigger_event(Player* player, int points, int& signal){
+    signal = 3;
+    this->points = points;
     int rent = points*rate_of_rent;
     if (player != owner && !mortgaged){
         if (!player->pay_rent(owner,rent)){
@@ -50,5 +53,9 @@ bool Utility::trigger_event(Player* player, int points){
 void Utility::set_mortgage(){
     Asset::set_mortgage();
     update_ownrate();
+}
+
+int Utility::get_rent(){
+    return rate_of_rent*points;
 }
 

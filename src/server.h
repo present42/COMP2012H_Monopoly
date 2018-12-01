@@ -59,11 +59,15 @@ public slots:
     void purchaseProperty();
 
 signals:
+    void pay_bank(int money);
+    void pay_rent(int ownerid, int rent);
+    void card_drawn(bool set, QString instruction);
+    void asset_bought(int pos);
+
     void init_player(int id);
     void status_changed(int status);
     void player_moved(int id);
     void dice_thrown(int first, int second);
-    void asset_bought();
 
     //void normal();
     //void nomoney();
