@@ -15,7 +15,6 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    void initGameWindow();
 
 private:
     Ui::MainWindow *ui;
@@ -25,8 +24,6 @@ private:
 private slots:
     void startButton_clicked_handler();
     void game_window_closed_handler();
-
-    void handler(int id);
 
 };
 

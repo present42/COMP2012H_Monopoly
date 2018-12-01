@@ -31,6 +31,9 @@ public:
     PayRentWidget* getPayRentWidget();
     CardWidget* getCardWidget();
     SimpleWidget* getSimpleWidget();
+
+    void init_player(int id);
+
 private:
     Ui::GameWindow *ui;
     int game_status;
@@ -85,7 +88,7 @@ private:
 public slots:
     void end_turn_button_clicked();
 
-    void init_player(int id);
+
     void handleStatusChange(int status);
 
     void getAssetPrice(int price);

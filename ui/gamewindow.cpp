@@ -142,7 +142,7 @@ void GameWindow::initInJailWidget() {
     pal.setColor(QPalette::Background, Qt::white);
     in_jail_widget->setPalette(pal);
 
-    in_jail_widget->hide();
+    in_jail_widget->show();
 }
 
 void GameWindow::initPayRentWidget() {
@@ -175,7 +175,7 @@ void GameWindow::initSimpleWidget() {
     pal.setColor(QPalette::Background, Qt::white);
     simple_widget->setPalette(pal);
 
-    simple_widget->show();
+    simple_widget->hide();
 }
 
 void GameWindow::closeEvent(QCloseEvent *) {
@@ -231,6 +231,10 @@ void GameWindow::handleStatusChange(int status) {
             return;
         case 5:
             card_widget->show();
+            return;
+        case 6:
+            simple_widget->setExplanation("Nothing to do..");
+            simple_widget->show();
             return;
         case 10:
             end_turn_widget->show();
@@ -353,3 +357,4 @@ void GameWindow::updateMoney(int player, int amount) {
 
     ui->tabWidget->setTabText(player, "Player " + QString::number(player + 1) + " ($" + QString::number(amount) + ")");
 }
+

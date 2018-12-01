@@ -11,9 +11,6 @@
 #include <QFile>
 #include <deque>
 
-
-
-
 using namespace std;
 
 Server::Server():
@@ -21,6 +18,22 @@ Server::Server():
   double_count(0)
 {
     srand(time(0));
+
+    if(gamewindow != nullptr) gamewindow = new GameWindow(nullptr);
+
+    add_player(new Player(0, Token::BOOT));
+    add_player(new Player(1, Token::CAR));
+    add_player(new Player(2, Token::CAT));
+    add_player(new Player(3, Token::SHIP));
+
+    connect(gamewindow->getRollDiceWidget(), &RollDiceWidget::roll_button_clicked, this, &Server::roll_dice);
+    connect(gamewindow, &GameWindow::turn_finished, this, &Server::next_player);
+    connect(gamewindow->getUnpurchasedAssetWidget(), &UnpurchasedAssetWidget::purchase_button_clicked, this, &Server::purchaseProperty);
+    connect(gamewindow->getSimpleWidget(), &SimpleWidget::ok_button_clicked, this, &Server::checkdouble);
+    connect(gamewindow->getPayRentWidget(), &PayRentWidget::ok_button_clicked, this, &Server::checkdouble);
+    connect(gamewindow->getCardWidget(), &CardWidget::ok_button_clicked, this, &Server::checkdouble);
+
+    gamewindow->show();
 }
 
 Server::~Server() {
@@ -148,11 +161,15 @@ void Server::initboard(){
 
 }
 
+GameWindow* Server::get_game_window() {
+    return gamewindow;
+}
+
 void Server::add_player(Player* new_player) {
     if(players.size() < 4) {
         new_player->set_money(1500);
         players.push_back( new_player);
-        emit init_player(new_player->get_playerid());
+        gamewindow->init_player(new_player->get_playerid());
     } else return;
 }
 
@@ -200,7 +217,8 @@ void Server::add_player(Player* new_player) {
 void Server::status_change(int status){
     this->status = status;
     //After changing the status, please emit the signal (status change)
-    emit status_changed(status);
+
+    gamewindow->handleStatusChange(status);
 }
 
 
@@ -210,7 +228,7 @@ void Server::start() {
     int id = rand() % players.size();
     current_player = players[id];
     initboard();
-    emit next(id);
+    gamewindow->setCurrentPlayer(id);
 
     //Wait a signal to roll the dice from Client GUI
     status_change(1);
@@ -228,7 +246,7 @@ void Server::roll_dice() {
         double_count = 0;
 
     //emit signal to GUI
-    emit dice_thrown(first, second);
+    gamewindow->showDiceNumber(first, second);
     if(double_count == 3){
         current_player->movebyposition(10);
         current_player->stayin_jail();
@@ -243,7 +261,7 @@ void Server::move(int dice_sum){
     int prepos = current_player->get_playerposition();
     current_player->movebysteps(dice_sum);
 
-    emit player_moved(current_player->get_playerposition());
+    gamewindow->moveToken(current_player->get_playerposition());
 
     if (prepos > current_player->get_playerposition()){
         current_player->set_money(current_player->get_money()+ 200);
@@ -261,7 +279,7 @@ void Server::trigger_event(int dice_num){
     if (asset != nullptr && asset->get_owner() == nullptr){
         //buy
         qDebug() << "buy a house";
-        emit asset_bought(pos);
+        //gamewindow->buyAsset(pos);
         status_change(2);
 
     }else if (block[pos]->trigger_event(current_player, dice_num,signal)){
@@ -277,7 +295,7 @@ void Server::trigger_event(int dice_num){
                 // asset part
                 if (asset != nullptr){
                     if (asset->get_owner() != current_player){
-                        emit pay_rent(asset->get_owner()->get_playerid()
+                        gamewindow->payToOtherPlayer(asset->get_owner()->get_playerid()
                                       , asset->get_rent());
                     }
                 }
@@ -290,7 +308,7 @@ void Server::trigger_event(int dice_num){
                 Charge* charge = dynamic_cast<Charge*>(block[pos]);
                 if (charge != nullptr){
                  qDebug() << "pay to bank";
-                    emit pay_bank(charge->get_charge());
+                    gamewindow->payToBank(charge->get_charge());
                 }
                 status_change(signal);
                 break;
@@ -302,7 +320,7 @@ void Server::trigger_event(int dice_num){
                 if (sc != nullptr){
                     Card* topcard = sc->get_card();
                     qDebug() << topcard->get_explanation();
-                    emit card_drawn(sc->get_id(), topcard->get_explanation());
+                    gamewindow->setCardInstruction(sc->get_id(), topcard->get_explanation());
                     status_change(signal);
                     //if (sc->get_trigger()){
                     //    sc->reset_trigger();
@@ -355,7 +373,8 @@ void Server::next_player(){
         current_player = players[index];
         double_count = 0;
     }
-    emit next(current_player->get_playerid());
+
+    gamewindow->setCurrentPlayer(current_player->get_playerid());
     status_change(1);
 }
 
@@ -367,6 +386,8 @@ void Server::purchaseProperty() {
     asset->change_owner(current_player);
 
     qDebug()<< current_player->get_money();
-    emit pay_bank(fee);
-    status_change(10);
+    gamewindow->buyAsset(current_player->get_playerposition());
+    gamewindow->payToBank(fee);
+    checkdouble();
 }
+

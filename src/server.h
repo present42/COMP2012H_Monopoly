@@ -48,11 +48,11 @@ private:
 
     int  double_count;
     int status;
+
     void initboard();
 
     //GUI
-    //If the server-client program is to be implemented,
-    //this part should be removed
+    GameWindow* gamewindow;
 
 public slots:
     void next_player();
