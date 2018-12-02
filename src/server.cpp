@@ -152,7 +152,6 @@ void Server::initboard(){
         QString type = obj["type"].toString();
         QString explanation = obj["explanation"].toString();
 
-//        qDebug() << type << explanation;
         Community_chest.push_back(new Card(id,explanation,type));
 
     }
@@ -181,39 +180,14 @@ void Server::add_player(Player* new_player) {
     } else return;
 }
 
-// Move to other places
-// Receive Money from Bank
-
-
 /*
- * [Required signals to update GUI]
- *
- * Pay to bank event (Income tax, Property tax ..)
- * >>payToBank(int amount)
- *
- * Move to other places
- * >>
- *
- * Receive Money from Bank
- *
- *
- *
- */
-
-/*
- * [Suggestion on Game Flow]
- * This function is called when the clients agree to start (all click the button)
- * Before this function is called, all participating players should be initiated
- *
- * <<Status Indicator>>
+ * [Game Flow & Status]
  * 0 : jail
  * 1 : Before rolling the dice
  *
-
  * 2 : Buy or Auction event
  * 3 : Pay rent event (Player A -> Player B) B rent
  * 5 : card
-
  *
  * 10 : Before ending his turn
  *
@@ -224,8 +198,6 @@ void Server::add_player(Player* new_player) {
  *
  * 20 : Sell your property or go bankrupt
  *
- * #1 : auction
- * #2 : trade
  */
 void Server::status_change(int status){
     if(status != 5)
@@ -456,7 +428,8 @@ void Server::next_player(){
     } while (players[index]->islosed());
 
     if(current_player == players[index]) {
-        gamewindow->setWarningMesseage("YOU WIN");
+        gamewindow->setCurrentPlayer(index);
+        gamewindow->setWarningMesseage(QString("CONGRATULATION!!\nPlayer ") + QString::number(index + 1) + "! YOU WIN.");
         status_change(31);
         return;
     }
@@ -596,6 +569,6 @@ void Server::handleSimpleWidgetOKButton(int type) {
 
 void Server::handleBankruptcy() {
     current_player->surrender();
-
+    gamewindow->hideToken(current_player->get_playerid());
     next_player();
 }

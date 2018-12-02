@@ -23,7 +23,7 @@
    <property name="geometry">
     <rect>
      <x>1100</x>
-     <y>110</y>
+     <y>160</y>
      <width>791</width>
      <height>481</height>
     </rect>
@@ -39,7 +39,7 @@ font-size: 16px;
 }</string>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>1</number>
    </property>
    <property name="iconSize">
     <size>
@@ -2757,101 +2757,11 @@ CARD</string>
     </widget>
    </widget>
   </widget>
-  <widget class="QPushButton" name="buildButton">
-   <property name="geometry">
-    <rect>
-     <x>1080</x>
-     <y>20</y>
-     <width>141</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>16</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>BUILD</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="sellButton">
-   <property name="geometry">
-    <rect>
-     <x>1240</x>
-     <y>20</y>
-     <width>141</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>16</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>SELL</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="mortageButton">
-   <property name="geometry">
-    <rect>
-     <x>1400</x>
-     <y>20</y>
-     <width>151</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>16</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>MORTGAGE</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="unmortgageButton">
-   <property name="geometry">
-    <rect>
-     <x>1570</x>
-     <y>20</y>
-     <width>161</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>16</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>UNMORTGAGE</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="tradeButton">
-   <property name="geometry">
-    <rect>
-     <x>1750</x>
-     <y>20</y>
-     <width>141</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>16</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>TRADE</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="warning">
    <property name="geometry">
     <rect>
-     <x>1180</x>
-     <y>650</y>
+     <x>1220</x>
+     <y>670</y>
      <width>661</width>
      <height>51</height>
     </rect>
@@ -2877,6 +2787,146 @@ color: red;
    </property>
    <property name="wordWrap">
     <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="sellButton">
+   <property name="geometry">
+    <rect>
+     <x>1270</x>
+     <y>10</y>
+     <width>141</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>SELL</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="mortageButton">
+   <property name="geometry">
+    <rect>
+     <x>1430</x>
+     <y>10</y>
+     <width>151</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>MORTGAGE</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="buildButton">
+   <property name="geometry">
+    <rect>
+     <x>1110</x>
+     <y>10</y>
+     <width>141</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>BUILD</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="unmortgageButton">
+   <property name="geometry">
+    <rect>
+     <x>1600</x>
+     <y>10</y>
+     <width>161</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>UNMORTGAGE</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="token_1">
+   <property name="geometry">
+    <rect>
+     <x>1140</x>
+     <y>80</y>
+     <width>71</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 1px solid black;
+qproperty-alignment: AlignCenter;</string>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="token_2">
+   <property name="geometry">
+    <rect>
+     <x>1290</x>
+     <y>80</y>
+     <width>71</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 1px solid black;
+qproperty-alignment: AlignCenter;</string>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="token_3">
+   <property name="geometry">
+    <rect>
+     <x>1440</x>
+     <y>80</y>
+     <width>71</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 1px solid black;
+qproperty-alignment: AlignCenter;</string>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="token_4">
+   <property name="geometry">
+    <rect>
+     <x>1590</x>
+     <y>80</y>
+     <width>71</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 1px solid black;
+qproperty-alignment: AlignCenter;</string>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
    </property>
   </widget>
  </widget>

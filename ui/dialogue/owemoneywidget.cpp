@@ -6,9 +6,9 @@ OweMoneyWidget::OweMoneyWidget(QWidget* parent) :
     setGeometry(OFFSET + BLOCK_HEIGHT + BLOCK_NORMAL_WIDTH, OFFSET + BLOCK_HEIGHT + 3 * BLOCK_NORMAL_WIDTH,
                 7 * BLOCK_NORMAL_WIDTH, 4 * BLOCK_NORMAL_WIDTH);
     id_label = new QLabel(this);
-    id_label->setGeometry(BLOCK_NORMAL_WIDTH, 5, BLOCK_NORMAL_WIDTH * 6, BLOCK_NORMAL_WIDTH * 2);
-    id_label->setText("You owe more money that you\ncan pay. Raise more money or\ndeclare bankruptcy");
-    id_label->setFont(QFont("Georgia", 10));
+    id_label->setGeometry(BLOCK_NORMAL_WIDTH, 10, BLOCK_NORMAL_WIDTH * 5, BLOCK_NORMAL_WIDTH * 2);
+    id_label->setText("You owe more money that you can pay. Raise more money or declare bankruptcy");
+    id_label->setFont(QFont("Calibri", 20));
     id_label->setAlignment(Qt::AlignLeft);
     id_label->setWordWrap(true);
 
