@@ -408,8 +408,12 @@ void Server::in_jail_action(int num){
                 gamewindow->showDiceNumber(first, second);
                 current_player->out_jail();
                 move(first+second);
-            }else
+            }else{
                 current_player->stayin_jail();
+                if (current_player->get_jail_turn() == 3){
+                    in_jail_action(0);
+                }
+            }
             break;
         }
     }
@@ -437,6 +441,10 @@ void Server::next_player(){
 
     gamewindow->setCurrentPlayer(current_player->get_playerid());
     if(current_player->is_injail()) {
+        bool canpay = (current_player->get_money()-50)>=0;
+        int id;
+        bool cancard = current_player->have_jailcard(id);
+        gamewindow->updateJailDialogue(canpay, cancard);
         status_change(0);
     } else {
         status_change(1);
