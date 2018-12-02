@@ -149,3 +149,27 @@ void Player::bankruptcy(){
     money+= (jailcardlist[0]+jailcardlist[1])*50;
 }
 
+int Player::get_totalhouse(){
+    int totalhouse =0;
+    vector<Asset*>::iterator p;
+    for(p = assetlist.begin(); p != assetlist.end() ; ++p){
+            Property* property = dynamic_cast<Property*>(*p);
+            if (property!= nullptr){
+                totalhouse += property->get_house();
+             }
+    }
+    return totalhouse;
+}
+
+int Player::get_totalhotel(){
+    int totalhotel =0;
+    vector<Asset*>::iterator p;
+    for(p = assetlist.begin(); p != assetlist.end() ; ++p){
+            Property* property = dynamic_cast<Property*>(*p);
+            if (property!= nullptr){
+                totalhotel += property->get_house();
+             }
+    }
+    return totalhotel;
+}
+

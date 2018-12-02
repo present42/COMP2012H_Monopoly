@@ -243,10 +243,8 @@ void Server::start() {
 
 //Define it as a slot (throw the dice only if the client sends the signal to do so)
 void Server::roll_dice() {
-      int first =1;
-      int second =1;
-//    int first = rand() % 6 + 1;
-//    int second = rand() % 6 + 1;
+    int first = rand() % 6 + 1;
+    int second = rand() % 6 + 1;
 
     bool doubles = (first == second);
     if(doubles)
@@ -407,12 +405,16 @@ void Server::in_jail_action(int num){
             qDebug()<< "throw a double";
             int first = rand() % 6 + 1;
             int second = rand() % 6 + 1;
+            gamewindow->showDiceNumber(first, second);
             if(first == second){
-                gamewindow->showDiceNumber(first, second);
                 current_player->out_jail();
                 move(first+second);
-            }else
+            }else{
                 current_player->stayin_jail();
+                if (current_player->get_jail_turn() == 3){
+                    in_jail_action(0);
+                } else status_change(10);
+            }
             break;
         }
     }
@@ -440,6 +442,10 @@ void Server::next_player(){
 
     gamewindow->setCurrentPlayer(current_player->get_playerid());
     if(current_player->is_injail()) {
+        bool canpay = (current_player->get_money()-50)>=0;
+        int id;
+        bool cancard = current_player->have_jailcard(id);
+        gamewindow->updateInJailDialogue(canpay, cancard);
 
         status_change(0);
     } else {

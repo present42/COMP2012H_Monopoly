@@ -39,6 +39,7 @@ public:
 
     void init_player(int id);
     void refresh(vector<Player*> players, Block* (*block)[40]);
+    void updateInJailDialogue(bool affordable, bool have_card);
     void setWarningMesseage(QString);
     void hideWarningMessage();
 private:
@@ -93,7 +94,7 @@ private:
 
     void updateMoney(int player, int amount);
     void updateAssetInfo(int player, int position, int value);
-    void updateInJailDialogue(bool affordable, bool have_card);
+
 
     QString getBorderStyle(int position);
 

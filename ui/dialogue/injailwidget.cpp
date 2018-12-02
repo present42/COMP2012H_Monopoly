@@ -37,6 +37,10 @@ InJailWidget::InJailWidget(QWidget* parent):
                                 BLOCK_NORMAL_WIDTH * 2, BLOCK_NORMAL_WIDTH);
     roll_dice->setText("ROLL FOR\nDOUBLE");
     roll_dice->setFont(QFont("Georgia", 16));
+
+    connect(pay_button, &QPushButton::clicked, this, &InJailWidget::handlePayButtonClicked);
+    connect(use_card, &QPushButton::clicked, this, &InJailWidget::handleUseCardClicked);
+    connect(roll_dice, &QPushButton::clicked, this, &InJailWidget::handleRollDiceClicked);
 }
 
 InJailWidget::~InJailWidget() {
