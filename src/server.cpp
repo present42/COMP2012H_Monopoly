@@ -276,7 +276,7 @@ void Server::trigger_event(int dice_num){
         switch(signal){
             case 0:
                 qDebug() << "go to jail";
-                status_change(signal);
+                status_change(10);
                 break;
             case 3:
             {
