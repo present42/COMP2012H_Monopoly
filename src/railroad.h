@@ -16,8 +16,9 @@ public:
     ~Railroad();
     void set_rent(int num);
     void update_ownrail();
-    int get_rent();
+    virtual int get_rent();
     virtual void update();
+    virtual bool can_mortgage();
     virtual void set_mortgage();
     virtual bool trigger_event(Player* player, int points, int& signal);
 

@@ -38,6 +38,9 @@ bool Asset::get_mortgage_status() const{
     return mortgaged;
 }
 
+bool Asset::can_mortgage(){
+    return true;
+}
 
 void Asset::set_mortgage(){
     mortgaged = true;

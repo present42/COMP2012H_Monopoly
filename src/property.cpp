@@ -87,14 +87,35 @@ bool Property::add_hotel(){
     return true;
 }
 
-void Property::sell_house(){
+bool Property::sell_house(){
+    if (hotel != 0 || house == 0)
+        return false;
+    vector<int> list;
+    for(int i=0; i <40; ++i){
+        qDebug() << i;
+        Property* p = dynamic_cast<Property*>((*block)[i]);
+        if (p != nullptr &&
+            p->group == this->group &&
+            p->owner == this->owner){
+            //
+            if (p->get_monopoly() && (p->get_house() > this->house
+                                     || p->get_hotel() ==1))
+                return false;
+        }
+    }
     house--;
     owner->set_money(owner->get_money()+housecost/2);
+    return true;
 }
 
-void Property::sell_hotel(){
-    hotel-- ;
-    owner->set_money(owner->get_money()+housecost*5/2);
+bool Property::sell_hotel(){
+    if (hotel == 0)
+        return false;
+
+    hotel=0;
+    house = 4;
+    owner->set_money(owner->get_money()+housecost/2);
+    return true;
 }
 
 
@@ -136,24 +157,24 @@ bool Property::trigger_event(Player* player,int points, int& signal){
     }
     return true;
 }
-
-void Property::set_mortgage(){
+bool Property::can_mortgage(){
     //sell all house
     if(monopoly){
         for(int i=0; i <40; ++i){
-            Property* p = dynamic_cast<Property*>(*block[i]);
+            Property* p = dynamic_cast<Property*>((*block)[i]);
             if (p != nullptr &&
                 p->group == this->group &&
-                p->owner != this->owner){
-                while(p->get_house() !=0){
-                    p->sell_house();
-                }
-                while(p->get_hotel() !=0){
-                    p->sell_hotel();
+             `   p->owner == this->owner){
+                if(p->get_house() !=0 ||
+                   p->get_hotel() !=0){
+                    return false;
                 }
             }
         }
     }
+    return Asset::can_mortgage();
+}
+void Property::set_mortgage(){
     Asset::set_mortgage();
     update_group_monopoly();
 }

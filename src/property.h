@@ -37,14 +37,15 @@ class Property : public Asset{
         bool add_house();
         bool add_hotel();
 
-        void sell_house();
-        void sell_hotel();
+        bool sell_house();
+        bool sell_hotel();
 
 
         bool get_monopoly() const;
         void set_monopoly(bool monopoly);
         void update_group_monopoly();
         virtual void update();
+        virtual bool can_mortgage();
         virtual void set_mortgage();
         virtual bool trigger_event(Player* player,int points, int& signal);
 

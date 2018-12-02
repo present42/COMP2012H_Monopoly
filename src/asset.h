@@ -23,6 +23,7 @@ class Asset : public Block{
         bool get_mortgage_status() const;
         virtual int get_rent() = 0;
         virtual void update() = 0;
+        virtual bool can_mortgage();
         virtual void set_mortgage();
         virtual bool trigger_event(Player* player, int points, int& signal);
 

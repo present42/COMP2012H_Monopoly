@@ -19,6 +19,7 @@ public:
             );
     ~Utility();
     int get_rent();
+    virtual bool can_mortgage();
     virtual void set_mortgage();
     virtual void update();
     virtual bool trigger_event(Player* player, int points,int& signal);
