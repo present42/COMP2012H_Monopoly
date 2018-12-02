@@ -18,7 +18,7 @@ void TokenUI::move(int position) {
     QSequentialAnimationGroup *group = new QSequentialAnimationGroup;
     int temp_stop = current_position;
     if(position >= 0) {
-        for(int i = current_position + 1; i != ((position + 1) % 40); (++i) %= 40) {
+        for(int i = (current_position + 1) % 40; i != ((position + 1) % 40); (++i) %= 40) {
             if(i % 10 == 0 || i == position) {
                 if(i == current_position) continue;
                 QPropertyAnimation *animation = new QPropertyAnimation(this, "geometry");

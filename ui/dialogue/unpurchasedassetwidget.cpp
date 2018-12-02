@@ -41,6 +41,7 @@ UnpurchasedAssetWidget::UnpurchasedAssetWidget(QWidget* parent):
                                 BLOCK_NORMAL_WIDTH * 3, BLOCK_NORMAL_WIDTH);
     auction_button->setText("AUCTION");
     auction_button->setFont(QFont("Georgia", 16));
+    auction_button->hide();
 }
 
 UnpurchasedAssetWidget::~UnpurchasedAssetWidget() {

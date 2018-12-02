@@ -67,7 +67,7 @@ GameWindow::GameWindow(QWidget* parent, Block* board[40]) :
     initSimpleWidget();
 
     initDice();
-
+    hideWarningMessage();
     this->show();
 }
 
@@ -239,9 +239,14 @@ QPushButton* GameWindow::getSellButton() {
 
 
 void GameWindow::init_player(int id) {
+    QLabel* list[] = { ui->token_1, ui->token_2, ui->token_3, ui->token_4 };
+
     token_num++;
     tokens[id] = new TokenUI(this, token_list[id], &block_ui);
     initTabWidget(id);
+
+    list[id]->setPixmap(tokens[id]->pixmap()->scaled(list[id]->width(), list[id]->height(), Qt::KeepAspectRatio));
+
     qDebug() << id << "from init_player()";
 }
 
@@ -360,6 +365,15 @@ void GameWindow::hideAllDialogues() {
 }
 
 void GameWindow::setCurrentPlayer(int index) {
+    qDebug() << "setCurrentPlayer" << index;
+    QLabel* list[] = { ui->token_1, ui->token_2, ui->token_3, ui->token_4 };
+    for(int i = 0; i < 4; ++i) {
+        if(i == index) {
+            list[i]->setStyleSheet("border: 2px solid red; qproperty-alignment: AlignCenter;");
+        } else {
+            list[i]->setStyleSheet("border: 2px solid black; qproperty-alignment: AlignCenter;");
+        }
+    }
     qDebug() << "setCurrentPlayer with" << index;
     ui->tabWidget->setCurrentIndex(index);
     current_token = index;
@@ -434,8 +448,14 @@ void GameWindow::receiveFromOthers(int amount) {
     }
 }
 
-void GameWindow::updateMoney(int player, int amount) {
-    ui->tabWidget->setTabText(player, "Player " + QString::number(player + 1) + " ($" + QString::number(amount) + ")");
+void GameWindow::updateMoney(int player, int amount, bool bankrupt) {
+    QLabel* list[] = { ui->token_1, ui->token_2, ui->token_3, ui->token_4 };
+
+    if(!bankrupt) ui->tabWidget->setTabText(player, "Player " + QString::number(player + 1) + " ($" + QString::number(amount) + ")");
+    else {
+        ui->tabWidget->setTabText(player, "Bankrupt");
+        list[player]->setText("BANKRUPT");
+    }
 }
 
 QString GameWindow::getBorderStyle(int position) {
@@ -510,8 +530,9 @@ void GameWindow::refresh(vector<Player*> players, Block* (*block)[40]) {
     QLCDNumber *home[4] = { ui->home_number, ui->home_number_2, ui->home_number_3, ui->home_number_4};
     QLCDNumber *hotel[4] = { ui->hotel_number_1, ui->hotel_number_2, ui->hotel_number_3, ui->hotel_number_4};
     QLCDNumber *jailcard[4] = { ui->jailcard_number_1, ui->jailcard_number_2, ui->jailcard_number_3, ui->jailcard_number_4 };
+
     for(vector<Player*>::iterator temp = players.begin(); temp != players.end(); temp++) {
-        updateMoney((*temp)->get_playerid(), (*temp)->get_money());
+        updateMoney((*temp)->get_playerid(), (*temp)->get_money(), (*temp)->islosed());
         tokens[(*temp)->get_playerid()]->move((*temp)->get_playerposition());
         home[(*temp)->get_playerid()]->display((*temp)->get_totalhouse());
         home[(*temp)->get_playerid()]->show();
@@ -577,4 +598,8 @@ void GameWindow::setWarningMesseage(QString message) {
 
 void GameWindow::hideWarningMessage() {
     ui->warning->setText("");
+}
+
+void GameWindow::hideToken(int id) {
+    tokens[id]->hide();
 }

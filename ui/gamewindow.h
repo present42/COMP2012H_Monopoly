@@ -94,7 +94,7 @@ private:
     void closeEvent(QCloseEvent *event);
     void hideAllDialogues();
 
-    void updateMoney(int player, int amount);
+    void updateMoney(int player, int amount, bool bankrupt = false);
     void updateAssetInfo(int player, int position, int value);
 
 
@@ -119,6 +119,7 @@ public slots:
     void setCurrentPlayer(int index);
     void showDiceNumber(int first, int second);
     void moveToken(int position);
+    void hideToken(int id);
 
     void setCardInstruction(bool isChanceCard, QString instruction);
     void handleButtonClicked(int position);
