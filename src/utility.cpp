@@ -25,7 +25,7 @@ void Utility::update_ownrate(){
     vector<Utility*> p_list;
     vector<Utility*>::iterator it;
     for(int i=0; i <40; ++i){
-        Utility* p = dynamic_cast<Utility*>(*block[i]);
+        Utility* p = dynamic_cast<Utility*>((*block)[i]);
         if (p != nullptr &&
             p->get_owner() == this->owner &&
             !mortgaged){
@@ -59,3 +59,6 @@ int Utility::get_rent(){
     return rate_of_rent*points;
 }
 
+void Utility::update(){
+    update_ownrate();
+}

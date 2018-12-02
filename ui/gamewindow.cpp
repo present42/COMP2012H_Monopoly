@@ -32,7 +32,8 @@ GameWindow::GameWindow(QWidget* parent, Block* board[40]) :
     token_num(0),
     current_token(0)
 {
-    ui->setupUi(this);   
+    ui->setupUi(this);
+//    connect(ui->buildButton,&QPushButton::clicked,this,&GameWindow::build_handler);
     for(int i = 0; i < 4; ++i) money[i] = 1500;
 
     player_property_list_widget[0] = ui->tab1;
@@ -395,7 +396,7 @@ QString GameWindow::getBorderStyle(int position) {
 }
 
 void GameWindow::updateAssetInfo(int player, int position, int value) {
-    QString find_name = QString("\\b(\\w*") + "a" + QString::number(position) + "_" + QString::number(player) + "\\w*)\\b";
+    QString find_name = QString("\\b(\\w*") + "a" + QString::number(position) + "_" + QString::number(player+1) + "\\w*)\\b";
     QRegExp regex (find_name);
     QList<QLabel *> list = ui->tabWidget->findChildren<QLabel*>(regex);
 
@@ -436,7 +437,7 @@ void GameWindow::updateAssetInfo(int player, int position, int value) {
     }
 }
 
-void GameWindow::refresh(vector<Player*> players, Block* block[40]) {
+void GameWindow::refresh(vector<Player*> players, Block* (*block)[40]) {
     qDebug() << "Refresh";
     QLCDNumber *home[4] = { ui->home_number, ui->home_number_2, ui->home_number_3, ui->home_number_4};
     QLCDNumber *hotel[4] = { ui->hotel_number_1, ui->hotel_number_2, ui->hotel_number_3, ui->hotel_number_4};
@@ -456,7 +457,7 @@ void GameWindow::refresh(vector<Player*> players, Block* block[40]) {
     int j =0;
     for (vector<Player*>::iterator temp = players.begin(); temp != players.end(); temp++){
         for(int i =0 ; i < 40; i++){
-            Asset* asset = dynamic_cast<Asset*>(block[i]);
+            Asset* asset = dynamic_cast<Asset*>((*block)[i]);
             if(asset != nullptr){
                 if(asset->get_owner() == nullptr){
                     updateAssetInfo(j, i, -3);
@@ -466,7 +467,7 @@ void GameWindow::refresh(vector<Player*> players, Block* block[40]) {
                           asset->get_mortgage_status()){
                     updateAssetInfo(j, i, -1);
                 } else{
-                    Property* property = dynamic_cast<Property*>(block[i]);
+                    Property* property = dynamic_cast<Property*>((*block)[i]);
                     if (property == nullptr){
                         updateAssetInfo(j,i,0);
                     } else if (property->get_hotel() == 0){
@@ -482,3 +483,7 @@ void GameWindow::refresh(vector<Player*> players, Block* block[40]) {
     qDebug() << "Refresh4";
 
 }
+
+//void GameWindow::build_handler(){
+//    current_token;
+//}

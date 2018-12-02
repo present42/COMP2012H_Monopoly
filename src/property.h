@@ -44,6 +44,7 @@ class Property : public Asset{
         bool get_monopoly() const;
         void set_monopoly(bool monopoly);
         void update_group_monopoly();
+        virtual void update();
         virtual void set_mortgage();
         virtual bool trigger_event(Player* player,int points, int& signal);
 

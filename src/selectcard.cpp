@@ -1,6 +1,7 @@
 #include "selectcard.h"
 #include "property.h"
 #include "algorithm"
+#include "QDebug"
 #include "QStringList"
 
 SelectCard::SelectCard(
@@ -47,6 +48,7 @@ bool SelectCard::trigger_event(Player* player, int points, int& signal){
     switch(Case.indexOf(list[0])){
         case 0:
         {
+            qDebug() << "card event P";
             int fee =0;
             if (list[1] == "-1" || list[1] == "-2"){
                 int housenum =0;
@@ -71,6 +73,7 @@ bool SelectCard::trigger_event(Player* player, int points, int& signal){
         }
         case 1:
         {
+        qDebug() << "card event P2";
         int fee = list[1].toInt();
         for (vector<Player*>::iterator p  = players.begin() ;
              p != players.end(); ++p){
@@ -82,6 +85,7 @@ bool SelectCard::trigger_event(Player* player, int points, int& signal){
         }
         case 2:
         {
+          qDebug() << "card event R";
           player->set_money(player->get_money()+list[1].toInt());
           break;
         }
@@ -108,7 +112,9 @@ bool SelectCard::trigger_event(Player* player, int points, int& signal){
             }
             int nowpos = player->get_playerposition();
 
-            if (prepos < nowpos)
+            if (nowpos < prepos &&
+                list[1].toInt()!= -3 &&
+                list[1].toInt()!= 10)
                 player->set_money(player->get_money()+200);
             trigger_again = true;
             break;

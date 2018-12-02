@@ -25,7 +25,7 @@ void Railroad::update_ownrail(){
     vector<Railroad*> p_list;
     vector<Railroad*>::iterator it;
     for(int i=0; i <40; ++i){
-        Railroad* p = dynamic_cast<Railroad*>(*block[i]);
+        Railroad* p = dynamic_cast<Railroad*>((*block)[i]);
         if (p != nullptr &&
             p->get_owner() == this->owner &&
             !mortgaged){
@@ -55,3 +55,6 @@ int Railroad::get_rent(){
     return rent;
 }
 
+void Railroad::update(){
+    update_ownrail();
+}

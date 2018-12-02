@@ -32,7 +32,6 @@ Server::Server():
     connect(gamewindow->getSimpleWidget(), &SimpleWidget::ok_button_clicked, this, &Server::checkdouble);
     connect(gamewindow->getPayRentWidget(), &PayRentWidget::ok_button_clicked, this, &Server::checkdouble);
     connect(gamewindow->getCardWidget(), &CardWidget::ok_button_clicked, this, &Server::drawn_after);
-
     gamewindow->show();
 }
 
@@ -215,6 +214,7 @@ void Server::add_player(Player* new_player) {
  * #4 : trade
  */
 void Server::status_change(int status){
+    gamewindow->refresh(players, &block);
     this->status = status;
     //After changing the status, please emit the signal (status change)
 
@@ -236,8 +236,10 @@ void Server::start() {
 
 //Define it as a slot (throw the dice only if the client sends the signal to do so)
 void Server::roll_dice() {
-    int first = rand() % 6 + 1;
-    int second = rand() % 6 + 1;
+      int first =3;
+      int second =3;
+//    int first = rand() % 6 + 1;
+//    int second = rand() % 6 + 1;
 
     bool doubles = (first == second);
     if(doubles)
@@ -251,7 +253,7 @@ void Server::roll_dice() {
         current_player->movebyposition(10);
         current_player->stayin_jail();
         double_count =0;
-        status_change(0);
+        status_change(10);
     }else
         move(first + second);
 }
@@ -279,8 +281,7 @@ void Server::trigger_event(int dice_num){
     Asset* asset = dynamic_cast<Asset*> (block[pos]);
     if (asset != nullptr && asset->get_owner() == nullptr){
         //buy
-        qDebug() << "buy a house";
-        //gamewindow->buyAsset(pos);
+        qDebug() << "Player"<< current_player->get_playerid() <<"buy a house";
         status_change(2);
 
     }else if (block[pos]->trigger_event(current_player, dice_num,signal)){
@@ -342,6 +343,7 @@ void Server::trigger_event(int dice_num){
 
 void Server::drawn_after(){
     gamewindow->moveToken(current_player->get_playerposition());
+    gamewindow->refresh(players,&block);
     if (chance_block->get_trigger()){
         chance_block->reset_trigger();
         trigger_event(0);
@@ -362,6 +364,7 @@ void Server::checkdouble(){
 void Server::bankruptcy(){
     current_player->bankruptcy();
 }
+
 
 void Server::in_jail_action(int num){
     switch (num) {
@@ -433,13 +436,17 @@ void Server::next_player(){
 }
 
 void Server::purchaseProperty() {
+    qDebug() << "Player"<< current_player->get_playerid() <<"buy a house";
     Asset* asset = dynamic_cast<Asset*> (block[current_player->get_playerposition()]);
     current_player->add_asset(asset);
     int fee = asset->get_cost_value();
     current_player->set_money(current_player->get_money() - fee);
     asset->change_owner(current_player);
-    gamewindow->buyAsset(current_player->get_playerposition());
-    gamewindow->refresh(players, block);
+    asset->update();
+    qDebug() << "asset" << asset->get_owner()->get_playerid();
+
+//    gamewindow->buyAsset(current_player->get_playerposition());
+
     checkdouble();
 }
 

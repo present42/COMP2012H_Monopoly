@@ -112,7 +112,7 @@ void Property::update_group_monopoly(){
     vector<Property*> p_list;
     vector<Property*>::iterator it;
     for(int i=0; i <40; ++i){
-        Property* p = dynamic_cast<Property*>(*block[i]);
+        Property* p = dynamic_cast<Property*>((*block)[i]);
         if (p != nullptr && p->group == this->group && !mortgaged){
             p_list.push_back(p);
             if(p->owner != this->owner){
@@ -156,3 +156,6 @@ void Property::set_mortgage(){
     update_group_monopoly();
 }
 
+void Property::update(){
+    update_group_monopoly();
+}

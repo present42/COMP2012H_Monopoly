@@ -2,6 +2,7 @@
 #include "asset.h"
 #include "property.h"
 #include <vector>
+#include "QDebug"
 #include <algorithm>
 #include <stdio.h>
 
@@ -34,9 +35,10 @@ vector<Asset*> Player::get_assetlist(){
 
 
 bool Player::pay_rent(Player* player, int rent){
-    if (player != nullptr)
+    if (player != nullptr){
+        qDebug()<< id <<  "give"  << player->get_playerid() << rent;
         player->set_money(get_money()+rent);
-
+    }
     money-=rent;
     if (money < 0)
         return false;
