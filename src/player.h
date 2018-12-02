@@ -19,7 +19,6 @@ private:
     int money;
     int position;
     vector<Asset*> assetlist;
-    // -1 mean not in jail
     bool jailcardlist[2];
     int jail_turn;
     bool losed;
@@ -32,8 +31,9 @@ public:
     //asset part
     void add_asset(Asset* asset);
     vector<Asset*> get_assetlist();
-    // monoey in trading not hee
     void remove_asset(Asset* asset);
+    int get_totalhouse();
+    int get_totalhotel();
 
     // false mean not enough money
     bool pay_rent(Player* player,int rent);
