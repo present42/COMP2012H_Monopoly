@@ -36,6 +36,7 @@ public:
     QPushButton* getBuildButton();
     QPushButton* getMortgageButton();
     QPushButton* getUnmortgageButton();
+    QPushButton* getSellButton();
 
     void init_player(int id);
     void refresh(vector<Player*> players, Block* (*block)[40]);

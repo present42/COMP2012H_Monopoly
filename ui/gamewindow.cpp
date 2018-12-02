@@ -229,6 +229,10 @@ QPushButton* GameWindow::getUnmortgageButton() {
     return ui->unmortgageButton;
 }
 
+QPushButton* GameWindow::getSellButton() {
+    return ui->sellButton;
+}
+
 
 void GameWindow::init_player(int id) {
     token_num++;
@@ -249,6 +253,7 @@ void GameWindow::handleStatusChange(int status) {
     pos = tokens[current_token]->getPosition();
     temp = dynamic_cast<Asset*>(board[pos]);
 
+    owe_money_widget->hide();
     switch (status) {
         case 0:
             in_jail_widget->show();
@@ -303,6 +308,14 @@ void GameWindow::handleStatusChange(int status) {
             simple_widget->setType(13);
             simple_widget->setExplanation("Click the place in which you want to unmortgage");
             simple_widget->show();
+            return;
+        case 14:
+            simple_widget->setType(14);
+            simple_widget->setExplanation("Click the place in which you want to unmortgage.\nYou cannot mortgage the property where hotel or houses are built");
+            simple_widget->show();
+            return;
+        case 20:
+            owe_money_widget->show();
             return;
         default:
             qDebug() << "this status is not defined yet..!";

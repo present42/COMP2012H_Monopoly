@@ -13,6 +13,7 @@ SimpleWidget::SimpleWidget(QWidget* parent) :
     explanation->setStyleSheet("QLabel { border: 1.5px solid black }");
     explanation->setText("{INSTRUCTION TO BE HERE}");
     explanation->setAlignment(Qt::AlignCenter);
+    explanation->setWordWrap(true);
 
     ok_button = new QPushButton(this);
     ok_button->setGeometry(BLOCK_NORMAL_WIDTH * 2, BLOCK_NORMAL_WIDTH * 4 + 10,

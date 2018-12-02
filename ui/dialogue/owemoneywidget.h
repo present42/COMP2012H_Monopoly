@@ -22,6 +22,9 @@ private:
     const static int OFFSET = 20;
 signals:
     void declare_bankrupt_button_clicked();
+
+private slots:
+    void handleButtonClicked();
 };
 
 #endif // OWEMONEYWIDGET_H

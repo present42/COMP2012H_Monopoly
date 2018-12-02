@@ -33,12 +33,13 @@
    </property>
    <property name="styleSheet">
     <string notr="true">QTabBar::tab { 
-height: 30px; 
+height: 50px; 
 width: 150px; 
+font-size: 16px;
 }</string>
    </property>
    <property name="currentIndex">
-    <number>3</number>
+    <number>0</number>
    </property>
    <property name="iconSize">
     <size>
@@ -652,7 +653,7 @@ qproperty-alignment: AlignCenter;</string>
 qproperty-alignment: AlignCenter;</string>
      </property>
      <property name="text">
-      <string>hotel</string>
+      <string>HOTEL</string>
      </property>
     </widget>
     <widget class="QLCDNumber" name="home_number">
@@ -709,8 +710,8 @@ qproperty-alignment: AlignCenter;</string>
 qproperty-alignment: AlignCenter;</string>
      </property>
      <property name="text">
-      <string>Jail
-Card</string>
+      <string>JAIL
+CARD</string>
      </property>
     </widget>
     <widget class="QLCDNumber" name="jailcard_number_1">
@@ -1181,7 +1182,7 @@ Card</string>
 qproperty-alignment: AlignCenter;</string>
      </property>
      <property name="text">
-      <string>hotel</string>
+      <string>HOTEL</string>
      </property>
     </widget>
     <widget class="QLabel" name="a34_2">
@@ -1226,7 +1227,7 @@ qproperty-alignment: AlignCenter;</string>
 qproperty-alignment: AlignCenter;</string>
      </property>
      <property name="text">
-      <string>home</string>
+      <string>HOME</string>
      </property>
     </widget>
     <widget class="QLabel" name="a32_2">
@@ -1385,8 +1386,8 @@ qproperty-alignment: AlignCenter;</string>
 qproperty-alignment: AlignCenter;</string>
      </property>
      <property name="text">
-      <string>Jail
-Card</string>
+      <string>JAIL
+CARD</string>
      </property>
     </widget>
     <widget class="QLCDNumber" name="jailcard_number_2">
@@ -1717,7 +1718,7 @@ Card</string>
 qproperty-alignment: AlignCenter;</string>
      </property>
      <property name="text">
-      <string>home</string>
+      <string>HOME</string>
      </property>
     </widget>
     <widget class="QLabel" name="hotel_3">
@@ -1743,7 +1744,7 @@ qproperty-alignment: AlignCenter;</string>
 qproperty-alignment: AlignCenter;</string>
      </property>
      <property name="text">
-      <string>hotel</string>
+      <string>HOTEL</string>
      </property>
     </widget>
     <widget class="QLabel" name="a14_3">
@@ -2064,8 +2065,8 @@ qproperty-alignment: AlignCenter;</string>
 qproperty-alignment: AlignCenter;</string>
      </property>
      <property name="text">
-      <string>Jail
-Card</string>
+      <string>JAIL
+CARD</string>
      </property>
     </widget>
     <widget class="QLCDNumber" name="jailcard_number_3">
@@ -2374,7 +2375,7 @@ Card</string>
 qproperty-alignment: AlignCenter;</string>
      </property>
      <property name="text">
-      <string>home</string>
+      <string>HOME</string>
      </property>
     </widget>
     <widget class="QLabel" name="hotel_4">
@@ -2400,7 +2401,7 @@ qproperty-alignment: AlignCenter;</string>
 qproperty-alignment: AlignCenter;</string>
      </property>
      <property name="text">
-      <string>hotel</string>
+      <string>HOTEL</string>
      </property>
     </widget>
     <widget class="QLabel" name="a14_4">
@@ -2737,8 +2738,8 @@ qproperty-alignment: AlignCenter;</string>
 qproperty-alignment: AlignCenter;</string>
      </property>
      <property name="text">
-      <string>Jail
-Card</string>
+      <string>JAIL
+CARD</string>
      </property>
     </widget>
     <widget class="QLCDNumber" name="jailcard_number_4">
