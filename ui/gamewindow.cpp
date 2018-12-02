@@ -226,6 +226,12 @@ void GameWindow::initTabWidget(int new_tab) {
 
 void GameWindow::handleStatusChange(int status) {
     qDebug() << "statusChangeHandler with parameter" << status;
+    int amount, pos;
+    Asset* temp;
+
+    pos = tokens[current_token]->getPosition();
+    temp = dynamic_cast<Asset*>(board[pos]);
+
     switch (status) {
         case 0:
             in_jail_widget->show();
@@ -237,11 +243,21 @@ void GameWindow::handleStatusChange(int status) {
             return;
         case 2:
             unpurchased_asset_widget->setPreview(tokens[current_token]->getPosition());
+            if(temp != nullptr) unpurchased_asset_widget->setPrice(temp->get_cost_value());
             unpurchased_asset_widget->show();
             return;
         case 3:
             pay_rent_widget->setPayer(tokens[current_token]);
+
+            if(temp != nullptr) {
+                pay_rent_widget->setRent(temp->get_rent());
+                pay_rent_widget->setReceiver(tokens[temp->get_owner()->get_playerid()]);
+            }
+            pay_rent_widget->show();
             return;
+        case 4:
+            amount = tokens[current_token]->getPosition() == 38 ? 200 : 100;
+            simple_widget->setExplanation("You have to pay $" + QString::number(amount) + " to the bank.");
         case 5:
             card_widget->show();
             return;
@@ -446,7 +462,7 @@ void GameWindow::refresh(vector<Player*> players, Block* (*block)[40]) {
     for(vector<Player*>::iterator temp = players.begin(); temp != players.end(); temp++) {
         updateMoney((*temp)->get_playerid(), (*temp)->get_money());
         tokens[(*temp)->get_playerid()]->move((*temp)->get_playerposition());
-        home[(*temp)->get_playerid()]->display(10);
+        home[(*temp)->get_playerid()]->display(0);
         home[(*temp)->get_playerid()]->show();
 
         hotel[(*temp)->get_playerid()]->display(10);
