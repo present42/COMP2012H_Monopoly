@@ -34,6 +34,9 @@ Server::Server():
     connect(gamewindow->getCardWidget(), &CardWidget::ok_button_clicked, this, &Server::drawn_after);
 
     connect(gamewindow->getBuildButton(), &QPushButton::clicked, this, &Server::buildSomething);
+    connect(gamewindow->getMortgageButton(), &QPushButton::clicked, this, &Server::mortgageSomething);
+    connect(gamewindow->getUnmortgageButton(), &QPushButton::clicked, this, &Server::unmortgageSomething);
+
     connect(gamewindow->getInJailWidget(), &InJailWidget::injail_choose, this, &Server::in_jail_action);
 
     gamewindow->show();
@@ -437,6 +440,7 @@ void Server::next_player(){
 
     gamewindow->setCurrentPlayer(current_player->get_playerid());
     if(current_player->is_injail()) {
+
         status_change(0);
     } else {
         status_change(1);
@@ -534,7 +538,6 @@ void Server::handleSimpleWidgetOKButton(int type) {
         status = prev_status;
         status_change(status);
         qDebug() << "In this case, what should we do??";
-
     }
 }
 

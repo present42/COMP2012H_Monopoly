@@ -612,16 +612,21 @@ width: 150px;
        <height>71</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <family>Calibri</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
      <property name="autoFillBackground">
       <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">
-	border-color: &quot;black&quot;;
-	border-width: 1px;</string>
+      <string notr="true">border: 1px solid black;
+qproperty-alignment: AlignCenter;</string>
      </property>
      <property name="text">
-      <string>home</string>
+      <string>HOME</string>
      </property>
     </widget>
     <widget class="QLabel" name="hotel">
@@ -633,13 +638,18 @@ width: 150px;
        <height>71</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <family>Calibri</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
      <property name="autoFillBackground">
       <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">
-	border-color: &quot;black&quot;;
-	border-width: 1px;</string>
+      <string notr="true">border: 1px solid black;
+qproperty-alignment: AlignCenter;</string>
      </property>
      <property name="text">
       <string>hotel</string>
@@ -685,16 +695,22 @@ width: 150px;
        <height>71</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <family>Calibri</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
      <property name="autoFillBackground">
       <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">
-	border-color: &quot;black&quot;;
-	border-width: 1px;</string>
+      <string notr="true">border: 1px solid black;
+qproperty-alignment: AlignCenter;</string>
      </property>
      <property name="text">
-      <string>JailCard</string>
+      <string>Jail
+Card</string>
      </property>
     </widget>
     <widget class="QLCDNumber" name="jailcard_number_1">
@@ -1151,13 +1167,18 @@ width: 150px;
        <height>71</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <family>Calibri</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
      <property name="autoFillBackground">
       <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">
-	border-color: &quot;black&quot;;
-	border-width: 1px;</string>
+      <string notr="true">border: 1px solid black;
+qproperty-alignment: AlignCenter;</string>
      </property>
      <property name="text">
       <string>hotel</string>
@@ -1191,13 +1212,18 @@ width: 150px;
        <height>71</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <family>Calibri</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
      <property name="autoFillBackground">
       <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">
-	border-color: &quot;black&quot;;
-	border-width: 1px;</string>
+      <string notr="true">border: 1px solid black;
+qproperty-alignment: AlignCenter;</string>
      </property>
      <property name="text">
       <string>home</string>
@@ -1345,16 +1371,22 @@ width: 150px;
        <height>71</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <family>Calibri</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
      <property name="autoFillBackground">
       <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">
-	border-color: &quot;black&quot;;
-	border-width: 1px;</string>
+      <string notr="true">border: 1px solid black;
+qproperty-alignment: AlignCenter;</string>
      </property>
      <property name="text">
-      <string>JailCard</string>
+      <string>Jail
+Card</string>
      </property>
     </widget>
     <widget class="QLCDNumber" name="jailcard_number_2">
@@ -1671,13 +1703,18 @@ width: 150px;
        <height>71</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <family>Calibri</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
      <property name="autoFillBackground">
       <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">
-	border-color: &quot;black&quot;;
-	border-width: 1px;</string>
+      <string notr="true">border: 1px solid black;
+qproperty-alignment: AlignCenter;</string>
      </property>
      <property name="text">
       <string>home</string>
@@ -1692,13 +1729,18 @@ width: 150px;
        <height>71</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <family>Calibri</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
      <property name="autoFillBackground">
       <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">
-	border-color: &quot;black&quot;;
-	border-width: 1px;</string>
+      <string notr="true">border: 1px solid black;
+qproperty-alignment: AlignCenter;</string>
      </property>
      <property name="text">
       <string>hotel</string>
@@ -1999,7 +2041,7 @@ width: 150px;
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="jailcard_4">
+    <widget class="QLabel" name="jailcard_3">
      <property name="geometry">
       <rect>
        <x>400</x>
@@ -2008,19 +2050,25 @@ width: 150px;
        <height>71</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <family>Calibri</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
      <property name="autoFillBackground">
       <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">
-	border-color: &quot;black&quot;;
-	border-width: 1px;</string>
+      <string notr="true">border: 1px solid black;
+qproperty-alignment: AlignCenter;</string>
      </property>
      <property name="text">
-      <string>JailCard</string>
+      <string>Jail
+Card</string>
      </property>
     </widget>
-    <widget class="QLCDNumber" name="jailcard_number_4">
+    <widget class="QLCDNumber" name="jailcard_number_3">
      <property name="geometry">
       <rect>
        <x>500</x>
@@ -2312,13 +2360,18 @@ width: 150px;
        <height>71</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <family>Calibri</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
      <property name="autoFillBackground">
       <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">
-	border-color: &quot;black&quot;;
-	border-width: 1px;</string>
+      <string notr="true">border: 1px solid black;
+qproperty-alignment: AlignCenter;</string>
      </property>
      <property name="text">
       <string>home</string>
@@ -2333,13 +2386,18 @@ width: 150px;
        <height>71</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <family>Calibri</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
      <property name="autoFillBackground">
       <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">
-	border-color: &quot;black&quot;;
-	border-width: 1px;</string>
+      <string notr="true">border: 1px solid black;
+qproperty-alignment: AlignCenter;</string>
      </property>
      <property name="text">
       <string>hotel</string>
@@ -2656,7 +2714,7 @@ width: 150px;
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="jailcard_3">
+    <widget class="QLabel" name="jailcard_4">
      <property name="geometry">
       <rect>
        <x>400</x>
@@ -2665,19 +2723,25 @@ width: 150px;
        <height>71</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <family>Calibri</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
      <property name="autoFillBackground">
       <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">
-	border-color: &quot;black&quot;;
-	border-width: 1px;</string>
+      <string notr="true">border: 1px solid black;
+qproperty-alignment: AlignCenter;</string>
      </property>
      <property name="text">
-      <string>JailCard</string>
+      <string>Jail
+Card</string>
      </property>
     </widget>
-    <widget class="QLCDNumber" name="jailcard_number_3">
+    <widget class="QLCDNumber" name="jailcard_number_4">
      <property name="geometry">
       <rect>
        <x>500</x>

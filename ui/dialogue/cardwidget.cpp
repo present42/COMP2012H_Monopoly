@@ -20,6 +20,7 @@ CardWidget::CardWidget(QWidget* parent):
     instruction->setStyleSheet("QLabel { border: 1.5px solid black }");
     instruction->setText("COMMUNITY CHEST\n\nGET OUT OF JAIL\nThis card may be kept until needed or traded");
     instruction->setAlignment(Qt::AlignCenter);
+    instruction->setWordWrap(true);
 
     ok_button = new QPushButton(this);
     ok_button->setGeometry(BLOCK_NORMAL_WIDTH * 2, BLOCK_NORMAL_WIDTH * 4 + 10,

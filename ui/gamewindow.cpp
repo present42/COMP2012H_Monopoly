@@ -221,6 +221,15 @@ QPushButton* GameWindow::getBuildButton() {
     return ui->buildButton;
 }
 
+QPushButton* GameWindow::getMortgageButton() {
+    return ui->mortageButton;
+}
+
+QPushButton* GameWindow::getUnmortgageButton() {
+    return ui->unmortgageButton;
+}
+
+
 void GameWindow::init_player(int id) {
     token_num++;
     tokens[id] = new TokenUI(this, token_list[id], &block_ui);
@@ -264,8 +273,10 @@ void GameWindow::handleStatusChange(int status) {
             pay_rent_widget->show();
             return;
         case 4:
-            amount = tokens[current_token]->getPosition() == 38 ? 200 : 100;
+            amount = tokens[current_token]->getPosition() == 38 ? 100 : 200;
             simple_widget->setExplanation("You have to pay $" + QString::number(amount) + " to the bank.");
+            simple_widget->show();
+            return;
         case 5:
             card_widget->show();
             return;
@@ -281,7 +292,16 @@ void GameWindow::handleStatusChange(int status) {
             simple_widget->setType(11);
             simple_widget->setExplanation("Click the place in which you want to build");
             simple_widget->show();
-            qDebug() << "building something should be popped up";
+            return;
+        case 12:
+            simple_widget->setType(12);
+            simple_widget->setExplanation("Click the place in which you want to mortgage");
+            simple_widget->show();
+            return;
+        case 13:
+            simple_widget->setType(13);
+            simple_widget->setExplanation("Click the place in which you want to unmortgage");
+            simple_widget->show();
             return;
         default:
             qDebug() << "this status is not defined yet..!";
@@ -338,12 +358,12 @@ void GameWindow::end_turn_button_clicked() {
     emit turn_finished();
 }
 
-void GameWindow::setCardInstruction(bool isChanceCard, QString instruction) {
+void GameWindow::setCardInstruction(bool isCommunityChest, QString instruction) {
     card_widget->setReader(current_token);
-    if(isChanceCard) {
-        card_widget->setInstruction("CHANCE CARD\n\n" + instruction);
-    } else {
+    if(isCommunityChest) {
         card_widget->setInstruction("COMMUNITY CHEST CARD\n\n" + instruction);
+    } else {
+        card_widget->setInstruction("CHANCE CARD\n\n" + instruction);
     }
 }
 
@@ -513,4 +533,20 @@ void GameWindow::refresh(vector<Player*> players, Block* (*block)[40]) {
 
 void GameWindow::handleButtonClicked(int position) {
     emit block_clicked(position);
+}
+
+void GameWindow::updateInJailDialogue(bool affordable, bool have_card) {
+    if(affordable) in_jail_widget->getPayButton()->show();
+    else in_jail_widget->getPayButton()->hide();
+
+    if(have_card) in_jail_widget->getUseCardButton()->show();
+    else in_jail_widget->getUseCardButton()->hide();
+}
+
+void GameWindow::setWarningMesseage(QString message) {
+    ui->warning->setText(message);
+}
+
+void GameWindow::hideWarningMessage() {
+    ui->warning->setText("");
 }
