@@ -240,10 +240,10 @@ void Server::start() {
 
 //Define it as a slot (throw the dice only if the client sends the signal to do so)
 void Server::roll_dice() {
-//      int first =3;
-//      int second =3;
-    int first = rand() % 6 + 1;
-    int second = rand() % 6 + 1;
+      int first =1;
+      int second =1;
+//    int first = rand() % 6 + 1;
+//    int second = rand() % 6 + 1;
 
     bool doubles = (first == second);
     if(doubles)
@@ -359,7 +359,8 @@ void Server::drawn_after(){
 }
 
 void Server::checkdouble(){
-    if (double_count != 0){
+    if (double_count != 0 &&
+        !current_player->is_injail()){
         status_change(1);
     }else
         status_change(10);
@@ -375,6 +376,7 @@ void Server::in_jail_action(int num){
         case 0:
         //pay
         {
+            qDebug()<< "payed";
             current_player->pay_rent(nullptr,50);
             current_player->out_jail();
             roll_dice();
@@ -382,6 +384,7 @@ void Server::in_jail_action(int num){
         }
         case 1:
         {
+            qDebug()<< "used card";
             int card = -1;
             if (current_player->have_jailcard(card)){
                 if(card == 0 || card == 2){
@@ -398,6 +401,7 @@ void Server::in_jail_action(int num){
         }
         case 2:
         {
+            qDebug()<< "throw a double";
             int first = rand() % 6 + 1;
             int second = rand() % 6 + 1;
             if(first == second){
@@ -424,7 +428,7 @@ void Server::next_player(){
 
     if (current_player == players[index]){
         //end game
-        status_change(11);
+//        status_change(11);
         return;
     }else{
         current_player = players[index];
@@ -438,6 +442,50 @@ void Server::next_player(){
         status_change(1);
     }
 
+}
+
+
+void Server::block_clicked_handler(int pos){
+    switch(status){
+        case 11:
+        {
+        Property* p = dynamic_cast<Property*>(block[pos]);
+        if (p!= nullptr &&
+            p->get_owner() == current_player)
+        {
+            if (!p->add_house())
+                p->add_hotel();
+            qDebug() << "builded" << p->get_hotel() << p->get_house();
+        }
+        break;
+        }
+        case 12:
+        {
+            Asset* a = dynamic_cast<Asset*>(block[pos]);
+            if (a != nullptr &&
+                a->get_owner() == current_player&&
+                !a->get_mortgage_status())
+            {
+                a->set_mortgage();
+                qDebug() << "mortgage" << a->get_mortgage_status();
+
+            }
+            break;
+        }
+        case 13:
+        {
+            Asset* a = dynamic_cast<Asset*>(block[pos]);
+            if (a != nullptr &&
+                a->get_owner() == current_player &&
+                a->get_mortgage_status())
+            {
+                a->demortgage();
+                qDebug() << "demortgage" << a->get_mortgage_status();
+
+            }
+        }
+    }
+    gamewindow->refresh(players,&block);
 }
 
 void Server::purchaseProperty() {
@@ -456,11 +504,37 @@ void Server::purchaseProperty() {
 }
 
 void Server::buildSomething() {
-    status_change(11);
+    if(status == 0 ||
+       status == 1 ||
+       status == 10){
+        prev_status = status;
+        status_change(11);
+    }
+}
+void Server::mortgageSomething() {
+    if(status == 0 ||
+       status == 1 ||
+       status == 10){
+        prev_status = status;
+        status_change(12);
+    }
+}
+void Server::unmortgageSomething() {
+    if(status == 0 ||
+       status == 1 ||
+       status == 10){
+        prev_status = status;
+        status_change(13);
+    }
 }
 
 void Server::handleSimpleWidgetOKButton(int type) {
     if(type == 6) checkdouble();
-    else if(type == 11) qDebug() << "In this case, what should we do??";
+    else if(type == 11){
+        status = prev_status;
+        status_change(status);
+        qDebug() << "In this case, what should we do??";
+
+    }
 }
 

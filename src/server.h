@@ -47,6 +47,7 @@ private:
     Player* current_player;
 
     int  double_count;
+    int prev_status;
     int status;
 
     void initboard();
@@ -60,8 +61,13 @@ public slots:
     void purchaseProperty();
     void checkdouble();
     void in_jail_action(int num);
+
+    void block_clicked_handler(int position);
     void buildSomething();
+    void mortgageSomething();
+    void unmortgageSomething();
     void handleSimpleWidgetOKButton(int type);
+
 signals:
     void pay_bank(int money);
     void pay_rent(int ownerid, int rent);

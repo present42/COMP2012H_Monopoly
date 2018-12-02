@@ -469,10 +469,8 @@ void GameWindow::updateAssetInfo(int player, int position, int value) {
 }
 
 void GameWindow::refresh(vector<Player*> players, Block* (*block)[40]) {
-    qDebug() << "Refresh";
     QLCDNumber *home[4] = { ui->home_number, ui->home_number_2, ui->home_number_3, ui->home_number_4};
     QLCDNumber *hotel[4] = { ui->hotel_number_1, ui->hotel_number_2, ui->hotel_number_3, ui->hotel_number_4};
-    qDebug() << "Refresh2";
 
     for(vector<Player*>::iterator temp = players.begin(); temp != players.end(); temp++) {
         updateMoney((*temp)->get_playerid(), (*temp)->get_money());
@@ -483,7 +481,6 @@ void GameWindow::refresh(vector<Player*> players, Block* (*block)[40]) {
         hotel[(*temp)->get_playerid()]->display(10);
         hotel[(*temp)->get_playerid()]->show();
     }
-    qDebug() << "Refresh3";
 
     int j =0;
     for (vector<Player*>::iterator temp = players.begin(); temp != players.end(); temp++){
@@ -511,7 +508,6 @@ void GameWindow::refresh(vector<Player*> players, Block* (*block)[40]) {
         }
         j++;
     }
-    qDebug() << "Refresh4";
 
 }
 

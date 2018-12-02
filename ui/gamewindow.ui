@@ -38,7 +38,7 @@ width: 150px;
 }</string>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>3</number>
    </property>
    <property name="iconSize">
     <size>
@@ -676,6 +676,40 @@ width: 150px;
       <number>2</number>
      </property>
     </widget>
+    <widget class="QLabel" name="jailcard_1">
+     <property name="geometry">
+      <rect>
+       <x>400</x>
+       <y>340</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+	border-color: &quot;black&quot;;
+	border-width: 1px;</string>
+     </property>
+     <property name="text">
+      <string>JailCard</string>
+     </property>
+    </widget>
+    <widget class="QLCDNumber" name="jailcard_number_1">
+     <property name="geometry">
+      <rect>
+       <x>500</x>
+       <y>340</y>
+       <width>51</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="digitCount">
+      <number>2</number>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="tab2">
     <property name="autoFillBackground">
@@ -1300,6 +1334,40 @@ width: 150px;
      </property>
      <property name="text">
       <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="jailcard_2">
+     <property name="geometry">
+      <rect>
+       <x>400</x>
+       <y>340</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+	border-color: &quot;black&quot;;
+	border-width: 1px;</string>
+     </property>
+     <property name="text">
+      <string>JailCard</string>
+     </property>
+    </widget>
+    <widget class="QLCDNumber" name="jailcard_number_2">
+     <property name="geometry">
+      <rect>
+       <x>500</x>
+       <y>340</y>
+       <width>51</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="digitCount">
+      <number>2</number>
      </property>
     </widget>
    </widget>
@@ -1931,6 +1999,40 @@ width: 150px;
       <string/>
      </property>
     </widget>
+    <widget class="QLabel" name="jailcard_4">
+     <property name="geometry">
+      <rect>
+       <x>400</x>
+       <y>340</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+	border-color: &quot;black&quot;;
+	border-width: 1px;</string>
+     </property>
+     <property name="text">
+      <string>JailCard</string>
+     </property>
+    </widget>
+    <widget class="QLCDNumber" name="jailcard_number_4">
+     <property name="geometry">
+      <rect>
+       <x>500</x>
+       <y>340</y>
+       <width>51</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="digitCount">
+      <number>2</number>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="tab4">
     <property name="styleSheet">
@@ -2552,6 +2654,40 @@ width: 150px;
      </property>
      <property name="text">
       <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="jailcard_3">
+     <property name="geometry">
+      <rect>
+       <x>400</x>
+       <y>340</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+	border-color: &quot;black&quot;;
+	border-width: 1px;</string>
+     </property>
+     <property name="text">
+      <string>JailCard</string>
+     </property>
+    </widget>
+    <widget class="QLCDNumber" name="jailcard_number_3">
+     <property name="geometry">
+      <rect>
+       <x>500</x>
+       <y>340</y>
+       <width>51</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="digitCount">
+      <number>2</number>
      </property>
     </widget>
    </widget>
