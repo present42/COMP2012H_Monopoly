@@ -141,7 +141,7 @@ void Property::set_mortgage(){
     //sell all house
     if(monopoly){
         for(int i=0; i <40; ++i){
-            Property* p = dynamic_cast<Property*>(*block[i]);
+            Property* p = dynamic_cast<Property*>((*block)[i]);
             if (p != nullptr &&
                 p->group == this->group &&
                 p->owner != this->owner){

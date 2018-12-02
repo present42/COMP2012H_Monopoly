@@ -311,7 +311,7 @@ void GameWindow::handleStatusChange(int status) {
             return;
         case 14:
             simple_widget->setType(14);
-            simple_widget->setExplanation("Click the place in which you want to unmortgage.\nYou cannot mortgage the property where hotel or houses are built");
+            simple_widget->setExplanation("Click the place in which you want to sell.\nYou cannot mortgage the property where hotel or houses are built");
             simple_widget->show();
             return;
         case 20:

@@ -18,7 +18,6 @@ MainWindow::~MainWindow()
 
 void MainWindow::startButton_clicked_handler() {
 
-    //We assume this is remote server
     if(game_instance != nullptr) delete game_instance;
     game_instance = new Server;
 
