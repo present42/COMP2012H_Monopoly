@@ -213,16 +213,17 @@ void Server::start() {
     //Randomly select the current player() [Server -> Client GUI]
 
     int id = rand() % players.size();
-    current_player = players[id];
+    Player* player = current_player = players[id];
     initboard();
     gamewindow->setCurrentPlayer(id);
     for(int i =0 ; i < 40; ++i){
         Asset* a = dynamic_cast<Asset*>(block[i]);
         if (a != nullptr){
-            current_player->add_asset(a);
-            a->change_owner(current_player);
+            player->add_asset(a);
+            a->change_owner(player);
             a->update();
         }
+        player = players[(id+i)%4];
     }
     //Wait a signal to roll the dice from Client GUI
     status_change(1);

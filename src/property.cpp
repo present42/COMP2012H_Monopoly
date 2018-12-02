@@ -41,7 +41,7 @@ int Property::get_hotel() const{
 }
 
 int Property::get_rent() {
-    int times = monopoly? 2:1;
+    int times = (monopoly && house ==0 && hotel ==0)? 2:1;
     if (hotel != 0)
         return rentlist[5]*times;
 

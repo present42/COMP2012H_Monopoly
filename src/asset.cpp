@@ -48,6 +48,9 @@ void Asset::set_mortgage(){
 }
 
 void Asset::demortgage(){
+    if (owner->get_money()-mortgage_value*1.1 <0 )
+        return;
+
     mortgaged = false;
     owner->set_money(owner->get_money()-mortgage_value*1.1);
 }

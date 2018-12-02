@@ -40,15 +40,15 @@ bool Player::pay_rent(Player* player, int rent){
             own.push_back({player,rent});
         }else if (money - rent < 0){
             player->set_money(player->get_money()+this->money);
-            own.push_back({player,(money-rent)});
+            own.push_back({player,(rent-money)});
         }else{
             player->set_money(player->get_money()+rent);
         }
     }else{
         if(money<0){
-            own.push_back({player,rent});
+            own.push_back({nullptr,rent});
         }else if (money - rent < 0){
-            own.push_back({player,(money-rent)});
+            own.push_back({nullptr,(rent-money)});
         }
     }
     money -= rent;
@@ -149,7 +149,6 @@ bool Player::islosed(){
 }
 
 void Player::bankruptcy(){
-    money =0 ;
     vector<Asset*>::iterator p;
     for(p = assetlist.begin(); p != assetlist.end() ; ++p){
         if (!(*p)->get_mortgage_status()){
@@ -196,31 +195,27 @@ void Player::surrender(){
 }
 
 bool Player::paydebts(){
-    vector<pair<Player*,int>> templist;
+    int price =0;
+    if (money < 0 && !losed)
+        return false;
+    if (money < 0 && losed){
+        int num_player = count_if(own.begin(),own.end(),[](pair<Player*,int> x){return (x.first!=nullptr);});
+        price = (-money)/num_player;
+    }
     for(vector<pair<Player*,int>>::iterator p = own.begin();
         p != own.end() ; ++p)
     {
         Player* player = p->first;
         int rent = p->second;
+        qDebug() <<"money" << money <<"paying debts" << p->second;
 
         if (player != nullptr){
-            if(money<0){
-                templist.push_back({player,rent});
-            }else if (money - rent < 0){
-                player->set_money(player->get_money()+this->money);
-                templist.push_back({player,(money-rent)});
-            }else{
-                player->set_money(player->get_money()+rent);
-            }
-        }else{
-            if(money<0){
-                templist.push_back({player,rent});
-            }else if (money - rent < 0){
-                templist.push_back({player,(money-rent)});
-            }
+                player->set_money(player->get_money()+rent-price);
         }
+
     }
-    own = templist;
+    qDebug() << "end debts" ;
+    own.clear();
     return (own.size() == 0)?true:false;
 }
 
