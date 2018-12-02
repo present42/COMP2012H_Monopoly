@@ -185,7 +185,7 @@ void Server::add_player(Player* new_player) {
  * 0 : jail
  * 1 : Before rolling the dice
  *
- * 2 : Buy or Auction event
+ * 2 : Buy
  * 3 : Pay rent event (Player A -> Player B) B rent
  * 5 : card
  *
