@@ -24,3 +24,7 @@ EndTurnWidget::~EndTurnWidget() {
 QPushButton* EndTurnWidget::get_end_turn_button() {
     return end_turn_button;
 }
+
+void EndTurnWidget::setPlayerID(int id) {
+    id_label->setText("Player " + QString::number(id + 1));
+}

@@ -40,7 +40,7 @@ void CardWidget::setInstruction(QString instruction) {
 }
 
 void CardWidget::setReader(int id) {
-    reader->setText("Player #" + QString::number(id));
+    reader->setText("Player #" + QString::number(id + 1));
 }
 
 void CardWidget::ok_button_clicked_handler() {

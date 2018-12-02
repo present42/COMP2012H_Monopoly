@@ -1,5 +1,7 @@
 #include "property.h"
 #include <vector>
+#include <QDebug>
+#include "asset.h"
 using namespace std;
 
 Property:: Property(
@@ -49,9 +51,9 @@ bool Property::add_house(){
     if (hotel != 0 ||house+1 > MAX_HOUSE)
         return false;
     vector<int> list;
-    Block* (*block)[40] = nullptr;
     for(int i=0; i <40; ++i){
-        Property* p = dynamic_cast<Property*>(*block[i]);
+        qDebug() << i;
+        Property* p = dynamic_cast<Property*>((*block)[i]);
         if (p != nullptr &&
             p->group == this->group &&
             p->owner == this->owner){
@@ -69,7 +71,7 @@ bool Property::add_hotel(){
         return false;
     vector<int> list;
     for(int i=0; i <40; ++i){
-        Property* p = dynamic_cast<Property*>(*block[i]);
+        Property* p = dynamic_cast<Property*>((*block)[i]);
         if (p != nullptr &&
             p->group == this->group &&
             p->owner == this->owner){

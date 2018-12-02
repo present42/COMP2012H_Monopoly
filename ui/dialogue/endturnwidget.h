@@ -12,7 +12,7 @@ public:
     EndTurnWidget(QWidget* parent = nullptr);
     ~EndTurnWidget();
     QPushButton* get_end_turn_button();
-
+    void setPlayerID(int id);
 private:
     QPushButton* end_turn_button;
     QLabel* id_label;

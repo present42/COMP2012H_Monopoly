@@ -286,6 +286,7 @@ void GameWindow::handleStatusChange(int status) {
             simple_widget->show();
             return;
         case 10:
+            end_turn_widget->setPlayerID(current_token);
             end_turn_widget->show();
             return;
         case 11:
@@ -491,14 +492,23 @@ void GameWindow::updateAssetInfo(int player, int position, int value) {
 void GameWindow::refresh(vector<Player*> players, Block* (*block)[40]) {
     QLCDNumber *home[4] = { ui->home_number, ui->home_number_2, ui->home_number_3, ui->home_number_4};
     QLCDNumber *hotel[4] = { ui->hotel_number_1, ui->hotel_number_2, ui->hotel_number_3, ui->hotel_number_4};
-
+    QLCDNumber *jailcard[4] = { ui->jailcard_number_1, ui->jailcard_number_2, ui->jailcard_number_3, ui->jailcard_number_4 };
     for(vector<Player*>::iterator temp = players.begin(); temp != players.end(); temp++) {
         updateMoney((*temp)->get_playerid(), (*temp)->get_money());
         tokens[(*temp)->get_playerid()]->move((*temp)->get_playerposition());
-        home[(*temp)->get_playerid()]->display(0);
+        home[(*temp)->get_playerid()]->display((*temp)->get_totalhouse());
         home[(*temp)->get_playerid()]->show();
 
-        hotel[(*temp)->get_playerid()]->display(10);
+        hotel[(*temp)->get_playerid()]->display((*temp)->get_totalhotel());
+        hotel[(*temp)->get_playerid()]->show();
+
+        int id, num;
+        (*temp)->have_jailcard(id);
+        if(id == 0 || id == 1) num = 1;
+        else if(id == 2) num = 2;
+        else num = 0;
+
+        jailcard[(*temp)->get_playerid()]->display(num);
         hotel[(*temp)->get_playerid()]->show();
     }
 

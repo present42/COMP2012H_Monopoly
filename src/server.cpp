@@ -38,7 +38,7 @@ Server::Server():
     connect(gamewindow->getUnmortgageButton(), &QPushButton::clicked, this, &Server::unmortgageSomething);
 
     connect(gamewindow->getInJailWidget(), &InJailWidget::injail_choose, this, &Server::in_jail_action);
-
+    connect(gamewindow, &GameWindow::block_clicked, this, &Server::block_clicked_handler);
     gamewindow->show();
 }
 
@@ -214,6 +214,7 @@ void Server::add_player(Player* new_player) {
 
  *
  * 10 : Before ending his turn
+ * 14 : Resolve your debt
  *
  * #1 : build
  * #2 : mortgage
@@ -239,6 +240,7 @@ void Server::start() {
     for(int i =0 ; i < 40; ++i){
         Asset* a = dynamic_cast<Asset*>(block[i]);
         if (a != nullptr){
+            current_player->add_asset(a);
             a->change_owner(current_player);
             a->update();
         }
@@ -310,10 +312,11 @@ void Server::trigger_event(int dice_num){
                     if (asset->get_owner() != current_player){
                         gamewindow->payToOtherPlayer(asset->get_owner()->get_playerid()
                                       , asset->get_rent());
-                    }
+                        status_change(signal);
+                    }else
+                        checkdouble();
                 }
                 qDebug()<< "give to owner";
-                status_change(signal);
                 break;
             }
             case 4:
@@ -465,15 +468,15 @@ void Server::block_clicked_handler(int pos){
     switch(status){
         case 11:
         {
-        Property* p = dynamic_cast<Property*>(block[pos]);
-        if (p!= nullptr &&
-            p->get_owner() == current_player)
-        {
-            if (!p->add_house())
-                p->add_hotel();
-            qDebug() << "builded" << p->get_hotel() << p->get_house();
-        }
-        break;
+            Property* p = dynamic_cast<Property*>(block[pos]);
+            if (p!= nullptr &&
+                p->get_owner() == current_player)
+            {
+                if (!p->add_house())
+                    p->add_hotel();
+                qDebug() << "builded" << p->get_hotel() << p->get_house();
+            }
+            break;
         }
         case 12:
         {

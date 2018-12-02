@@ -167,7 +167,7 @@ int Player::get_totalhotel(){
     for(p = assetlist.begin(); p != assetlist.end() ; ++p){
             Property* property = dynamic_cast<Property*>(*p);
             if (property!= nullptr){
-                totalhotel += property->get_house();
+                totalhotel += property->get_hotel();
              }
     }
     return totalhotel;
