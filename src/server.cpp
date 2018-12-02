@@ -305,7 +305,8 @@ void Server::trigger_event(int dice_num){
         qDebug() << "Player"<< current_player->get_playerid() <<"buy a house";
         status_change(2);
 
-    }else if (block[pos]->trigger_event(current_player, dice_num,signal)){
+    }
+    bool result = block[pos]->trigger_event(current_player, dice_num,signal);
         qDebug() << signal << "successful trigger";
         switch(signal){
             case 0:
@@ -353,19 +354,12 @@ void Server::trigger_event(int dice_num){
             qDebug()<< "nothing to do";
             status_change(6);
         }
-    }
-    else
-    {
-        qDebug()<< "fail";
-        status_change(20);
-    }
 
 }
 
 void Server::drawn_after(){
 //    gamewindow->refresh(players,&block);
     if (chance_block->get_trigger()){
-
         chance_block->reset_trigger();
         trigger_event(0);
     }else if(community_block->get_trigger()){
@@ -377,15 +371,14 @@ void Server::drawn_after(){
 }
 
 void Server::checkdouble(){
-    if (double_count != 0 &&
+
+    if(current_player->get_money() <0){
+        status_change(20);
+    }else if (double_count != 0 &&
         !current_player->is_injail()){
         status_change(1);
     }else
         status_change(10);
-}
-
-void Server::bankruptcy(){
-    current_player->bankruptcy();
 }
 
 
@@ -585,7 +578,7 @@ void Server::handleSimpleWidgetOKButton(int type) {
 
     else if(type == 11 || type == 12 || type == 13 || type == 14){
         //Special case: player resolves the debt.
-        if(prev_status == 20 && current_player->get_money() >= 0) {
+        if(prev_status == 20 && current_player->paydebts()) {
             checkdouble();
         } else {
             status = prev_status;

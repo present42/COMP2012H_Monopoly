@@ -41,10 +41,11 @@ int Property::get_hotel() const{
 }
 
 int Property::get_rent() {
+    int times = monopoly? 2:1;
     if (hotel != 0)
-        return rentlist[5];
+        return rentlist[5]*times;
 
-        return rentlist[house];
+        return rentlist[house]*times;
 }
 
 bool Property::add_house(){
@@ -117,6 +118,14 @@ bool Property::sell_hotel(){
     owner->set_money(owner->get_money()+housecost/2);
     return true;
 }
+
+int Property::sell_tobank(){
+    int price = (hotel*5+house)*housecost/2;
+    hotel =0;
+    house =0;
+    return price;
+}
+
 
 
 bool Property::get_monopoly() const{

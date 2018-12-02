@@ -36,12 +36,25 @@ vector<Asset*> Player::get_assetlist(){
 
 bool Player::pay_rent(Player* player, int rent){
     if (player != nullptr){
-        qDebug()<< id <<  "give"  << player->get_playerid() << rent;
-        player->set_money(get_money()+rent);
+        if(money<0){
+            own.push_back({player,rent});
+        }else if (money - rent < 0){
+            player->set_money(player->get_money()+this->money);
+            own.push_back({player,(money-rent)});
+        }else{
+            player->set_money(player->get_money()+rent);
+        }
+    }else{
+        if(money<0){
+            own.push_back({player,rent});
+        }else if (money - rent < 0){
+            own.push_back({player,(money-rent)});
+        }
     }
-    money-=rent;
+    money -= rent;
     if (money < 0)
         return false;
+
     return true;
 }
 
@@ -123,7 +136,7 @@ bool Player::willlose(){
             Property* property = dynamic_cast<Property*>(*p);
             if (property!= nullptr){
                 asset_value+= property->get_house()*property->get_housecost()/2;
-                asset_value+= property->get_hotel()*property->get_housecost()/2;
+                asset_value+= property->get_hotel()*5*property->get_housecost()/2;
             }
         }
     }
@@ -136,18 +149,21 @@ bool Player::islosed(){
 }
 
 void Player::bankruptcy(){
+    money =0 ;
     vector<Asset*>::iterator p;
     for(p = assetlist.begin(); p != assetlist.end() ; ++p){
         if (!(*p)->get_mortgage_status()){
             (*p)->set_mortgage();
             Property* property = dynamic_cast<Property*>(*p);
             if (property!= nullptr){
-                (*p)->set_mortgage();
-                (*p)->change_owner(nullptr);
+                money+=property->sell_tobank();
             }
+            (*p)->set_mortgage();
+            (*p)->change_owner(nullptr);
         }
     }
     money+= (jailcardlist[0]+jailcardlist[1])*50;
+    paydebts();
 }
 
 int Player::get_totalhouse(){
@@ -177,5 +193,34 @@ int Player::get_totalhotel(){
 void Player::surrender(){
     bankruptcy();
     losed = true;
+}
+
+bool Player::paydebts(){
+    vector<pair<Player*,int>> templist;
+    for(vector<pair<Player*,int>>::iterator p = own.begin();
+        p != own.end() ; ++p)
+    {
+        Player* player = p->first;
+        int rent = p->second;
+
+        if (player != nullptr){
+            if(money<0){
+                templist.push_back({player,rent});
+            }else if (money - rent < 0){
+                player->set_money(player->get_money()+this->money);
+                templist.push_back({player,(money-rent)});
+            }else{
+                player->set_money(player->get_money()+rent);
+            }
+        }else{
+            if(money<0){
+                templist.push_back({player,rent});
+            }else if (money - rent < 0){
+                templist.push_back({player,(money-rent)});
+            }
+        }
+    }
+    own = templist;
+    return (own.size() == 0)?true:false;
 }
 
