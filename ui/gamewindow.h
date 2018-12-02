@@ -22,7 +22,7 @@ class GameWindow : public QWidget
     Q_OBJECT
 public:
 
-    explicit GameWindow(QWidget *parent = nullptr, Block* board[40] = nullptr);
+    explicit GameWindow( QWidget *parent = nullptr, Block* board[40] = nullptr);
     virtual ~GameWindow();
     void setDice(int dice1, int dice2);
     void initToken(int player, TokenUI::Token token_type);

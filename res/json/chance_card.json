@@ -15,16 +15,6 @@
       "explanation":"Advance to St. Charles Place. If you pass Go, collect $200."
    },
    {
-      "id":4,
-      "type":"M(41)",
-      "explanation":"Advance token to nearest Utility. If unowned, you may buy it from the Bank. If owned, throw dice and pay owner a total 10 times the amount thrown. "
-   },
-   {
-      "id":5,
-      "type":"M(42)",
-      "explanation":"Advance token to the nearest Railroad and pay owner twice the rental to which he/she is otherwise entitled. If Railroad is unowned, you may buy it from the Bank."
-   },
-   {
       "id":6,
       "type":"P(50)",
       "explanation":"Bank pays you dividend of $50."

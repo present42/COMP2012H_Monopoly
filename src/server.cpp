@@ -19,7 +19,7 @@ Server::Server():
 {
     srand(time(0));
 
-    if(gamewindow != nullptr) gamewindow = new GameWindow(nullptr, block);
+    if(gamewindow != nullptr) gamewindow = new GameWindow(nullptr,block);
 
     add_player(new Player(0, Token::BOOT));
     add_player(new Player(1, Token::CAR));
@@ -148,7 +148,7 @@ void Server::initboard(){
 
     }
     file.close();
-
+    qDebug()<< "Chance size" << Chance.size();
     chance_block = new SelectCard(&block, 0, players, Chance);
     community_block = new SelectCard(&block, 1,  players , Community_chest);
 
@@ -236,10 +236,10 @@ void Server::start() {
 
 //Define it as a slot (throw the dice only if the client sends the signal to do so)
 void Server::roll_dice() {
-      int first =3;
-      int second =3;
-//    int first = rand() % 6 + 1;
-//    int second = rand() % 6 + 1;
+//      int first =3;
+//      int second =3;
+    int first = rand() % 6 + 1;
+    int second = rand() % 6 + 1;
 
     bool doubles = (first == second);
     if(doubles)
@@ -420,6 +420,7 @@ void Server::next_player(){
 
     if (current_player == players[index]){
         //end game
+        status_change(11);
         return;
     }else{
         current_player = players[index];

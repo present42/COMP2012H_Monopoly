@@ -33,7 +33,6 @@ GameWindow::GameWindow(QWidget* parent, Block* board[40]) :
     current_token(0)
 {
     ui->setupUi(this);
-//    connect(ui->buildButton,&QPushButton::clicked,this,&GameWindow::build_handler);
     for(int i = 0; i < 4; ++i) money[i] = 1500;
 
     player_property_list_widget[0] = ui->tab1;
@@ -500,6 +499,3 @@ void GameWindow::refresh(vector<Player*> players, Block* (*block)[40]) {
 
 }
 
-//void GameWindow::build_handler(){
-//    current_token;
-//}
