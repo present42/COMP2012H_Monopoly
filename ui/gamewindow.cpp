@@ -217,6 +217,10 @@ InJailWidget* GameWindow::getInJailWidget() {
     return in_jail_widget;
 }
 
+OweMoneyWidget* GameWindow::getOweMoneyWidget() {
+    return owe_money_widget;
+}
+
 QPushButton* GameWindow::getBuildButton() {
     return ui->buildButton;
 }

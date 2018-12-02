@@ -66,6 +66,7 @@ public:
     //determine lose or not
     // if asset_value + money + jailcard < 0 gg
     bool willlose();
+    void surrender();
     bool islosed();
     void bankruptcy();
 

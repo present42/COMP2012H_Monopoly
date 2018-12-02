@@ -143,6 +143,7 @@ void Player::bankruptcy(){
             Property* property = dynamic_cast<Property*>(*p);
             if (property!= nullptr){
                 (*p)->set_mortgage();
+                (*p)->change_owner(nullptr);
             }
         }
     }
@@ -171,5 +172,10 @@ int Player::get_totalhotel(){
              }
     }
     return totalhotel;
+}
+
+void Player::surrender(){
+    bankruptcy();
+    losed = true;
 }
 

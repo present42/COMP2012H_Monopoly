@@ -69,7 +69,7 @@ public slots:
     void sellSomething();
 
     void handleSimpleWidgetOKButton(int type);
-
+    void handleBankruptcy();
 signals:
     void pay_bank(int money);
     void pay_rent(int ownerid, int rent);

@@ -32,6 +32,7 @@ public:
     CardWidget* getCardWidget();
     SimpleWidget* getSimpleWidget();
     InJailWidget* getInJailWidget();
+    OweMoneyWidget* getOweMoneyWidget();
 
     QPushButton* getBuildButton();
     QPushButton* getMortgageButton();

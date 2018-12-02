@@ -40,7 +40,7 @@ Server::Server():
 
     connect(gamewindow->getInJailWidget(), &InJailWidget::injail_choose, this, &Server::in_jail_action);
     connect(gamewindow, &GameWindow::block_clicked, this, &Server::block_clicked_handler);
-
+    connect(gamewindow->getOweMoneyWidget(), &OweMoneyWidget::declare_bankrupt_button_clicked, this, &Server::handleBankruptcy);
     gamewindow->show();
 }
 
@@ -175,7 +175,7 @@ GameWindow* Server::get_game_window() {
 
 void Server::add_player(Player* new_player) {
     if(players.size() < 4) {
-        new_player->set_money(1500);
+        new_player->set_money(0);
         players.push_back( new_player);
         gamewindow->init_player(new_player->get_playerid());
     } else return;
@@ -357,8 +357,7 @@ void Server::trigger_event(int dice_num){
     else
     {
         qDebug()<< "fail";
-        //no money
-//        status_change(4);
+        status_change(20);
     }
 
 }
@@ -449,13 +448,17 @@ void Server::next_player(){
         index = (index + 1) % players.size();
     } while (players[index]->islosed());
 
-    if (current_player == players[index]){
-        //end game
-//        status_change(11);
+    current_player = players[index];
+    double_count = 0;
+
+    do {
+        index = (index + 1) % players.size();
+    } while (players[index]->islosed());
+
+    if(current_player == players[index]) {
+        gamewindow->setWarningMesseage("YOU WIN");
+        status_change(31);
         return;
-    }else{
-        current_player = players[index];
-        double_count = 0;
     }
 
     gamewindow->setCurrentPlayer(current_player->get_playerid());
@@ -588,9 +591,11 @@ void Server::handleSimpleWidgetOKButton(int type) {
             status = prev_status;
             status_change(status);
         }
-
-    } else if (type == 20) {
-
     }
 }
 
+void Server::handleBankruptcy() {
+    current_player->surrender();
+
+    next_player();
+}
