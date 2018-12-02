@@ -36,9 +36,11 @@ Server::Server():
     connect(gamewindow->getBuildButton(), &QPushButton::clicked, this, &Server::buildSomething);
     connect(gamewindow->getMortgageButton(), &QPushButton::clicked, this, &Server::mortgageSomething);
     connect(gamewindow->getUnmortgageButton(), &QPushButton::clicked, this, &Server::unmortgageSomething);
+    connect(gamewindow->getSellButton(), &QPushButton::clicked, this, &Server::sellSomething);
 
     connect(gamewindow->getInJailWidget(), &InJailWidget::injail_choose, this, &Server::in_jail_action);
     connect(gamewindow, &GameWindow::block_clicked, this, &Server::block_clicked_handler);
+
     gamewindow->show();
 }
 
@@ -214,12 +216,16 @@ void Server::add_player(Player* new_player) {
 
  *
  * 10 : Before ending his turn
- * 14 : Resolve your debt
  *
- * #1 : build
- * #2 : mortgage
- * #3 : unmortgage
- * #4 : trade
+ * 11 : build
+ * 12 : mortgage
+ * 13 : unmortage
+ * 14 : sell
+ *
+ * 20 : Sell your property or go bankrupt
+ *
+ * #1 : auction
+ * #2 : trade
  */
 void Server::status_change(int status){
     gamewindow->refresh(players, &block);
@@ -531,9 +537,7 @@ void Server::buildSomething() {
     }
 }
 void Server::mortgageSomething() {
-    if(status == 0 ||
-       status == 1 ||
-       status == 10){
+    if(status == 0 || status == 1 || status == 10 || status == 20){
         prev_status = status;
         status_change(12);
     }
@@ -547,11 +551,23 @@ void Server::unmortgageSomething() {
     }
 }
 
+void Server::sellSomething() {
+    if(status == 0 || status == 1 || status == 10  || status == 20) {
+        prev_status = status;
+        status_change(14);
+    }
+}
+
 void Server::handleSimpleWidgetOKButton(int type) {
     if(type == 6) checkdouble();
-    else if(type == 11){
-        status = prev_status;
-        status_change(status);
+    else if(type == 11 || type == 12 || type == 13 || type == 14){
+        //Special case: player resolves the debt.
+        if(prev_status == 20 && current_player->get_money() >= 0) {
+            checkdouble();
+        } else {
+            status = prev_status;
+            status_change(status);
+        }
         qDebug() << "In this case, what should we do??";
     }
 }

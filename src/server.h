@@ -66,6 +66,8 @@ public slots:
     void buildSomething();
     void mortgageSomething();
     void unmortgageSomething();
+    void sellSomething();
+
     void handleSimpleWidgetOKButton(int type);
 
 signals:

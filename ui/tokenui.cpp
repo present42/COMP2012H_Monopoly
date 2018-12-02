@@ -22,7 +22,8 @@ void TokenUI::move(int position) {
             if(i % 10 == 0 || i == position) {
                 if(i == current_position) continue;
                 QPropertyAnimation *animation = new QPropertyAnimation(this, "geometry");
-                animation->setDuration((i - temp_stop) * 200);
+                int len = (i - temp_stop) > 0 ? (i - temp_stop) : 5;
+                animation->setDuration(len * 200);
                 animation->setStartValue(QRect((*blocks)[temp_stop]->token_pos_x(), (*blocks)[temp_stop]->token_pos_y(), 90, 90));
                 animation->setEndValue(QRect((*blocks)[i]->token_pos_x(), (*blocks)[i]->token_pos_y(), 90, 90));
                 group->addAnimation(animation);

@@ -10,15 +10,21 @@ OweMoneyWidget::OweMoneyWidget(QWidget* parent) :
     id_label->setText("You owe more money that you\ncan pay. Raise more money or\ndeclare bankruptcy");
     id_label->setFont(QFont("Georgia", 10));
     id_label->setAlignment(Qt::AlignLeft);
+    id_label->setWordWrap(true);
 
     declare_bankrupt_button = new QPushButton(this);
     declare_bankrupt_button->setGeometry(2 * BLOCK_NORMAL_WIDTH, BLOCK_NORMAL_WIDTH * 2 + 5, BLOCK_NORMAL_WIDTH * 9 / 2, BLOCK_NORMAL_WIDTH / 2);
     declare_bankrupt_button->setText("DECLARE BANKRUPTCY");
     declare_bankrupt_button->setFont(QFont("Georgia", 16));
 
+    connect(declare_bankrupt_button, &QPushButton::clicked, this, &OweMoneyWidget::handleButtonClicked);
 }
 
 OweMoneyWidget::~OweMoneyWidget() {
     if(id_label) delete id_label;
     if(declare_bankrupt_button) delete declare_bankrupt_button;
+}
+
+void OweMoneyWidget::handleButtonClicked() {
+    emit declare_bankrupt_button_clicked();
 }
