@@ -62,3 +62,7 @@ int Utility::get_rent(){
 void Utility::update(){
     update_ownrate();
 }
+
+bool Utility::can_mortgage(){
+    return Asset::can_mortgage();
+}

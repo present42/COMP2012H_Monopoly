@@ -491,7 +491,10 @@ void Server::block_clicked_handler(int pos){
                 a->get_owner() == current_player&&
                 !a->get_mortgage_status())
             {
-                a->set_mortgage();
+                if (a->can_mortgage())
+                    a->set_mortgage();
+                else
+                    gamewindow->setWarningMesseage("You have to sell all house and hotel in the same group of properties before mortgage");
                 qDebug() << "mortgage" << a->get_mortgage_status();
 
             }
@@ -508,6 +511,19 @@ void Server::block_clicked_handler(int pos){
                 qDebug() << "demortgage" << a->get_mortgage_status();
 
             }
+            break;
+        }
+        case 14:
+        {
+            Property* p = dynamic_cast<Property*>(block[pos]);
+            if (p!= nullptr &&
+                p->get_owner() == current_player)
+            {
+                if (!p->sell_hotel())
+                    p->sell_house();
+                qDebug() << "builded" << p->get_hotel() << p->get_house();
+            }
+            break;
         }
     }
     gamewindow->refresh(players,&block);
@@ -560,6 +576,7 @@ void Server::sellSomething() {
 
 void Server::handleSimpleWidgetOKButton(int type) {
     if(type == 6) checkdouble();
+
     else if(type == 11 || type == 12 || type == 13 || type == 14){
         //Special case: player resolves the debt.
         if(prev_status == 20 && current_player->get_money() >= 0) {

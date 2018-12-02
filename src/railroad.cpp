@@ -58,3 +58,7 @@ int Railroad::get_rent(){
 void Railroad::update(){
     update_ownrail();
 }
+
+bool Railroad::can_mortgage(){
+    return Asset::can_mortgage();
+}
