@@ -236,7 +236,13 @@ void Server::start() {
     current_player = players[id];
     initboard();
     gamewindow->setCurrentPlayer(id);
-
+    for(int i =0 ; i < 40; ++i){
+        Asset* a = dynamic_cast<Asset*>(block[i]);
+        if (a != nullptr){
+            a->change_owner(current_player);
+            a->update();
+        }
+    }
     //Wait a signal to roll the dice from Client GUI
     status_change(1);
 }
