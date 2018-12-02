@@ -18,7 +18,7 @@ public:
             int cost
             );
     ~Utility();
-    int get_rent();
+    virtual int get_rent();
     virtual bool can_mortgage();
     virtual void set_mortgage();
     virtual void update();

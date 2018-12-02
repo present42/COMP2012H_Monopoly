@@ -14,7 +14,7 @@ Railroad::~Railroad() {
 
 
 void Railroad::set_rent(int num){
-    rent *= num;
+    rent = 25*num;
 }
 
 void Railroad::update_ownrail(){

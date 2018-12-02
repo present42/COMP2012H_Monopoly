@@ -18,6 +18,7 @@ private:
     int id;
     int money;
     int position;
+    vector<pair<Player*,int>> own;
     vector<Asset*> assetlist;
     bool jailcardlist[2];
     int jail_turn;
@@ -68,6 +69,7 @@ public:
     bool willlose();
     void surrender();
     bool islosed();
+    bool paydebts();
     void bankruptcy();
 
 };

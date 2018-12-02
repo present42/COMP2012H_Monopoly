@@ -30,12 +30,7 @@ public:
     void roll_dice();
     void move(int dice_sum);
     void status_change(int status);
-    void do_next_job();
-
     void trigger_event(int dice_num);
-    void end_turn();
-
-    void bankruptcy();
 
     GameWindow* get_game_window();
     void startGUI();

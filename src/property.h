@@ -33,7 +33,7 @@ class Property : public Asset{
         int get_house() const;
         int get_hotel() const;
         int get_rent() ;
-
+        int sell_tobank();
         bool add_house();
         bool add_hotel();
 

@@ -36,12 +36,25 @@ vector<Asset*> Player::get_assetlist(){
 
 bool Player::pay_rent(Player* player, int rent){
     if (player != nullptr){
-        qDebug()<< id <<  "give"  << player->get_playerid() << rent;
-        player->set_money(get_money()+rent);
+        if(money<0){
+            own.push_back({player,rent});
+        }else if (money - rent < 0){
+            player->set_money(player->get_money()+this->money);
+            own.push_back({player,(rent-money)});
+        }else{
+            player->set_money(player->get_money()+rent);
+        }
+    }else{
+        if(money<0){
+            own.push_back({nullptr,rent});
+        }else if (money - rent < 0){
+            own.push_back({nullptr,(rent-money)});
+        }
     }
-    money-=rent;
+    money -= rent;
     if (money < 0)
         return false;
+
     return true;
 }
 
@@ -123,7 +136,7 @@ bool Player::willlose(){
             Property* property = dynamic_cast<Property*>(*p);
             if (property!= nullptr){
                 asset_value+= property->get_house()*property->get_housecost()/2;
-                asset_value+= property->get_hotel()*property->get_housecost()/2;
+                asset_value+= property->get_hotel()*5*property->get_housecost()/2;
             }
         }
     }
@@ -142,12 +155,14 @@ void Player::bankruptcy(){
             (*p)->set_mortgage();
             Property* property = dynamic_cast<Property*>(*p);
             if (property!= nullptr){
-                (*p)->set_mortgage();
-                (*p)->change_owner(nullptr);
+                money+=property->sell_tobank();
             }
+            (*p)->set_mortgage();
+            (*p)->change_owner(nullptr);
         }
     }
     money+= (jailcardlist[0]+jailcardlist[1])*50;
+    paydebts();
 }
 
 int Player::get_totalhouse(){
@@ -177,5 +192,30 @@ int Player::get_totalhotel(){
 void Player::surrender(){
     bankruptcy();
     losed = true;
+}
+
+bool Player::paydebts(){
+    int price =0;
+    if (money < 0 && !losed)
+        return false;
+    if (money < 0 && losed){
+        int num_player = count_if(own.begin(),own.end(),[](pair<Player*,int> x){return (x.first!=nullptr);});
+        price = (-money)/num_player;
+    }
+    for(vector<pair<Player*,int>>::iterator p = own.begin();
+        p != own.end() ; ++p)
+    {
+        Player* player = p->first;
+        int rent = p->second;
+        qDebug() <<"money" << money <<"paying debts" << p->second;
+
+        if (player != nullptr){
+                player->set_money(player->get_money()+rent-price);
+        }
+
+    }
+    qDebug() << "end debts" ;
+    own.clear();
+    return (own.size() == 0)?true:false;
 }
 

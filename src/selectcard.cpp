@@ -127,8 +127,10 @@ bool SelectCard::trigger_event(Player* player, int points, int& signal){
 
             if (nowpos < prepos &&
                 list[1].toInt()!= -3 &&
-                list[1].toInt()!= 10)
+                list[1].toInt()!= 10){
+                qDebug()<< "player receive the money" << player->get_playerid();
                 player->set_money(player->get_money()+200);
+                }
             trigger_again = true;
             break;
         }
