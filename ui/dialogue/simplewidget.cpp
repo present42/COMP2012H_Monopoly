@@ -34,5 +34,5 @@ void SimpleWidget::setExplanation(QString explanation) {
 
 void SimpleWidget::ok_button_clicked_handler() {
     hide();
-    emit ok_button_clicked();
+    emit ok_button_clicked(type);
 }

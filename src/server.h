@@ -60,7 +60,8 @@ public slots:
     void purchaseProperty();
     void checkdouble();
     void in_jail_action(int num);
-
+    void buildSomething();
+    void handleSimpleWidgetOKButton(int type);
 signals:
     void pay_bank(int money);
     void pay_rent(int ownerid, int rent);

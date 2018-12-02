@@ -29,9 +29,11 @@ Server::Server():
     connect(gamewindow->getRollDiceWidget(), &RollDiceWidget::roll_button_clicked, this, &Server::roll_dice);
     connect(gamewindow, &GameWindow::turn_finished, this, &Server::next_player);
     connect(gamewindow->getUnpurchasedAssetWidget(), &UnpurchasedAssetWidget::purchase_button_clicked, this, &Server::purchaseProperty);
-    connect(gamewindow->getSimpleWidget(), &SimpleWidget::ok_button_clicked, this, &Server::checkdouble);
+    connect(gamewindow->getSimpleWidget(), &SimpleWidget::ok_button_clicked, this, &Server::handleSimpleWidgetOKButton);
     connect(gamewindow->getPayRentWidget(), &PayRentWidget::ok_button_clicked, this, &Server::checkdouble);
     connect(gamewindow->getCardWidget(), &CardWidget::ok_button_clicked, this, &Server::drawn_after);
+
+    connect(gamewindow->getBuildButton(), &QPushButton::clicked, this, &Server::buildSomething);
     gamewindow->show();
 }
 
@@ -449,5 +451,14 @@ void Server::purchaseProperty() {
 //    gamewindow->buyAsset(current_player->get_playerposition());
 
     checkdouble();
+}
+
+void Server::buildSomething() {
+    status_change(11);
+}
+
+void Server::handleSimpleWidgetOKButton(int type) {
+    if(type == 6) checkdouble();
+    else if(type == 11) qDebug() << "In this case, what should we do??";
 }
 

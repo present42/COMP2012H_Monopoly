@@ -51,6 +51,9 @@ bool AbstractBlockUI::event(QEvent *event) {
         case QEvent::HoverLeave:
             hoverLeave(static_cast<QHoverEvent*>(event));
             return true;
+        case QEvent::MouseButtonPress:
+            emit clicked(position);
+            return true;
         default:
             break;
     }

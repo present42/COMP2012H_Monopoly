@@ -32,6 +32,7 @@ public:
     CardWidget* getCardWidget();
     SimpleWidget* getSimpleWidget();
     InJailWidget* getInJailWidget();
+    QPushButton* getBuildButton();
 
     void init_player(int id);
     void refresh(vector<Player*> players, Block* (*block)[40]);
@@ -92,7 +93,6 @@ private:
 public slots:
     void end_turn_button_clicked();
 
-    void build_handler();
     void handleStatusChange(int status);
 
     void getAssetPrice(int price);
@@ -111,6 +111,7 @@ public slots:
     void moveToken(int position);
 
     void setCardInstruction(bool isChanceCard, QString instruction);
+    void handleButtonClicked(int position);
     //void processHoverEnterWithInput(int x, int y);
     //void processHoverLeaveWithInput(int x, int y);
 
@@ -118,6 +119,7 @@ signals:
 //    void click_build();
     void closed();
     void turn_finished();
+    void block_clicked(int position);
 };
 
 #endif // GAMEWINDOW_H
