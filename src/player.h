@@ -18,7 +18,6 @@ private:
     int id;
     int money;
     int position;
-    Player* last_payer;
     vector<pair<Player*,int>> own;
     vector<Asset*> assetlist;
     bool jailcardlist[2];
