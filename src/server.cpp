@@ -34,6 +34,8 @@ Server::Server():
     connect(gamewindow->getCardWidget(), &CardWidget::ok_button_clicked, this, &Server::drawn_after);
 
     connect(gamewindow->getBuildButton(), &QPushButton::clicked, this, &Server::buildSomething);
+    connect(gamewindow->getInJailWidget(), &InJailWidget::injail_choose, this, &Server::in_jail_action);
+
     gamewindow->show();
 }
 

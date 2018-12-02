@@ -58,3 +58,18 @@ QPushButton* InJailWidget::getUseCardButton() {
 QPushButton* InJailWidget::getRollDiceButton() {
     return roll_dice;
 }
+
+void InJailWidget::handlePayButtonClicked() {
+    hide();
+    emit injail_choose(0);
+}
+
+void InJailWidget::handleUseCardClicked() {
+    hide();
+    emit injail_choose(1);
+}
+
+void InJailWidget::handleRollDiceClicked(){
+    hide();
+    emit injail_choose(2);
+}

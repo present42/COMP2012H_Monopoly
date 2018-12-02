@@ -33,6 +33,9 @@ GameWindow::GameWindow(QWidget* parent, Block* board[40]) :
     current_token(0)
 {
     ui->setupUi(this);
+
+    ui->warning;
+
     for(int i = 0; i < 4; ++i) money[i] = 1500;
 
     player_property_list_widget[0] = ui->tab1;

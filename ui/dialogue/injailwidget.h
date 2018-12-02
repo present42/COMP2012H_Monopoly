@@ -31,6 +31,10 @@ private:
 signals:
     void injail_choose(int choice);
 
+private slots:
+    void handlePayButtonClicked();
+    void handleUseCardClicked();
+    void handleRollDiceClicked();
 };
 
 #endif // INJAILWIDGET_H

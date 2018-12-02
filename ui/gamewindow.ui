@@ -2646,6 +2646,38 @@ width: 150px;
     <string>TRADE</string>
    </property>
   </widget>
+  <widget class="QLabel" name="warning">
+   <property name="geometry">
+    <rect>
+     <x>1180</x>
+     <y>650</y>
+     <width>661</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Calibri</family>
+     <pointsize>16</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">qproperty-alignment: AlignCenter;
+color: red;
+</string>
+   </property>
+   <property name="text">
+    <string>{ WARNING MESSAGE HERE}</string>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>
