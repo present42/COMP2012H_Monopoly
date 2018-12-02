@@ -39,6 +39,7 @@ void TokenUI::move(int position) {
         animation->setDuration((-position) * 200);
         animation->setStartValue(QRect((*blocks)[current_position]->token_pos_x(), (*blocks)[current_position]->token_pos_y(), 90, 90));
         int goal = (current_position + position + 40) % 40;
+
         animation->setEndValue(QRect((*blocks)[goal]->token_pos_x(), (*blocks)[goal]->token_pos_y(), 90, 90));
         group->addAnimation(animation);
     }

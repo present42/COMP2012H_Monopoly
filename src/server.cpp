@@ -228,6 +228,7 @@ void Server::add_player(Player* new_player) {
  * #2 : trade
  */
 void Server::status_change(int status){
+    if(status != 5)
     gamewindow->refresh(players, &block);
     this->status = status;
     //After changing the status, please emit the signal (status change)
@@ -257,9 +258,10 @@ void Server::start() {
 
 //Define it as a slot (throw the dice only if the client sends the signal to do so)
 void Server::roll_dice() {
-    int first = rand() % 6 + 1;
-    int second = rand() % 6 + 1;
-
+//    int first = rand() % 6 + 1;
+//    int second = rand() % 6 + 1;
+    int first = 3;
+    int second = 4;
     bool doubles = (first == second);
     if(doubles)
         ++double_count;
@@ -362,12 +364,13 @@ void Server::trigger_event(int dice_num){
 }
 
 void Server::drawn_after(){
-    gamewindow->moveToken(current_player->get_playerposition());
-    gamewindow->refresh(players,&block);
+//    gamewindow->refresh(players,&block);
     if (chance_block->get_trigger()){
+
         chance_block->reset_trigger();
         trigger_event(0);
     }else if(community_block->get_trigger()){
+
         community_block->reset_trigger();
         trigger_event(0);
     }else

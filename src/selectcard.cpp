@@ -141,6 +141,7 @@ bool SelectCard::trigger_event(Player* player, int points, int& signal){
                 carddeck.erase(p);
             }
         }
+        qDebug() << "card event F";
         player->keep_jailcard(id);
     }
     return true;
