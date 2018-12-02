@@ -174,7 +174,7 @@ GameWindow* Server::get_game_window() {
 
 void Server::add_player(Player* new_player) {
     if(players.size() < 4) {
-        new_player->set_money(0);
+        new_player->set_money(1500);
         players.push_back( new_player);
         gamewindow->init_player(new_player->get_playerid());
     } else return;
@@ -213,28 +213,19 @@ void Server::start() {
     //Randomly select the current player() [Server -> Client GUI]
 
     int id = rand() % players.size();
-    Player* player = current_player = players[id];
+    current_player = players[id];
     initboard();
     gamewindow->setCurrentPlayer(id);
-    for(int i =0 ; i < 40; ++i){
-        Asset* a = dynamic_cast<Asset*>(block[i]);
-        if (a != nullptr){
-            player->add_asset(a);
-            a->change_owner(player);
-            a->update();
-        }
-        player = players[(id+i)%4];
-    }
+
     //Wait a signal to roll the dice from Client GUI
     status_change(1);
 }
 
 //Define it as a slot (throw the dice only if the client sends the signal to do so)
 void Server::roll_dice() {
-//    int first = rand() % 6 + 1;
-//    int second = rand() % 6 + 1;
-    int first = 3;
-    int second = 4;
+    int first = rand() % 6 + 1;
+    int second = rand() % 6 + 1;
+
     bool doubles = (first == second);
     if(doubles)
         ++double_count;
@@ -278,7 +269,8 @@ void Server::trigger_event(int dice_num){
         qDebug() << "Player"<< current_player->get_playerid() <<"buy a house";
         status_change(2);
 
-    }
+
+    }else{
     bool result = block[pos]->trigger_event(current_player, dice_num,signal);
         qDebug() << signal << "successful trigger";
         switch(signal){
@@ -327,6 +319,7 @@ void Server::trigger_event(int dice_num){
             qDebug()<< "nothing to do";
             status_change(6);
         }
+    }
 
 }
 
@@ -427,7 +420,7 @@ void Server::next_player(){
         status_change(31);
         return;
     }
-
+    gamewindow->hideWarningMessage();
     gamewindow->setCurrentPlayer(current_player->get_playerid());
     if(current_player->is_injail()) {
         bool canpay = (current_player->get_money()-50)>=0;
@@ -449,7 +442,8 @@ void Server::block_clicked_handler(int pos){
         {
             Property* p = dynamic_cast<Property*>(block[pos]);
             if (p!= nullptr &&
-                p->get_owner() == current_player)
+                p->get_owner() == current_player
+                )
             {
                 if (!p->add_house())
                     p->add_hotel();
@@ -505,14 +499,16 @@ void Server::block_clicked_handler(int pos){
 void Server::purchaseProperty() {
     qDebug() << "Player"<< current_player->get_playerid() <<"buy a house";
     Asset* asset = dynamic_cast<Asset*> (block[current_player->get_playerposition()]);
-    current_player->add_asset(asset);
-    int fee = asset->get_cost_value();
-    current_player->set_money(current_player->get_money() - fee);
-    asset->change_owner(current_player);
-    asset->update();
-    qDebug() << "asset" << asset->get_owner()->get_playerid();
-
-//    gamewindow->buyAsset(current_player->get_playerposition());
+    if (current_player->get_money() - asset->get_cost_value() < 0){
+        gamewindow->setWarningMesseage("Sorry, You dont have enough money to buy this asset");
+    }else{
+        current_player->add_asset(asset);
+        int fee = asset->get_cost_value();
+        current_player->set_money(current_player->get_money() - fee);
+        asset->change_owner(current_player);
+        asset->update();
+        qDebug() << "asset" << asset->get_owner()->get_playerid();
+    }
 
     checkdouble();
 }

@@ -59,7 +59,7 @@ bool Property::add_house(){
             p->group == this->group &&
             p->owner == this->owner){
             //
-            if (p->get_monopoly() && p->get_house() < this->house)
+            if (!p->get_monopoly() || p->get_house() < this->house)
                 return false;
         }
     }
@@ -77,7 +77,7 @@ bool Property::add_hotel(){
             p->group == this->group &&
             p->owner == this->owner){
             //
-            if (p->get_monopoly() && (p->get_house() < this->house &&
+            if (!p->get_monopoly() || (p->get_house() < this->house &&
                                       p->get_hotel() == 0))
                 return false;
         }
@@ -99,7 +99,7 @@ bool Property::sell_house(){
             p->group == this->group &&
             p->owner == this->owner){
             //
-            if (p->get_monopoly() && (p->get_house() > this->house
+            if (!p->get_monopoly() || (p->get_house() > this->house
                                      || p->get_hotel() ==1))
                 return false;
         }
@@ -147,7 +147,8 @@ void Property::update_group_monopoly(){
         Property* p = dynamic_cast<Property*>((*block)[i]);
         if (p != nullptr && p->group == this->group && !mortgaged){
             p_list.push_back(p);
-            if(p->owner != this->owner){
+            if(p->owner == nullptr
+              ||p->owner != this->owner){
                 can_monopoly = false;
             }
         }
