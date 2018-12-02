@@ -36,6 +36,8 @@ protected:
 signals:
     void hovered_enter_with_pos(int pos);
     void hovered_leave_with_pos(int pos);
+
+    void clicked(int pos);
 private slots:
     void hovered_enter_handler();
     void hovered_leave_handler();

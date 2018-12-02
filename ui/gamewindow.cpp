@@ -46,6 +46,7 @@ GameWindow::GameWindow(QWidget* parent, Block* board[40]) :
     for(int i = 0; i < 40; i++) {
         block_ui[i] = BlockUIFactory::createBlock(this, i);
         block_ui[i]->render();
+        connect(block_ui[i], &AbstractBlockUI::clicked, this, &GameWindow::handleButtonClicked);
     }
 
     token_list[0] = TokenUI::Token::BOOT;
@@ -71,6 +72,7 @@ GameWindow::~GameWindow() {
     delete ui;
     if(roll_dice_widget) delete roll_dice_widget;
 }
+
 
 void GameWindow::initDice() {
     for(int i = 0; i < 2; ++i) {
@@ -212,6 +214,10 @@ InJailWidget* GameWindow::getInJailWidget() {
     return in_jail_widget;
 }
 
+QPushButton* GameWindow::getBuildButton() {
+    return ui->buildButton;
+}
+
 void GameWindow::init_player(int id) {
     token_num++;
     tokens[id] = new TokenUI(this, token_list[id], &block_ui);
@@ -261,11 +267,18 @@ void GameWindow::handleStatusChange(int status) {
             card_widget->show();
             return;
         case 6:
+            simple_widget->setType(6);
             simple_widget->setExplanation("Nothing to do..");
             simple_widget->show();
             return;
         case 10:
             end_turn_widget->show();
+            return;
+        case 11:
+            simple_widget->setType(11);
+            simple_widget->setExplanation("Click the place in which you want to build");
+            simple_widget->show();
+            qDebug() << "building something should be popped up";
             return;
         default:
             qDebug() << "this status is not defined yet..!";
@@ -495,3 +508,6 @@ void GameWindow::refresh(vector<Player*> players, Block* (*block)[40]) {
 
 }
 
+void GameWindow::handleButtonClicked(int position) {
+    emit block_clicked(position);
+}

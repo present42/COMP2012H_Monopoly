@@ -61,10 +61,15 @@ public slots:
     void purchaseProperty();
     void checkdouble();
     void in_jail_action(int num);
+<<<<<<< HEAD
     void build_handler(int pos);
     void mortgage_handler(int pos);
     void demortgage_handler(int pos);
 
+=======
+    void buildSomething();
+    void handleSimpleWidgetOKButton(int type);
+>>>>>>> f930a1bb6959bbb873760cc582265d283e44ab37
 signals:
     void pay_bank(int money);
     void pay_rent(int ownerid, int rent);
