@@ -236,10 +236,10 @@ void Server::start() {
 
 //Define it as a slot (throw the dice only if the client sends the signal to do so)
 void Server::roll_dice() {
-//      int first =3;
-//      int second =3;
-    int first = rand() % 6 + 1;
-    int second = rand() % 6 + 1;
+      int first =1;
+      int second =1;
+//    int first = rand() % 6 + 1;
+//    int second = rand() % 6 + 1;
 
     bool doubles = (first == second);
     if(doubles)
@@ -355,7 +355,8 @@ void Server::drawn_after(){
 }
 
 void Server::checkdouble(){
-    if (double_count != 0){
+    if (double_count != 0 &&
+        !current_player->is_injail()){
         status_change(1);
     }else
         status_change(10);
@@ -371,6 +372,7 @@ void Server::in_jail_action(int num){
         case 0:
         //pay
         {
+            qDebug()<< "payed";
             current_player->pay_rent(nullptr,50);
             current_player->out_jail();
             roll_dice();
@@ -378,6 +380,7 @@ void Server::in_jail_action(int num){
         }
         case 1:
         {
+            qDebug()<< "used card";
             int card = -1;
             if (current_player->have_jailcard(card)){
                 if(card == 0 || card == 2){
@@ -394,6 +397,7 @@ void Server::in_jail_action(int num){
         }
         case 2:
         {
+            qDebug()<< "throw a double";
             int first = rand() % 6 + 1;
             int second = rand() % 6 + 1;
             if(first == second){
@@ -434,6 +438,41 @@ void Server::next_player(){
         status_change(1);
     }
 
+}
+
+void Server::build_handler(int pos){
+    Property* p = dynamic_cast<Property*>(block[pos]);
+    if (p!= nullptr &&
+        p->get_owner() == current_player)
+    {
+        if (!p->add_house())
+            p->add_hotel();
+        qDebug() << "builded" << p->get_hotel() << p->get_house();
+        gamewindow->refresh(players,&block);
+    }
+}
+
+void Server::mortgage_handler(int pos){
+    Asset* a = dynamic_cast<Asset*>(block[pos]);
+    if (a != nullptr &&
+        a->get_owner() == current_player)
+    {
+        a->set_mortgage();
+        qDebug() << "mortgage" << a->get_mortgage_status();
+    }
+    gamewindow->refresh(players,&block);
+}
+
+void Server::demortgage_handler(int pos){
+    Asset* a = dynamic_cast<Asset*>(block[pos]);
+    if (a != nullptr &&
+        a->get_owner() == current_player)
+    {
+        a->demortgage();
+        qDebug() << "demortgage" << a->get_mortgage_status();
+
+    }
+    gamewindow->refresh(players,&block);
 }
 
 void Server::purchaseProperty() {

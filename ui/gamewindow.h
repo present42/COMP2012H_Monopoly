@@ -92,7 +92,6 @@ private:
 public slots:
     void end_turn_button_clicked();
 
-    void build_handler();
     void handleStatusChange(int status);
 
     void getAssetPrice(int price);

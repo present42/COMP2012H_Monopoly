@@ -43,7 +43,7 @@ bool SelectCard::trigger_event(Player* player, int points, int& signal){
     QString string = card->get_type();
     QStringList list = (string.left(string.length() -1)).split('(');
     QStringList Case;
-    Case << "P" << "P2" << "R" << "M" << "F";
+    Case << "P" << "P2" << "R" << "R2"<< "M" << "F";
     index++;
     switch(Case.indexOf(list[0])){
         case 0:
@@ -90,8 +90,21 @@ bool SelectCard::trigger_event(Player* player, int points, int& signal){
           break;
         }
         case 3:
+        {
+            qDebug() << "card event R2";
+            int fee = list[1].toInt();
+            for (vector<Player*>::iterator p  = players.begin() ;
+                 p != players.end(); ++p){
+                if (*p != player){
+                    (*p)->pay_rent(player,fee);
+                }
+            }
+            break;
+        }
+        case 4:
         //move
         {
+            qDebug() << "card event M";
             int prepos = player->get_playerposition();
             switch(list[1].toInt()){
                 // omit case 41 ,42 first
@@ -119,7 +132,8 @@ bool SelectCard::trigger_event(Player* player, int points, int& signal){
             trigger_again = true;
             break;
         }
-        case 4:
+        case 5:
+        qDebug() << "card event F";
         for(vector<Card*>::iterator p = carddeck.begin();
             p!= carddeck.end() ; ++p){
             if ((*p)->get_type() == card->get_type()){
