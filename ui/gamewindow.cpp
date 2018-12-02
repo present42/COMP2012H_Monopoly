@@ -301,17 +301,17 @@ void GameWindow::handleStatusChange(int status) {
             return;
         case 12:
             simple_widget->setType(12);
-            simple_widget->setExplanation("Click the place in which you want to mortgage");
+            simple_widget->setExplanation("Click the place in which you want to mortgage.\nYou cannot mortgage the property in which buildings are built");
             simple_widget->show();
             return;
         case 13:
             simple_widget->setType(13);
-            simple_widget->setExplanation("Click the place in which you want to unmortgage");
+            simple_widget->setExplanation("Click the place in which you want to unmortgage.");
             simple_widget->show();
             return;
         case 14:
             simple_widget->setType(14);
-            simple_widget->setExplanation("Click the place in which you want to sell.\nYou cannot mortgage the property where hotel or houses are built");
+            simple_widget->setExplanation("Click the place in which you want to sell.");
             simple_widget->show();
             return;
         case 20:
@@ -517,6 +517,7 @@ void GameWindow::refresh(vector<Player*> players, Block* (*block)[40]) {
 
         int id, num;
         (*temp)->have_jailcard(id);
+
         if(id == 0 || id == 1) num = 1;
         else if(id == 2) num = 2;
         else num = 0;

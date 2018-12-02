@@ -21,7 +21,7 @@
   },
   {
     "id": 5,
-    "type": "F",
+    "type": "F()",
     "explanation": "Get Out of Jail Free. This card may be kept until needed or sold/traded."
   },
   {
@@ -47,7 +47,7 @@
   {
     "id": 10,
     "type": "R(100)",
-    "explanation": "Life insurance matures � Collect $100"
+    "explanation": "Life insurance matures. Collect $100"
   },
   {
     "id": 11,

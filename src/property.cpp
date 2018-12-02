@@ -164,7 +164,7 @@ bool Property::can_mortgage(){
             Property* p = dynamic_cast<Property*>((*block)[i]);
             if (p != nullptr &&
                 p->group == this->group &&
-             `   p->owner == this->owner){
+                 p->owner == this->owner){
                 if(p->get_house() !=0 ||
                    p->get_hotel() !=0){
                     return false;

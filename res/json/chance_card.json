@@ -16,12 +16,12 @@
    },
    {
       "id":6,
-      "type":"P(50)",
+      "type":"R(50)",
       "explanation":"Bank pays you dividend of $50."
    },
    {
       "id":7,
-      "type":"F",
+      "type":"F()",
       "explanation":"Get out of Jail Free. This card may be kept until needed, or traded/sold."
    },
    {

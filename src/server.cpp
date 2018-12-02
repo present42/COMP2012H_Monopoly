@@ -585,7 +585,9 @@ void Server::handleSimpleWidgetOKButton(int type) {
             status = prev_status;
             status_change(status);
         }
-        qDebug() << "In this case, what should we do??";
+
+    } else if (type == 20) {
+
     }
 }
 
